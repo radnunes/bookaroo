@@ -71,6 +71,7 @@
         </a>
         <nav class="vertnav navbar navbar-light">
             <!-- nav bar -->
+            <!--
             <div class="w-100 mb-3 d-flex">
                 <a  href="{{ url('/') }}">
                     <img src="{{ asset('book_logo_bigger.png') }}" class="brand-md ml-0 pl-0 mt-2" alt="Brand Logo">
@@ -79,7 +80,18 @@
                     <h2 class="flex-fill ml-3 mt-3 mb-0">Bookaroo</h2>
                     <p class="flex-fill ml-3 mt-0">With a book for you</p>
                 </div>
-
+            </div>
+            -->
+            <div class="w-100 mb-4 d-flex">
+                <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+                    <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+                <g>
+                    <polygon class="st0" points="78,105 15,105 24,87 87,87 	"></polygon>
+                    <polygon class="st0" points="96,69 33,69 42,51 105,51 	"></polygon>
+                    <polygon class="st0" points="78,33 15,33 24,15 87,15 	"></polygon>
+                </g>
+              </svg>
+                </a>
             </div>
             <ul class="navbar-nav flex-fill w-100 mb-2">
                 <li class="nav-item dropdown">

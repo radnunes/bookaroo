@@ -3093,6 +3093,18 @@ input[type="button"].btn-block {
   background: no-repeat center center;
   background-size: 100% 100%; }
 
+.logo {
+    max-width: 55px;
+    position: relative;
+    right: 2px;
+}
+
+.logo-text {
+    position: relative;
+    right: 10px;
+    padding-left: 2px;
+}
+
 @media (max-width: 575.98px) {
   .navbar-expand-sm > .container,
   .navbar-expand-sm > .container-fluid, .navbar-expand-sm > .container-sm, .navbar-expand-sm > .container-md, .navbar-expand-sm > .container-lg, .navbar-expand-sm > .container-xl {
@@ -8066,7 +8078,7 @@ svg.navbar-brand-img {
   color: #dee2e6; }
   .navbar-light .navbar-nav .nav-link:hover {
     background: #495057;
-    color: #1b68ff;
+    color: #E19D41;
     border-radius: 0.2rem; }
 
 .navbar-dark .navbar-nav .nav-link {

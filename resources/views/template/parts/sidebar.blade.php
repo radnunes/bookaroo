@@ -4,39 +4,32 @@
     </a>
     <nav class="vertnav navbar navbar-light">
         <!-- nav bar -->
-        <div class="w-100 mb-3 d-flex">
+        <!--
+        <div class="navbar-brand mx-auto mt-2 flex-fill text-center">
             <a  href="{{ url('/') }}">
-                <img src="{{ asset('book_logo_bigger.png') }}" class="brand-md ml-0 pl-0 mt-2" alt="Brand Logo">
+                <img src="{{ asset('book_brand.svg') }}" class="navbar-brand-img brand-md" alt="Brand Logo">
             </a>
-            <div>
+            <h2 class="flex-fill ml-3 mt-3 mb-0">Bookaroo</h2>
+            <p class="flex-fill ml-3 mt-0">With a book for you</p>
+        </div>
+        -->
+        <div class="w-100 mb-4 d-flex">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+                <img src="{{ asset('book_color.svg') }}" class="logo" alt="Brand Logo">
+            </a>
+            <div class="logo-text">
                 <h2 class="flex-fill ml-3 mt-3 mb-0">Bookaroo</h2>
                 <p class="flex-fill ml-3 mt-0">With a book for you</p>
             </div>
 
         </div>
+
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-                <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="nav-link">
                     <i class="fe fe-home fe-16"></i>
                     <span class="ml-3 item-text">Home</span><span class="sr-only">(current)</span>
                 </a>
-                <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
-                    <li class="nav-item active">
-                        <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./dashboard-system.html"><span class="ml-1 item-text">Systems</span></a>
-                    </li>
-                </ul>
             </li>
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">
@@ -45,99 +38,101 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
                 <a href="#books" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                    <i class="fe fe-box fe-16"></i>
+                    <i class="fe fe-book-open fe-16"></i>
                     <span class="ml-3 item-text">Books</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="books">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Colors</span>
+                        <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Genres</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Typograpy</span></a>
+                        <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Decades</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Icons</span></a>
+                        <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Language</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-buttons.html"><span class="ml-1 item-text">Buttons</span></a>
+                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Format</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Notifications</span></a>
+                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Length</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-modals.html"><span class="ml-1 item-text">Modals</span></a>
+                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Ratings</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-tabs-accordion.html"><span class="ml-1 item-text">Tabs & Accordion</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-progress.html"><span class="ml-1 item-text">Progress</span></a>
+                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Publisher</span></a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
                 <a href="#authors" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                    <i class="fe fe-box fe-16"></i>
+                    <i class="fe fe-users fe-16"></i>
                     <span class="ml-3 item-text">Authors</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="authors">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Colors</span>
+                        <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Genres</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Typograpy</span></a>
+                        <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Nationality</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Icons</span></a>
+                        <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Era</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-buttons.html"><span class="ml-1 item-text">Buttons</span></a>
+                        <a class="nav-link pl-3" href="./ui-buttons.html"><span class="ml-1 item-text">Language</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Notifications</span></a>
+                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Awards</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-modals.html"><span class="ml-1 item-text">Modals</span></a>
+                        <a class="nav-link pl-3" href="./ui-modals.html"><span class="ml-1 item-text">Gender</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-tabs-accordion.html"><span class="ml-1 item-text">Tabs & Accordion</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-progress.html"><span class="ml-1 item-text">Progress</span></a>
+                        <a class="nav-link pl-3" href="./ui-tabs-accordion.html"><span class="ml-1 item-text">Literary Movements</span></a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
                 <a href="#lists" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                    <i class="fe fe-credit-card fe-16"></i>
+                    <i class="fe fe-list fe-16"></i>
                     <span class="ml-3 item-text">Lists</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="lists">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./form_elements.html"><span class="ml-1 item-text">Basic Elements</span></a>
+                        <a class="nav-link pl-3" href="./form_elements.html"><span class="ml-1 item-text">from the Community</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./form_advanced.html"><span class="ml-1 item-text">Advanced Elements</span></a>
+                        <a class="nav-link pl-3" href="./form_advanced.html"><span class="ml-1 item-text">Curated</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./form_validation.html"><span class="ml-1 item-text">Validation</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./form_wizard.html"><span class="ml-1 item-text">Wizard</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./form_layouts.html"><span class="ml-1 item-text">Layouts</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./form_upload.html"><span class="ml-1 item-text">File upload</span></a>
+                        <a class="nav-link pl-3" href="./form_validation.html"><span class="ml-1 item-text">Reading Challenges</span></a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="#news" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                    <i class="fe fe-grid fe-16"></i>
+                <a href="#community" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                    <i class="fe fe-globe fe-16"></i>
+                    <span class="ml-3 item-text">Community</span>
+                </a>
+                <ul class="collapse list-unstyled pl-4 w-100" id="community">
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="./chart-inline.html"><span class="ml-1 item-text">People</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="./chart-chartjs.html"><span class="ml-1 item-text">Groups</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="./chart-apexcharts.html"><span class="ml-1 item-text">Giveaways</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#news" data-toggle="collapse" aria-expanded="false" class="nav-link">
+                    <i class="fe fe-tv fe-16"></i>
                     <span class="ml-3 item-text">News</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="News">
@@ -152,26 +147,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a href="#community" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                    <i class="fe fe-pie-chart fe-16"></i>
-                    <span class="ml-3 item-text">Community</span>
-                </a>
-                <ul class="collapse list-unstyled pl-4 w-100" id="community">
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./chart-inline.html"><span class="ml-1 item-text">Inline Chart</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./chart-chartjs.html"><span class="ml-1 item-text">Chartjs</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./chart-apexcharts.html"><span class="ml-1 item-text">ApexCharts</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./datamaps.html"><span class="ml-1 item-text">Datamaps</span></a>
-                    </li>
-                </ul>
-            </li>
+
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">
             <span>Apps</span>

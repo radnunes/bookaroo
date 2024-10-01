@@ -1,9 +1,6 @@
 <div class="row align-items-center h-100">
     <form class="col-lg-6 col-md-8 col-10 mx-auto">
         <div class="mx-auto text-center my-4">
-            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
-                <img src="{{ asset('assets/images/login_logo.svg') }}" class="brand-form" alt="Brand Logo">
-            </a>
             <h2 class="my-3">Register</h2>
         </div>
         <div class="form-group">

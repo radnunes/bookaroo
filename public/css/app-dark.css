@@ -2034,12 +2034,12 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(66, 70, 73, 0.5); }
 
 .btn-outline-primary {
-  color: #1b68ff;
-  border-color: #1b68ff; }
+  color: #E19D41;
+  border-color: #b17831; }
   .btn-outline-primary:hover {
     color: #ffffff;
-    background-color: #1b68ff;
-    border-color: #1b68ff; }
+    background-color: #E19D41;
+    border-color: #885f28; }
   .btn-outline-primary:focus, .btn-outline-primary.focus {
     box-shadow: 0 0 0 0.2rem rgba(27, 104, 255, 0.5); }
   .btn-outline-primary.disabled, .btn-outline-primary:disabled {

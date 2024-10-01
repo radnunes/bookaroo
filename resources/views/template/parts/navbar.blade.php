@@ -13,6 +13,13 @@
             </a>
         </li>
 
+
+        <div class="mt-2">
+            <button type="button" class="btn mb-2 btn-outline-primary mr-2">Login</button>
+            <button type="button" class="btn mb-2 btn-outline-secondary">Sign Up</button>
+        </div>
+
+        <!--
         <li class="nav-item">
             <a class="nav-link text-muted my-2" href="#" data-toggle="modal" data-target=".modal-shortcut">
                 <span class="fe fe-grid fe-16"></span>
@@ -35,6 +42,7 @@
                 <a class="dropdown-item" href="#">Settings</a>
                 <a class="dropdown-item" href="#">Activities</a>
             </div>
+            -->
         </li>
     </ul>
 </nav>

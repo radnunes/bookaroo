@@ -2032,12 +2032,12 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5); }
 
 .btn-outline-primary {
-  color: #1b68ff;
-  border-color: #1b68ff; }
+  color: #4D88FF;
+  border-color: #4D88FF; }
   .btn-outline-primary:hover {
     color: #ffffff;
-    background-color: #1b68ff;
-    border-color: #1b68ff; }
+    background-color: #4D88FF;
+    border-color: #345eb6; }
   .btn-outline-primary:focus, .btn-outline-primary.focus {
     box-shadow: 0 0 0 0.2rem rgba(27, 104, 255, 0.5); }
   .btn-outline-primary.disabled, .btn-outline-primary:disabled {

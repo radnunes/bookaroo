@@ -15,8 +15,8 @@
 
 
         <div class="mt-2">
-            <button type="button" class="btn mb-2 btn-outline-primary mr-2">Login</button>
-            <button type="button" class="btn mb-2 btn-outline-secondary">Sign Up</button>
+            <button id="show-login" type="button" class="btn mb-2 btn-outline-primary mr-2">Login</button>
+            <button id="show-register" type="button" class="btn mb-2 btn-outline-secondary">Sign Up</button>
         </div>
 
         <!--

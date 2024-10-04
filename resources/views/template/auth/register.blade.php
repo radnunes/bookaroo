@@ -1,5 +1,4 @@
-<x-layout>
-    <div class="row align-items-center h-100">
+<div class="row align-items-center h-100">
         <form class="col-lg-6 col-md-8 col-10 mx-auto">
             <div class="mx-auto text-center my-4">
                 <h2 class="my-3">Register</h2>
@@ -45,5 +44,3 @@
             <p class="mt-5 mb-3 text-muted text-center">© 2020</p>
         </form>
     </div>
-
-</x-layout>

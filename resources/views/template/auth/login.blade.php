@@ -1,5 +1,4 @@
-<x-layout>
-    <div class="row align-items-center mt-5">
+<div class="row align-items-center mt-5">
         <form class="col-lg-3 col-md-4 col-10 mx-auto text-center mt-5">
             <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
                 <img src="{{ asset('assets/images/login_logo.svg') }}" class="brand-form" alt="Brand Logo">
@@ -20,6 +19,4 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Let me in</button>
             <p class="mt-5 mb-3 text-muted">© 2020</p>
         </form>
-    </div>
-
-</x-layout>
+</div>

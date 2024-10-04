@@ -43,11 +43,11 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="books">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('bookgenres') }}"><span class="ml-1 item-text">Genres</span>
+                        <a class="nav-link pl-3" href="{{ route('books.genres') }}"><span class="ml-1 item-text">Genres</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Decades</span></a>
+                        <a class="nav-link pl-3" href="{{ route('books.decades') }}"><span class="ml-1 item-text">Decades</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Language</span></a>

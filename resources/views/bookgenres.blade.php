@@ -1,3 +1,3 @@
 <x-layout>
-        @include('Components.genrelinks')
+        @include('components.genrelinks')
 </x-layout>

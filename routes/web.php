@@ -3,13 +3,28 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view ('home');
+})->name('home');
 
 Route::get('/login', function () {
-    return view ('template.parts.login');
+    return view ('auth/login');
 })->name('login');
 
 Route::get('/register', function () {
-    return view ('template.parts.register');
+    return view ('auth/register');
 })->name('register');
+
+Route::get('/books-genres', function () {
+    return view ('bookgenres');
+})->name('bookgenres');
+
+
+
+
+
+
+
+
+
+
+

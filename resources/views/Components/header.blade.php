@@ -21,3 +21,4 @@
 <!-- App CSS -->
 <link rel="stylesheet" href="css/app-light.css" id="lightTheme" disabled>
 <link rel="stylesheet" href="css/app-dark.css" id="darkTheme">
+<link rel="stylesheet" href="css/genre-buttons.css">

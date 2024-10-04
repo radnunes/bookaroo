@@ -26,7 +26,7 @@
 
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-                <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="nav-link">
+                <a href="{{ route('home') }}" aria-expanded="false" class="nav-link">
                     <i class="fe fe-home fe-16"></i>
                     <span class="ml-3 item-text">Home</span><span class="sr-only">(current)</span>
                 </a>
@@ -43,7 +43,7 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="books">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Genres</span>
+                        <a class="nav-link pl-3" href="{{ route('bookgenres') }}"><span class="ml-1 item-text">Genres</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -73,17 +73,10 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="authors">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Genres</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Nationality</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Era</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-buttons.html"><span class="ml-1 item-text">Language</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Awards</span></a>

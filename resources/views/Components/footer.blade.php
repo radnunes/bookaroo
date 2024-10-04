@@ -245,4 +245,7 @@
     }
     gtag('js', new Date());
     gtag('config', 'UA-56159088-1');
+    document.querySelector('.nav-link').addEventListener('click', function(e) {
+        e.preventDefault(); // This will stop the link from working
+    });
 </script>

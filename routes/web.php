@@ -15,7 +15,7 @@ Route::get('/register', function () {
 })->name('register');
 
 Route::get('/books-genres', function () {
-    return view ('bookgenres');
+    return view ('books/bookgenres');
 })->name('bookgenres');
 
 

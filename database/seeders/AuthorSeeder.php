@@ -20,7 +20,8 @@ class AuthorSeeder extends Seeder
                 'bio'=>'o maior autor do mundo',
                 'nationality'=>'Português',
                 'birthdate'=>'2004/6/11',
-                'literary_moviment'=>0,
+                'literary_moviment_id'=>0,
+                'award_id'=>0
             ]
         ]);
 

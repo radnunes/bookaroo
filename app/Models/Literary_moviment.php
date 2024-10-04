@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Author extends Model
+class Literary_moviment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'bio', 'nationality', 'birthdate', 'literary_moviment_id', 'award_id'];
+    protected $fillable = ['name'];
 }

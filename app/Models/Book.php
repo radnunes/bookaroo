@@ -12,4 +12,9 @@ class Book extends Model
     protected $fillable = ['title', 'subtitle', 'description', 'ISBN',
         'pages','publication_date','publisher', 'language', 'rating',
         'image-name', 'image-type'];
+
+    public function was_wrote()
+    {
+        return $this->belongsToMany(Author::class);
+    }
 }

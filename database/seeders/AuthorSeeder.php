@@ -14,12 +14,13 @@ class AuthorSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('authors')->insert([
+        DB::table('authors')->insert(values: [
             [
                 'name'=>'Leandro Santos',
                 'bio'=>'o maior autor do mundo',
                 'nationality'=>'Português',
                 'birthdate'=>'2004/6/11',
+                'gender'=>'M',
                 'literary_moviment_id'=>0,
                 'award_id'=>0
             ]

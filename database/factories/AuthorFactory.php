@@ -21,8 +21,9 @@ class AuthorFactory extends Factory
             'bio' => $this->faker->sentence(5),
             'nationality' => $this->faker->sentence(5),
             'birthdate' => $this->faker->date(),
-            'literary_moviment_id' => $this->faker->numberBetween(0, 1),
-            'award_id' => $this->faker->numberBetween(0, 1),
+            'gender' => $this->faker->randomElement(['M', 'F']),
+            'literary_moviment_id' => 0,
+            'award_id' => 0
         ];
     }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('bio', 250);
             $table->string('nationality', 30);
             $table->date('birthdate');
+            $table->char('gender', 1);
             $table->integer('literary_moviment_id')->nullable;
             $table->integer('award_id')->nullable;
             $table->timestamps();

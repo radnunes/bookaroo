@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             GenreSeeder::class,
             BookGenreSeeder::class,
             AwardsSeeder::class,
-            CommentSeeder::class
+            CommentSeeder::class,
+            RatingSeeder::class
         ]);
     }
 }

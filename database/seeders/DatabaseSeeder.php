@@ -26,7 +26,8 @@ class DatabaseSeeder extends Seeder
             AuhorBookSeeder::class,
             LiteraryMovimentSeeder::class,
             GenreSeeder::class,
-            BookGenreSeeder::class
+            BookGenreSeeder::class,
+            AwardsSeeder::class,
         ]);
     }
 }

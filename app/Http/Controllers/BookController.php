@@ -69,9 +69,12 @@ class BookController extends Controller
         return view('template.books.genres', ['books'=>Book::all()]);
     }
 
-    public function decades()
+    public function decades(Request $request)
     {
-
-        return view('template.books.decades', ['books'=>Book::all()]);
+        $decade = $request->input('decades');
+        if(!$decade){
+            return view('template.books.decades', ['books'=>Book::all()]);
+        }
+        return view('template.books.decades', ['books'=>Book::all(), 'publication_date'[0]=>$decade]);
     }
 }

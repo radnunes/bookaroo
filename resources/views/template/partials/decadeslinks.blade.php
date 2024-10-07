@@ -17,16 +17,16 @@
                         <div class="col-7">
                             <div class="tab-content mb-4" id="v-pills-tabContent">
                                 <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                    <button type="button" class="btn mb-2 btn-light genre-button w-100">90's</button>
-                                    <button type="button" class="btn mb-2 btn-light genre-button w-100">80's</button>
-                                    <button type="button" class="btn mb-2 btn-light genre-button w-100">70's</button>
-                                    <button type="button" class="btn mb-2 btn-light genre-button w-100">60's</button>
-                                    <button type="button" class="btn mb-2 btn-light genre-button w-100">50's</button>
-                                    <button type="button" class="btn mb-2 btn-light genre-button w-100">40's</button>
-                                    <button type="button" class="btn mb-2 btn-light genre-button w-100">30's</button>
-                                    <button type="button" class="btn mb-2 btn-light genre-button w-100">20's</button>
-                                    <button type="button" class="btn mb-2 btn-light genre-button w-100">10's</button>
-                                    <button type="button" class="btn mb-2 btn-light genre-button w-100">00's</button>
+                                    <a href="{{route('books.decades',['decades'=>90])}}" class="btn mb-2 btn-light genre-button w-100">90's</a>
+                                    <a href="{{route('books.decades',['decades'=>80])}}" class="btn mb-2 btn-light genre-button w-100">80's</a>
+                                    <a href="{{route('books.decades',['decades'=>70])}}" class="btn mb-2 btn-light genre-button w-100">70's</a>
+                                    <a href="{{route('books.decades',['decades'=>60])}}" class="btn mb-2 btn-light genre-button w-100">60's</a>
+                                    <a href="{{route('books.decades',['decades'=>50])}}" class="btn mb-2 btn-light genre-button w-100">50's</a>
+                                    <a href="{{route('books.decades',['decades'=>40])}}" class="btn mb-2 btn-light genre-button w-100">40's</a>
+                                    <a href="{{route('books.decades',['decades'=>30])}}" class="btn mb-2 btn-light genre-button w-100">30's</a>
+                                    <a href="{{route('books.decades',['decades'=>20])}}" class="btn mb-2 btn-light genre-button w-100">20's</a>
+                                    <a href="{{route('books.decades',['decades'=>10])}}" class="btn mb-2 btn-light genre-button w-100">10's</a>
+                                    <a href="{{route('books.decades',['decades'=>00])}}" class="btn mb-2 btn-light genre-button w-100">00's</a>
                                 </div>
                             </div>
                         </div>

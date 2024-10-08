@@ -13,7 +13,7 @@ class Book extends Model
         'pages','publication_date','publisher', 'language', 'rating',
         'image-name', 'image-type'];
 
-    public function was_wrote()
+    public function wrote_by()
     {
         return $this->belongsToMany(Author::class);
     }

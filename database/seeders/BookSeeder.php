@@ -64,6 +64,6 @@ class BookSeeder extends Seeder
                 'deleted_at' => null
             ]
         ]);
-        Book::factory(30)->create();
+        //Book::factory(30)->create();
     }
 }

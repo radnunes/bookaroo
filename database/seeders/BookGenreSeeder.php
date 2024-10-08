@@ -14,9 +14,9 @@ class BookGenreSeeder extends Seeder
     public function run(): void
     {
         DB::table('book_genre')->insert([
-            ['book_id'=>2,'genre_id'=>1],
-            ['book_id'=>5, 'genre_id'=>1],
-            ['book_id'=>2,'genre_id'=>2]
+            ['book_id'=>1,'genre_id'=>1],
+            ['book_id'=>2, 'genre_id'=>1],
+            ['book_id'=>3,'genre_id'=>2]
         ]);
     }
 }

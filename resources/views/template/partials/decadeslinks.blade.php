@@ -36,7 +36,7 @@
         </div>
     </div>
     <!-- ROWS -->
-
+    @if(count($books))
     <div class="col-md-9 my-4">
         <div class="card shadow">
             <div class="card-body">
@@ -54,13 +54,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!-- foreach -->
+                    @foreach($books as $book)
                     <tr>
-                        <td>22</td>
-                        <td>Harry Potter and the Seven Dwarves</td>
-                        <td>J. K. Rowling</td>
-                        <td>123</td>
-                        <td>13/09/2025</td>
+                        <td>{{$book->id}}</td>
+                        <td>{{$book->title}}</td>
+                        <td>{{$book->authors}}</td><!--autor-->
+                        <td>{{$book->pages}}</td>
+                        <td>{{$book->publication_date}}</td>
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-sm dropdown-toggle" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,12 +73,13 @@
                             </div>
                         </td>
                     </tr>
-                    <!-- endforeach -->
+                    @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    @endif
 
 
 </div>

@@ -58,7 +58,13 @@
                     <tr>
                         <td>{{$book->id}}</td>
                         <td>{{$book->title}}</td>
-                        <td>{{$book->authors}}</td><!--autor-->
+                        <td>
+                            <ul style="padding: 0">
+                                @foreach($book->authors as $author)
+                                    {{$author->name}}</br>
+                                @endforeach
+                            </ul>
+                        </td>
                         <td>{{$book->pages}}</td>
                         <td>{{$book->publication_date}}</td>
                         <td>

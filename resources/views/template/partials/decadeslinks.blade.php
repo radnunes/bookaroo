@@ -61,7 +61,7 @@
                         <td>
                             <ul style="padding: 0">
                                 @foreach($book->authors as $author)
-                                    {{$author->name}}</br>
+                                    <li style="padding: 0">{{$author->name}}</li>
                                 @endforeach
                             </ul>
                         </td>

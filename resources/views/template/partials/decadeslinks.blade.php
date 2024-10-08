@@ -6,62 +6,27 @@
                     <div class="row">
                         <div class="col-5">
                             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">2000</a>
-                                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">1900</a>
-                                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">1800</a>
-                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">1700</a>
-                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-5" aria-selected="false">1600</a>
-                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-6" role="tab" aria-controls="v-pills-6" aria-selected="false">Older</a>
+                                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">2000</a>
+                                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">1900</a>
+                                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">1800</a>
+                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">1700</a>
+                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">1600</a>
+                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Older</a>
                             </div>
                         </div>
                         <div class="col-7">
                             <div class="tab-content mb-4" id="v-pills-tabContent">
-                                <div class="tab-pane fade active show" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                    <a href="{{route('books.decades',['decades'=>2020])}}" class="btn mb-2 btn-light genre-button w-100">20's</a>
-                                    <a href="{{route('books.decades',['decades'=>2010])}}" class="btn mb-2 btn-light genre-button w-100">10's</a>
-                                    <a href="{{route('books.decades',['decades'=>2000])}}" class="btn mb-2 btn-light genre-button w-100">00's</a>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                    <a href="{{route('books.decades',['decades'=>1990])}}" class="btn mb-2 btn-light genre-button w-100">90's</a>
-                                    <a href="{{route('books.decades',['decades'=>1980])}}" class="btn mb-2 btn-light genre-button w-100">80's</a>
-                                    <a href="{{route('books.decades',['decades'=>1970])}}" class="btn mb-2 btn-light genre-button w-100">70's</a>
-                                    <a href="{{route('books.decades',['decades'=>1960])}}" class="btn mb-2 btn-light genre-button w-100">60's</a>
-                                    <a href="{{route('books.decades',['decades'=>1950])}}" class="btn mb-2 btn-light genre-button w-100">50's</a>
-                                    <a href="{{route('books.decades',['decades'=>1940])}}" class="btn mb-2 btn-light genre-button w-100">40's</a>
-                                    <a href="{{route('books.decades',['decades'=>1930])}}" class="btn mb-2 btn-light genre-button w-100">30's</a>
-                                    <a href="{{route('books.decades',['decades'=>1920])}}" class="btn mb-2 btn-light genre-button w-100">20's</a>
-                                    <a href="{{route('books.decades',['decades'=>1910])}}" class="btn mb-2 btn-light genre-button w-100">10's</a>
-                                    <a href="{{route('books.decades',['decades'=>1900])}}" class="btn mb-2 btn-light genre-button w-100">00's</a>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                                    <a href="{{route('books.decades',['decades'=>1890])}}" class="btn mb-2 btn-light genre-button w-100">90's</a>
-                                    <a href="{{route('books.decades',['decades'=>1880])}}" class="btn mb-2 btn-light genre-button w-100">80's</a>
-                                    <a href="{{route('books.decades',['decades'=>1870])}}" class="btn mb-2 btn-light genre-button w-100">70's</a>
-                                    <a href="{{route('books.decades',['decades'=>1860])}}" class="btn mb-2 btn-light genre-button w-100">60's</a>
-                                    <a href="{{route('books.decades',['decades'=>1850])}}" class="btn mb-2 btn-light genre-button w-100">50's</a>
-                                    <a href="{{route('books.decades',['decades'=>1840])}}" class="btn mb-2 btn-light genre-button w-100">40's</a>
-                                    <a href="{{route('books.decades',['decades'=>1830])}}" class="btn mb-2 btn-light genre-button w-100">30's</a>
-                                    <a href="{{route('books.decades',['decades'=>1820])}}" class="btn mb-2 btn-light genre-button w-100">20's</a>
-                                    <a href="{{route('books.decades',['decades'=>1810])}}" class="btn mb-2 btn-light genre-button w-100">10's</a>
-                                    <a href="{{route('books.decades',['decades'=>1800])}}" class="btn mb-2 btn-light genre-button w-100">00's</a>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                    <a href="{{route('books.decades',['decades'=>1890])}}" class="btn mb-2 btn-light genre-button w-100">90's</a>
-                                    <a href="{{route('books.decades',['decades'=>1880])}}" class="btn mb-2 btn-light genre-button w-100">80's</a>
-                                    <a href="{{route('books.decades',['decades'=>1870])}}" class="btn mb-2 btn-light genre-button w-100">70's</a>
-                                    <a href="{{route('books.decades',['decades'=>1860])}}" class="btn mb-2 btn-light genre-button w-100">60's</a>
-                                    <a href="{{route('books.decades',['decades'=>1850])}}" class="btn mb-2 btn-light genre-button w-100">50's</a>
-                                    <a href="{{route('books.decades',['decades'=>1840])}}" class="btn mb-2 btn-light genre-button w-100">40's</a>
-                                    <a href="{{route('books.decades',['decades'=>1830])}}" class="btn mb-2 btn-light genre-button w-100">30's</a>
-                                    <a href="{{route('books.decades',['decades'=>1820])}}" class="btn mb-2 btn-light genre-button w-100">20's</a>
-                                    <a href="{{route('books.decades',['decades'=>1810])}}" class="btn mb-2 btn-light genre-button w-100">10's</a>
-                                    <a href="{{route('books.decades',['decades'=>1800])}}" class="btn mb-2 btn-light genre-button w-100">00's</a>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                    <!-- Add content for 1600s -->
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                    <!-- Add content for Older -->
+                                <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                    <a href="{{route('books.decades',['decades'=>90])}}" class="btn mb-2 btn-light genre-button w-100">90's</a>
+                                    <a href="{{route('books.decades',['decades'=>80])}}" class="btn mb-2 btn-light genre-button w-100">80's</a>
+                                    <a href="{{route('books.decades',['decades'=>70])}}" class="btn mb-2 btn-light genre-button w-100">70's</a>
+                                    <a href="{{route('books.decades',['decades'=>60])}}" class="btn mb-2 btn-light genre-button w-100">60's</a>
+                                    <a href="{{route('books.decades',['decades'=>50])}}" class="btn mb-2 btn-light genre-button w-100">50's</a>
+                                    <a href="{{route('books.decades',['decades'=>40])}}" class="btn mb-2 btn-light genre-button w-100">40's</a>
+                                    <a href="{{route('books.decades',['decades'=>30])}}" class="btn mb-2 btn-light genre-button w-100">30's</a>
+                                    <a href="{{route('books.decades',['decades'=>20])}}" class="btn mb-2 btn-light genre-button w-100">20's</a>
+                                    <a href="{{route('books.decades',['decades'=>10])}}" class="btn mb-2 btn-light genre-button w-100">10's</a>
+                                    <a href="{{route('books.decades',['decades'=>00])}}" class="btn mb-2 btn-light genre-button w-100">00's</a>
                                 </div>
                             </div>
                         </div>
@@ -70,6 +35,7 @@
             </div>
         </div>
     </div>
+    <!-- ROWS -->
 
     <div class="col-md-9 my-4">
         <div class="card shadow">
@@ -113,4 +79,7 @@
             </div>
         </div>
     </div>
+
+
 </div>
+

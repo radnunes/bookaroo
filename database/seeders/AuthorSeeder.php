@@ -21,8 +21,8 @@ class AuthorSeeder extends Seeder
                 'nationality'=>'Português',
                 'birthdate'=>'2004/6/11',
                 'gender'=>'M',
-                'literary_moviment_id'=>0,
-                'award_id'=>0
+                'literary_moviment_id'=>1,
+                'award_id'=>1
             ]
         ]);
 

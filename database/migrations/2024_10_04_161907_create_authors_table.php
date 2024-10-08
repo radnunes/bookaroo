@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nationality', 30);
             $table->date('birthdate');
             $table->char('gender', 1);
-            $table->integer('literary_moviment_id')->nullable;
-            $table->integer('award_id')->nullable;
+            $table->foreignId('literary_moviment_id')->constrained('literary_moviments');
+            $table->foreignId('award_id')->constrained('awards');
             $table->timestamps();
         });
     }

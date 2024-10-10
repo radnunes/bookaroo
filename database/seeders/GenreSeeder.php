@@ -15,7 +15,7 @@ class GenreSeeder extends Seeder
     {
         DB::table('genres')->insert([
             //Fiction
-            ['name'=>'Fiction'],
+            //['name'=>'Fiction'],
             ['name'=>'Adveture'],
             ['name'=>'Romance'],
             ['name'=>'Mystery'],
@@ -29,7 +29,7 @@ class GenreSeeder extends Seeder
             ['name'=>'Paranormal'],
             ['name'=>'Young Adult'],
             //Non-Fiction
-            ['name'=>'Non-Fiction'],
+            //['name'=>'Non-Fiction'],
             ['name'=>'Biography'],
             ['name'=>'Memoir'],
             ['name'=>'Self-Help'],
@@ -42,14 +42,14 @@ class GenreSeeder extends Seeder
             ['name'=>'Essays'],
             ['name'=>'Journalism'],
             //For Children
-            ['name'=>'For Children'],
+            //['name'=>'For Children'],
             ['name'=>'Picture Books'],
             ['name'=>'Early Readers'],
             ['name'=>'Middle Grade Fiction'],
             ['name'=>'Fairytales & Fables'],
             ['name'=>"Children's Fantasy"],
             //Others
-            ['name'=>'Others'],
+            //['name'=>'Others'],
             ['name'=>'Graphic Novels/Comics'],
             ['name'=>'Poetry'],
             ['name'=>'Satire'],

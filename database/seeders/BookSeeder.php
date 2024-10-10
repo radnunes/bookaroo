@@ -53,7 +53,7 @@ class BookSeeder extends Seeder
                 'description' => 'Um livro sobre o presente e o futuro da tecnologia.',
                 'ISBN' => '333-3-33-333333-3',
                 'pages' => 400,
-                'publication_date' => '0900-02-15',
+                'publication_date' => '2024-02-15',
                 'publisher' => 'Leya',
                 'language' => 'en',
                 'rating' => null,

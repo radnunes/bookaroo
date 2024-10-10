@@ -15,48 +15,48 @@
                             <div class="col-7">
                                 <div class="tab-content mb-4" id="v-pills-tabContent">
                                     <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Adventure</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Romance</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Mystery</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Thriller</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Science Fiction</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Fantasy</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Historical Fiction</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Horror</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Dystopian</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Magical Realism</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Paranormal</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Young Adult (YA)</button>
+                                        <a href="{{route('books.genres',['genres'=>'Adventure'])}}" class="btn mb-2 btn-light genre-button w-100">Adventure</a>
+                                        <a href="{{route('books.genres',['genres'=>'Romance'])}}" class="btn mb-2 btn-light genre-button w-100">Romance</a>
+                                        <a href="{{route('books.genres',['genres'=>'Mystery'])}}" class="btn mb-2 btn-light genre-button w-100">Mystery</a>
+                                        <a href="{{route('books.genres',['genres'=>'Thriller'])}}" class="btn mb-2 btn-light genre-button w-100">Thriller</a>
+                                        <a href="{{route('books.genres',['genres'=>'Science Fiction'])}}" class="btn mb-2 btn-light genre-button w-100">Science Fiction</a>
+                                        <a href="{{route('books.genres',['genres'=>'Fantasy'])}}" class="btn mb-2 btn-light genre-button w-100">Fantasy</a>
+                                        <a href="{{route('books.genres',['genres'=>'Historical Fiction'])}}" class="btn mb-2 btn-light genre-button w-100">Historical Fiction</a>
+                                        <a href="{{route('books.genres',['genres'=>'Horror'])}}" class="btn mb-2 btn-light genre-button w-100">Horror</a>
+                                        <a href="{{route('books.genres',['genres'=>'Dystopian'])}}" class="btn mb-2 btn-light genre-button w-100">Dystopian</a>
+                                        <a href="{{route('books.genres',['genres'=>'Magical Realism'])}}" class="btn mb-2 btn-light genre-button w-100">Magical Realism</a>
+                                        <a href="{{route('books.genres',['genres'=>'Paranormal'])}}" class="btn mb-2 btn-light genre-button w-100">Paranormal</a>
+                                        <a href="{{route('books.genres',['genres'=>'Young Adult'])}}" class="btn mb-2 btn-light genre-button w-100">Young Adult (YA)</a>
 
                                     </div>
                                     <div class="tab-pane fade mb-4" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Biography</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Memoir</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Self-help</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">True Crime</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">History</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Science</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Travel</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Philosophy</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Religion/Spirituality</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Essays</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Journalism</button>
+                                        <a href="{{route('books.genres',['genres'=>'Biography'])}}" class="btn mb-2 btn-light genre-button w-100">Biography</a>
+                                        <a href="{{route('books.genres',['genres'=>'Memoir'])}}" class="btn mb-2 btn-light genre-button w-100">Memoir</a>
+                                        <a href="{{route('books.genres',['genres'=>'Self-help'])}}" class="btn mb-2 btn-light genre-button w-100">Self-help</a>
+                                        <a href="{{route('books.genres',['genres'=>'True Crime'])}}" class="btn mb-2 btn-light genre-button w-100">True Crime</a>
+                                        <a href="{{route('books.genres',['genres'=>'History'])}}" class="btn mb-2 btn-light genre-button w-100">History</a>
+                                        <a href="{{route('books.genres',['genres'=>'Science'])}}" class="btn mb-2 btn-light genre-button w-100">Science</a>
+                                        <a href="{{route('books.genres',['genres'=>'Travel'])}}" class="btn mb-2 btn-light genre-button w-100">Travel</a>
+                                        <a href="{{route('books.genres',['genres'=>'Philosophy'])}}" class="btn mb-2 btn-light genre-button w-100">Philosophy</a>
+                                        <a href="{{route('books.genres',['genres'=>'Religion/Spirituality'])}}" class="btn mb-2 btn-light genre-button w-100">Religion/Spirituality</a>
+                                        <a href="{{route('books.genres',['genres'=>'Essays'])}}" class="btn mb-2 btn-light genre-button w-100">Essays</a>
+                                        <a href="{{route('books.genres',['genres'=>'Journalism'])}}" class="btn mb-2 btn-light genre-button w-100">Journalism</a>
 
                                     </div>
                                     <div class="tab-pane fade mb-4" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Picture Books</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Early Readers</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Middle Grade Fiction</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Fairytales & Fables</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Children's Fantasy</button>
+                                        <a href="{{route('books.genres',['genres'=>'Picture Books'])}}" class="btn mb-2 btn-light genre-button w-100">Picture Books</a>
+                                        <a href="{{route('books.genres',['genres'=>'Early Readers'])}}" class="btn mb-2 btn-light genre-button w-100">Early Readers</a>
+                                        <a href="{{route('books.genres',['genres'=>'Middle Grade Fiction'])}}" class="btn mb-2 btn-light genre-button w-100">Middle Grade Fiction</a>
+                                        <a href="{{route('books.genres',['genres'=>'Fairytales & Fables'])}}" class="btn mb-2 btn-light genre-button w-100">Fairytales & Fables</a>
+                                        <a href="{{route('books.genres',['genres'=>"Children's Fantasy"])}}" class="btn mb-2 btn-light genre-button w-100">Children's Fantasy</a>
 
                                     </div>
                                     <div class="tab-pane fade mb-4" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Graphic Novels/Comics</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Poetry</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Satire</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Anthologies</button>
-                                        <button type="button" class="btn mb-2 btn-light genre-button w-100">Plays</button>
+                                        <a href="{{route('books.genres',['genres'=>'Graphic Novels/Comics'])}}" class="btn mb-2 btn-light genre-button w-100">Graphic Novels/Comics</a>
+                                        <a href="{{route('books.genres',['genres'=>'Poetry'])}}" class="btn mb-2 btn-light genre-button w-100">Poetry</a>
+                                        <a href="{{route('books.genres',['genres'=>'Satire'])}}" class="btn mb-2 btn-light genre-button w-100">Satire</a>
+                                        <a href="{{route('books.genres',['genres'=>'Anthologies'])}}" class="btn mb-2 btn-light genre-button w-100">Anthologies</a>
+                                        <a href="{{route('books.genres',['genres'=>'Plays'])}}" class="btn mb-2 btn-light genre-button w-100">Plays</a>
 
                                     </div>
                                 </div>
@@ -79,19 +79,41 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>Author</th>
-                        <th>Nº of Pages</th>
+                        <th>Genres</th>
                         <th>Publication Date</th>
                         <th>Action</th>
                     </tr>
                     </thead>
+                    @if(!count($books))
+                        <tdbody>
+                            <tr>
+                                <td>
+                                    <h2>{{"No books found!"}}</h2>
+                                </td>
+                            </tr>
+                        </tdbody>
+
+                    @elseif(count($books))
                     <tbody>
-                    <!-- foreach -->
+                    @foreach($books as $book)
                     <tr>
-                        <td>22</td>
-                        <td>Harry Potter and the Seven Dwarves</td>
-                        <td>J. K. Rowling</td>
-                        <td>123</td>
-                        <td>13/09/2025</td>
+                        <td>{{$book->id}}</td>
+                        <td>{{$book->title}}</td>
+                        <td>
+                            <ul style="padding: 0">
+                                @foreach($book->authors as $author)
+                                    <li style="padding: 0">{{$author->name}}</li>
+                                @endforeach
+                            </ul>
+                        </td>
+                        <td>
+                            <ul style="padding: 0">
+                                @foreach($book->genres as $genre)
+                                    <li style="padding: 0">{{$genre->name}}</li>
+                                @endforeach
+                            </ul>
+                        </td>
+                        <td>{{$book->publication_date}}</td>
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-sm dropdown-toggle" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -104,13 +126,13 @@
                             </div>
                         </td>
                     </tr>
-                    <!-- endforeach -->
+                    @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
+    @endif
 
     </div>
 

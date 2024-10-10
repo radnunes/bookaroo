@@ -63,10 +63,14 @@ class BookController extends Controller
         //
     }
 
-    public function genres()
+    public function genres(Request $request)
     {
+        $genre = $request->input('genre');
+        if(!$genre){
+            return view('template.books.genres', ['books'=>Book::all()]);
+        }
 
-        return view('template.books.genres', ['books'=>Book::all()]);
+        return view('template.books.genres', ['books'=>Book::query()->where('genre', $genre)->get()]);
     }
 
     public function decades(Request $request)

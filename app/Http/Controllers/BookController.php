@@ -68,12 +68,18 @@ class BookController extends Controller
 
     public function genres(Request $request)
     {
-        $genre = $request->input('genre');
-        if(!$genre){
+        $genreName = urldecode($request->input('genres'));
+        //dd($genreName);
+        if(!$genreName){
             return view('template.books.genres', ['books'=>Book::all()]);
         }
 
-        return view('template.books.genres', ['books'=>Book::query()->where('genre', $genre)->get()]);
+        $genre = Genre::query()->where('name', $genreName)->first();
+        //dd($genre);
+        $book = $genre->books;
+        //dd($book);
+        //dd($genre);
+        return view('template.books.genres', ['books'=>$book]);
     }
 
     public function decades(Request $request)

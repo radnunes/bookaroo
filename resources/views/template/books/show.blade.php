@@ -3,5 +3,5 @@
 @section('title', 'Bookaroo')
 
 @section('content')
-    @include('template.partials.show')
+    @include('template.partials.showbook')
 @endsection

@@ -88,9 +88,10 @@ class BookController extends Controller
     {
         // Fetch the book with the given ID, including its authors and genres
         $book = Book::with('authors', 'genres')->findOrFail($id);
-
+        $genres = Genre::all();
+        $authors = Author::all();
         // Return the view with the book data
-        return view('template.books.show', compact('book'));
+        return view('template.books.show', compact('book','genres', 'authors'));
     }
 
     /**

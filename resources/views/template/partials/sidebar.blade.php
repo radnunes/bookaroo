@@ -50,19 +50,19 @@
                         <a class="nav-link pl-3" href="{{ route('books.decades') }}"><span class="ml-1 item-text">Decades</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('books.languages') }}"><span class="ml-1 item-text">Language</span></a>
+                        <a class="nav-link pl-3" href="{{ route('books.languages') }}"><span class="ml-1 item-text">Language</span> #WIP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('books.format') }}"><span class="ml-1 item-text">Format</span></a>
+                        <a class="nav-link pl-3" href="{{ route('books.format') }}"><span class="ml-1 item-text">Format</span> #WIP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Length</span></a>
+                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Length</span> #WIP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Ratings</span></a>
+                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Ratings</span> #WIP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Publisher</span></a>
+                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Publisher</span> #WIP</a>
                     </li>
                 </ul>
             </li>
@@ -76,16 +76,16 @@
                         <a class="nav-link pl-3" href="{{ route('authors.nationality') }}"><span class="ml-1 item-text">Nationality</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Era</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Awards</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-modals.html"><span class="ml-1 item-text">Gender</span></a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link pl-3" href="./ui-tabs-accordion.html"><span class="ml-1 item-text">Literary Movements</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Era</span> #WIP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Awards #WIP</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="./ui-modals.html"><span class="ml-1 item-text">Gender</span> #WIP</a>
                     </li>
                 </ul>
             </li>

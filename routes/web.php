@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\AuthorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BookController::class, 'index'])->name('home');
@@ -14,6 +13,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view ('register');
 })->name('register');
+
 //resource
 Route::resource('books', BookController::class);
 

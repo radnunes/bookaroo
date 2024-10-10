@@ -86,15 +86,19 @@
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <label for="multi-select2">Genres</label>
-                                <select class="form-control select2-multi" id="select-genres">
+                                <select class="form-control select2-multi" id="select-genres" multiple="multiple">
                                     @foreach($genres as $genre)
-                                        <option value="{{$genre->id}}">{{$genre->name}}</option>
+                                        <option value="{{$genre->id}}"
+                                                @if($book->genres->contains($genre->id)) selected @endif>
+                                            {{$genre->name}}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group mb-4">

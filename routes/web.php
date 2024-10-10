@@ -1,11 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view ('home');
-})->name('home');
+Route::get('/', [BookController::class, 'index'])->name('home');
 
 Route::get('/login', function () {
     return view ('login');
@@ -16,6 +15,7 @@ Route::get('/register', function () {
 })->name('register');
 //resource
 Route::resource('books', BookController::class);
+
 
 Route::get('/books-genres', [BookController::class, 'genres'])->name('books.genres');
 

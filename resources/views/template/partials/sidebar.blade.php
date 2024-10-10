@@ -73,7 +73,7 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="authors">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Nationality</span></a>
+                        <a class="nav-link pl-3" href="{{ route('authors.nationality') }}"><span class="ml-1 item-text">Nationality</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Era</span></a>

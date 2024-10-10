@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -57,5 +58,15 @@ class AuthorController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function nationalities(Request $request)
+    {
+        $nationality = urldecode($request->input('nationality'));
+        if(!$nationality){
+            return view('template.authors.nationality', ['authors'=>Author::all()]);
+        }
+
+        return  view('template.authors.nationality', ['authors'=>Author::query()->where('nationality', $nationality)->get()]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,6 +29,10 @@ Route::get('/books-{book}-destroy', [BookController::class, 'destroy'])->name('b
 Route::get('/books-languages', [BookController::class, 'languages'])->name('books.languages');
 
 Route::get('/books-format', [BookController::class, 'format'])->name('books.format');
+
+Route::resource('authors', AuthorController::class);
+
+Route::get('/authors-nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
 
 
 

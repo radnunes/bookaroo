@@ -83,9 +83,13 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Book $book)
     {
-        //
+        $book->genres()->detach();  // Remove all genre associations
+        $book->authors()->detach(); // Remove all author associations
+
+        $book->delete();
+        return to_route('home');
     }
 
     public function genres(Request $request)
@@ -137,7 +141,7 @@ class BookController extends Controller
         return view('template.books.languages', ['books'=>Book::query()->where('language', $language)->get()]);
     }
 
-    public function format(Request $request)
+    /*public function format(Request $request)
     {
         $format = $request->input('format');
         if(!$format){
@@ -145,5 +149,5 @@ class BookController extends Controller
         }
 
         return view('template.books.format', ['books'=>Book::query()->where('format', $format)->get()]);
-    }
+    }*/
 }

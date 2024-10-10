@@ -16,13 +16,13 @@ class GenreSeeder extends Seeder
         DB::table('genres')->insert([
             //Fiction
             //['name'=>'Fiction'],
-            ['name'=>'Adveture'],
+            ['name'=>'Adventure'],
             ['name'=>'Romance'],
             ['name'=>'Mystery'],
             ['name'=>'Thriller'],
             ['name'=>'Science Fiction'],
             ['name'=>'Fantasy'],
-            ['name'=>'Hitorical Fiction'],
+            ['name'=>'Historical Fiction'],
             ['name'=>'Horror'],
             ['name'=>'Dystopian'],
             ['name'=>'Magical Realism'],

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
@@ -11,30 +10,10 @@ class BookController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        // Get search input and items per page
-        $search = $request->input('search');
-        $perPage = $request->input('per_page', 12); // Default to 12 if not provided
-
-        // Fetch books with pagination and filter by title if search term exists
-        $books = Book::when($search, function ($query) use ($search) {
-            return $query->where('title', 'LIKE', "%$search%");
-        })->paginate($perPage);
-
-        // Fetch authors based on the search term
-        $authors = Author::when($search, function ($query) use ($search) {
-            return $query->where('name', 'LIKE', "%$search%");
-        })->get();
-
-        // Return the view with the books and authors
-        return view('home', compact('books', 'authors', 'search', 'perPage'));
+        //
     }
-
-
-
-
-
 
     /**
      * Show the form for creating a new resource.

@@ -149,6 +149,10 @@
         {
             placeholder: "____-___"
         });
+    $('.input-isbn').mask('000-0-00-000000-0',
+        {
+            placeholder: "___-_-__-______-_"
+        });
     $('.input-money').mask("#.##0,00",
         {
             reverse: true

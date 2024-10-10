@@ -21,7 +21,11 @@ Route::get('/books-genres', [BookController::class, 'genres'])->name('books.genr
 
 Route::get('/books-decades', [BookController::class, 'decades'])->name('books.decades');
 
+Route::get('/books-create', [BookController::class, 'create'])->name('books.create');
+
 Route::get('/books-{book}-edit', [BookController::class, 'edit'])->name('books.edit');
+
+Route::get('/books-{book}-destroy', [BookController::class, 'destroy'])->name('books.destroy');
 
 Route::get('/books-languages', [BookController::class, 'languages'])->name('books.languages');
 

@@ -54,7 +54,10 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('template.books.create');
+        $genre = Genre::all();
+        $author = Author::all();
+
+        return view('template.books.create', ['genres' => $genre, 'authors' => $author]);
     }
 
     /**
@@ -65,6 +68,15 @@ class BookController extends Controller
         $dados=$request->validate($this->rules,$this->messages);
         $book = new Book($dados);
         $book->save();
+
+        if ($request->has('genres')) {
+            $book->genres()->sync($request->input('genres'));
+        }
+
+        if ($request->has('authors')) {
+            $book->authors()->sync($request->input('authors'));
+        }
+
         return redirect()->back();
 
     }

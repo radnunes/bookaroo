@@ -42,7 +42,7 @@
                     <div class="col-md-4">
                         <div class="form-group mb-4">
                             <label for="subtitle">Subtitle</label>
-                            <input type="text" id="subtitle" class="form-control" value="{{old('subtitle', $book->subtitle)}}" placeholder="Subtitle">
+                            <input type="text" id="subtitle" name="subtitle" class="form-control" value="{{old('subtitle', $book->subtitle)}}" placeholder="Subtitle">
                             <span class="help-block"><small>The subtitle can be blank</small></span>
                         </div>
                     </div>

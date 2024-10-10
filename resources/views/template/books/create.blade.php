@@ -19,7 +19,6 @@
 
     <form method="POST" action="{{route('books.store')}}">
         @csrf
-        @method('PUT')
 
         <div class="card shadow mb-4">
             <div class="card-header">
@@ -36,7 +35,7 @@
                     <div class="col-md-4">
                         <div class="form-group mb-4">
                             <label for="subtitle">Subtitle</label>
-                            <input type="text" id="subtitle" class="form-control" placeholder="Subtitle">
+                            <input type="text" id="subtitle" name="subtitle" class="form-control" placeholder="Subtitle">
                             <span class="help-block"><small>The subtitle can be blank</small></span>
                         </div>
                     </div>
@@ -111,8 +110,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mb-4">
-                            <button type="submit" class="btn mb-1 btn-outline-primary">Atualizar</button>
-                            <a href="{{route('/')}}"><i class="fa-solid fa-ban"></i> Cancelar</a>
+                            <button type="submit" class="btn mb-1 btn-outline-primary">Criar</button>
+                            <a href="{{route('home')}}"><i class="fa-solid fa-ban"></i> Cancelar</a>
                         </div>
                     </div>
                 </div>

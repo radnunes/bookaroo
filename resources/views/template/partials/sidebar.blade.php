@@ -14,7 +14,7 @@
         </div>
         -->
         <div class="w-100 mb-4 d-flex">
-            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="{{route('home')}}">
                 <img src="{{ asset('book_color.svg') }}" class="logo" alt="Brand Logo">
             </a>
             <div class="logo-text">

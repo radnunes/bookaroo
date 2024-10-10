@@ -28,6 +28,8 @@ Route::get('/books-{book}-edit', [BookController::class, 'edit'])->name('books.e
 
 Route::get('/books-{book}-destroy', [BookController::class, 'destroy'])->name('books.destroy');
 
+Route::get('/books-{id}-show', [BookController::class, 'show'])->name('books.show');
+
 Route::get('/books-languages', [BookController::class, 'languages'])->name('books.languages');
 
 Route::get('/books-format', [BookController::class, 'format'])->name('books.format');

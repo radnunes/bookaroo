@@ -27,7 +27,9 @@
                                 @foreach($books as $book)
                                     <tr>
                                         <td>{{ $book->id }}</td>
-                                        <td>{{ $book->title }}</td>
+                                        <td>
+                                            <a href="{{ route('books.show', ['id' => $book->id]) }}">{{ $book->title }}</a>
+                                        </td>
                                         <td>
                                             @foreach($book->authors as $author)
                                                 <li style="padding: 0">{{ $author->name }}</li>

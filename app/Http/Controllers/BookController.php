@@ -37,7 +37,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('template.books.create');
     }
 
     /**
@@ -45,7 +45,11 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados=$request->validate($this->rules,$this->messages);
+        $book = new Book($dados);
+        $book->save();
+        return redirect()->back();
+
     }
 
     /**
@@ -84,7 +88,7 @@ class BookController extends Controller
             $book->authors()->sync($request->input('authors'));
         }
 
-        return redirect()->back();
+        return redirect('/');
     }
 
     /**

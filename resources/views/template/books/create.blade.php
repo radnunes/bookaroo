@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{route('books.update',$book)}}">
+    <form method="POST" action="{{route('books.store',$book)}}">
         @csrf
         @method('PUT')
 
@@ -132,5 +132,3 @@
         </div>
     </form>
 @endsection
-
-

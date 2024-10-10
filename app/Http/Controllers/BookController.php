@@ -3,30 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use App\Models\Genre;
-use App\Models\Author;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    protected $rules=[
-        'title'=>'required|max:100',
-        'subtitle'=>'nullable|max:100',
-        'description'=>'required|max:500',
-        'ISBN'=>'required|unique:books,ISBN|min:17|max:17',
-        'pages'=>'required',
-        'publication_date'=>'required',
-        'publisher'=>'required|max:100',
-        'language'=>'required|min:2|max:2',
-    ];
-
-    protected $messages=[
-        'required' => 'The :attribute field is required.',
-        'min' => 'The :attribute must have at least :min characters.',
-        'max' => 'The :attribute may not have more than :max characters.',
-        'unique' => 'The ISBN must be unique.',
-    ];
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         //
@@ -61,58 +44,33 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        $genre = Genre::all();
-        $author = Author::all();
-
-        return view('template.books.edit', ['book' => $book, 'genres' => $genre, 'authors' => $author]);
+        return view('template.books.edit', ['book' => $book]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, string $id)
     {
-        $this->rules['ISBN'] = 'required|min:17|max:17|unique:books,ISBN,' . $book->id;
-        $dados=$request->validate($this->rules,$this->messages);
-        $book->update($dados);
-
-        if ($request->has('genres')) {
-            $book->genres()->sync($request->input('genres'));
-        }
-
-        if ($request->has('authors')) {
-            $book->authors()->sync($request->input('authors'));
-        }
-
-        return redirect()->back();
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Book $book)
+    public function destroy(string $id)
     {
-        $book->genres()->detach();  // Remove all genre associations
-        $book->authors()->detach(); // Remove all author associations
-
-        $book->delete();
-        return to_route('home');
+        //
     }
 
     public function genres(Request $request)
     {
-        $genreName = urldecode($request->input('genres'));
-        //dd($genreName);
-        if(!$genreName){
+        $genre = $request->input('genre');
+        if(!$genre){
             return view('template.books.genres', ['books'=>Book::all()]);
         }
 
-        $genre = Genre::query()->where('name', $genreName)->first();
-        //dd($genre);
-        $book = $genre->books;
-        //dd($book);
-        //dd($genre);
-        return view('template.books.genres', ['books'=>$book]);
+        return view('template.books.genres', ['books'=>Book::query()->where('genre', $genre)->get()]);
     }
 
     public function decades(Request $request)
@@ -148,7 +106,7 @@ class BookController extends Controller
         return view('template.books.languages', ['books'=>Book::query()->where('language', $language)->get()]);
     }
 
-    /*public function format(Request $request)
+    public function format(Request $request)
     {
         $format = $request->input('format');
         if(!$format){
@@ -156,5 +114,5 @@ class BookController extends Controller
         }
 
         return view('template.books.format', ['books'=>Book::query()->where('format', $format)->get()]);
-    }*/
+    }
 }

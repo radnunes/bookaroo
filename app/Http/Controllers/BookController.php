@@ -21,11 +21,10 @@ class BookController extends Controller
     ];
 
     protected $messages=[
-        'required' => 'O campo :attribute é obrigatório',
-        'min' => 'O campo tem de possuir pelo menos :min caracteres',
-        'max'=>'O :attribute não pode possuir mais que :max caracteres',
-        'length'=>'O :attribute tem de pode possuir :length caracteres',
-        'unique'=>'O :attribute tem de ser unico',
+        'required' => 'The :attribute field is required.',
+        'min' => 'The :attribute must have at least :min characters.',
+        'max' => 'The :attribute may not have more than :max characters.',
+        'unique' => 'The ISBN must be unique.',
     ];
 
     public function index()
@@ -76,7 +75,15 @@ class BookController extends Controller
         $this->rules['ISBN'] = 'required|min:17|max:17|unique:books,ISBN,' . $book->id;
         $dados=$request->validate($this->rules,$this->messages);
         $book->update($dados);
-        $book->save();
+
+        if ($request->has('genres')) {
+            $book->genres()->sync($request->input('genres'));
+        }
+
+        if ($request->has('authors')) {
+            $book->authors()->sync($request->input('authors'));
+        }
+
         return redirect()->back();
     }
 

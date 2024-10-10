@@ -7,7 +7,7 @@
     @if($errors->any())
         <div class="row p-2">
             <div class="alert alert-danger" role="alert">
-                Verifique os dados inseridos
+                Please check the entered data
                 <ul>
                     @foreach($errors->all() as $message)
                         <li>{{$message}}</li>
@@ -86,7 +86,7 @@
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <label for="multi-select2">Genres</label>
-                                <select class="form-control select2-multi" id="select-genres" multiple="multiple">
+                                <select class="form-control select2-multi" id="genres" name="genres[]" multiple="multiple">
                                     @foreach($genres as $genre)
                                         <option value="{{$genre->id}}"
                                                 @if($book->genres->contains($genre->id)) selected @endif>
@@ -101,7 +101,7 @@
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <label for="multi-select2">Authors</label>
-                                <select class="form-control select2-multi" id="select-authors" multiple="multiple">
+                                <select class="form-control select2-multi" id="authors" name="authors[]" multiple="multiple">
                                     @foreach($authors as $author)
                                         <option value="{{$author->id}}"
                                                 @if($book->authors->contains($author->id)) selected @endif>

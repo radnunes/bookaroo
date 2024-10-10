@@ -38,6 +38,11 @@ Route::resource('authors', AuthorController::class);
 
 Route::get('/authors-nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
 
+Route::get('/contacts', function () {
+    return view ('contacts');
+})->name('contacts');
+
+
 
 
 

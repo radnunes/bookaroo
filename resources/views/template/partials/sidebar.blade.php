@@ -211,11 +211,13 @@
         </ul>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-                <a href="#pages" data-toggle="collapse" aria-expanded="false" class="nav-link">
-                    <i class="fe fe-file fe-16"></i>
-                    <span class="ml-3 item-text">Contact</span>
+                <a href="{{ route('contacts') }}" aria-expanded="false" class="nav-link">
+                    <i class="fe fe-home fe-16"></i>
+                    <span class="ml-3 item-text">Contacts</span></span>
                 </a>
             </li>
+
+
             <li class="nav-item dropdown">
                 <a href="#auth" data-toggle="collapse" aria-expanded="false" class="nav-link">
                     <i class="fe fe-shield fe-16"></i>

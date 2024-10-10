@@ -75,6 +75,20 @@ class BookController extends Controller
         if(!$decade){
             return view('template.books.decades', ['books'=>Book::all()]);
         }
-        return view('template.books.decades', ['books'=>Book::all()]); /*'publication_date'[0]=>$decade*/
+
+        $decadePrefix = substr($decade, 0, 3);
+
+        if($decade==-1000){
+            $books = Book::query()->whereYear('publication_date', '<', 1000)->get();
+
+            foreach($books as $book){
+                $book->publication_date = ltrim($book->publication_date, '0');
+            }
+
+            return view('template.books.decades', ['books'=> $books]);
+        }else{
+            return view('template.books.decades', ['books'=>Book::query()->where('publication_date', 'LIKE', $decadePrefix.'%')->get()]);
+        }
+
     }
 }

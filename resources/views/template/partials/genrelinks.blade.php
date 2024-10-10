@@ -6,7 +6,7 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Fiction</a>
+                                    <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Fiction</a>
                                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Non-Fiction</a>
                                     <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">For Children</a>
                                     <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Others</a>
@@ -71,8 +71,9 @@
     <div class="col-md-9 my-4">
         <div class="card shadow">
             <div class="card-body">
-                <h5 class="card-title">Striped rows</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">Books</h5>
+                <p class="card-text">List of books based on selected genre.</p>
+                <button type="button" class="btn mb-1 btn-outline-primary">Create new book</button>
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>

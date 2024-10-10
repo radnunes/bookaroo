@@ -21,6 +21,10 @@ Route::get('/books-genres', [BookController::class, 'genres'])->name('books.genr
 
 Route::get('/books-decades', [BookController::class, 'decades'])->name('books.decades');
 
+Route::get('/books-languages', [BookController::class, 'languages'])->name('books.languages');
+
+Route::get('/books-format', [BookController::class, 'format'])->name('books.format');
+
 
 
 

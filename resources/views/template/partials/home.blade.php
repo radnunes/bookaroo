@@ -19,32 +19,38 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($books as $book)
+                            @if($books->isEmpty())
                                 <tr>
-                                    <td>{{ $book->id }}</td>
-                                    <td>{{ $book->title }}</td>
-                                    <td>
-                                        @foreach($book->authors as $author)
-                                            <li style="padding: 0">{{ $author->name }}</li>
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach($book->genres as $genre)
-                                            <li style="padding: 0">{{ $genre->name }}</li>
-                                        @endforeach
-                                    </td>
-                                    <td>{{ \Carbon\Carbon::parse($book->publication_date)->format('d/m/Y') }}</td>
-                                    <td>
-                                        <button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="text-muted sr-only">Action</span>
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Edit</a>
-                                            <a class="dropdown-item" href="#">Remove</a>
-                                        </div>
-                                    </td>
+                                    <td colspan="6" class="text-center">No books found with title "{{ $search }}".</td>
                                 </tr>
-                            @endforeach
+                            @else
+                                @foreach($books as $book)
+                                    <tr>
+                                        <td>{{ $book->id }}</td>
+                                        <td>{{ $book->title }}</td>
+                                        <td>
+                                            @foreach($book->authors as $author)
+                                                <li style="padding: 0">{{ $author->name }}</li>
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            @foreach($book->genres as $genre)
+                                                <li style="padding: 0">{{ $genre->name }}</li>
+                                            @endforeach
+                                        </td>
+                                        <td>{{ \Carbon\Carbon::parse($book->publication_date)->format('d/m/Y') }}</td>
+                                        <td>
+                                            <button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="text-muted sr-only">Action</span>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">Edit</a>
+                                                <a class="dropdown-item" href="#">Remove</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
                             </tbody>
                         </table>
                         <nav aria-label="Table Paging" class="mb-0 text-muted">
@@ -62,7 +68,6 @@
                 <p class="mb-3">All authors matching your search</p>
                 <div class="card shadow">
                     <div class="card-body">
-
                         <!-- table -->
                         <table class="table table-borderless table-hover">
                             <thead>
@@ -74,26 +79,32 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($authors as $author)
+                            @if($authors->isEmpty())
                                 <tr>
-                                    <td>{{ $author->id }}</td>
-                                    <td>{{ $author->name }}</td>
-                                    <td>
-                                        @foreach($author->books as $book)
-                                            <li style="padding: 0">{{ $book->title }}</li>
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="text-muted sr-only">Action</span>
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Edit</a>
-                                            <a class="dropdown-item" href="#">Remove</a>
-                                        </div>
-                                    </td>
+                                    <td colspan="4" class="text-center">No authors found with name "{{ $search }}".</td>
                                 </tr>
-                            @endforeach
+                            @else
+                                @foreach($authors as $author)
+                                    <tr>
+                                        <td>{{ $author->id }}</td>
+                                        <td>{{ $author->name }}</td>
+                                        <td>
+                                            @foreach($author->books as $book)
+                                                <li style="padding: 0">{{ $book->title }}</li>
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="text-muted sr-only">Action</span>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">Edit</a>
+                                                <a class="dropdown-item" href="#">Remove</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
                             </tbody>
                         </table>
                     </div>

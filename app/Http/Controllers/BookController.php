@@ -114,19 +114,39 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Book $book)
     {
-        //
+        $book->genres()->detach();
+        $book->authors()->detach();
+
+        $book->delete();
+        return to_route('home');
     }
+
 
     public function genres(Request $request)
     {
         $genre = $request->input('genre');
-        if(!$genre){
-            return view('template.books.genres', ['books'=>Book::all()]);
+
+        if (!$genre) {
+            $genreName = urldecode($request->input('genres'));
+
+            if (!$genreName) {
+                return view('template.books.genres', ['books' => Book::all()]);
+            }
+
+            $genre = Genre::query()->where('name', $genreName)->first();
+
+            if (!$genre) {
+                return view('template.books.genres', ['books' => collect([])]);
+            }
+
+            $books = $genre->books;
+
+            return view('template.books.genres', ['books' => $books]);
         }
 
-        return view('template.books.genres', ['books'=>Book::query()->where('genre', $genre)->get()]);
+        return view('template.books.genres', ['books' => Book::query()->where('genre', $genre)->get()]);
     }
 
     public function decades(Request $request)

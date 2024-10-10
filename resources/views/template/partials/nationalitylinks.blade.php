@@ -113,8 +113,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Nationality</th>
                         <th>Books</th>
+                        <th>Nationality</th>
                         <th>Publication Date</th>
                         <th>Action</th>
                     </tr>

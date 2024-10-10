@@ -31,20 +31,20 @@
                 <div class="row">
                     <div class="col-md-1">
                         <div class="form-group mb-4">
-                            <label for="input_id">Id</label>
-                            <input type="text" id="input_id" value="{{$book->id}}" readonly="" class="form-control-plaintext">
+                            <label for="id">Id</label>
+                            <input type="text" id="id" value="{{$book->id}}" readonly="" class="form-control-plaintext">
                         </div>
                     </div>
                     <div class="col-md-7">
                         <div class="form-group mb-4">
-                            <label for="input_title">Title</label>
-                            <input type="text" id="input_title" name="input_title" class="form-control" placeholder="Title" value="{{old('title', $book->title)}}" required>
+                            <label for="title">Title</label>
+                            <input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{old('title', $book->title)}}">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-4">
-                            <label for="input_subtitle">Subtitle</label>
-                            <input type="text" id="input_subtitle" class="form-control" value="{{old('subtitle', $book->subtitle)}}" placeholder="Subtitle">
+                            <label for="subtitle">Subtitle</label>
+                            <input type="text" id="subtitle" class="form-control" value="{{old('subtitle', $book->subtitle)}}" placeholder="Subtitle">
                             <span class="help-block"><small>The subtitle can be blank</small></span>
                         </div>
                     </div>
@@ -52,32 +52,32 @@
                 <div class="row">
                     <div class="col-md-1">
                         <div class="form-group mb-4">
-                            <label for="input_language">Language</label>
-                            <input type="text" id="input_language" name="input_language" class="form-control" placeholder="Language" value="{{old('language', $book->language)}}" required>
+                            <label for="language">Language</label>
+                            <input type="text" id="language" name="language" class="form-control" placeholder="Language" value="{{old('language', $book->language)}}">
                         </div>
                     </div>
                     <div class="col-md-1">
                         <div class="form-group mb-4">
-                            <label for="input_pages">Pages</label>
-                            <input type="text" id="input_pages" name="input_pages" class="form-control" placeholder="Pages" value="{{old('pages', $book->pages)}}" required>
+                            <label for="pages">Pages</label>
+                            <input type="text" id="pages" name="pages" class="form-control" placeholder="Pages" value="{{old('pages', $book->pages)}}">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group mb-4">
-                            <label for="input_isbn">ISBN</label>
-                            <input type="text" id="input_isbn" name="input_isbn" class="form-control input-isbn" autocomplete="off" maxlength="17" placeholder="___-_-__-______-_" value="{{old('ISBN', $book->ISBN)}}" required>
+                            <label for="ISBN">ISBN</label>
+                            <input type="text" id="ISBN" name="ISBN" class="form-control input-isbn" autocomplete="off" maxlength="17" placeholder="___-_-__-______-_" value="{{old('ISBN', $book->ISBN)}}">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group mb-4">
-                            <label for="input_pub_date">Publication Date</label>
-                            <input type="date" id="input_pub_date" name="input_pub_date" class="form-control" placeholder="Publication Date" value="{{old('publication_date', $book->publication_date)}}" required>
+                            <label for="publication_date">Publication Date</label>
+                            <input type="date" id="publication_date" name="publication_date" class="form-control" placeholder="Publication Date" value="{{old('publication_date', $book->publication_date)}}">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-4">
-                            <label for="input_publisher">Publisher</label>
-                            <input type="text" id="input_publisher" name="input_publisher" class="form-control" placeholder="Publisher" value="{{old('publisher', $book->publisher)}}" required>
+                            <label for="publisher">Publisher</label>
+                            <input type="text" id="publisher" name="publisher" class="form-control" placeholder="Publisher" value="{{old('publisher', $book->publisher)}}">
                         </div>
                     </div>
                 </div>
@@ -97,13 +97,28 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <label for="multi-select2">Authors</label>
+                                <select class="form-control select2-multi" id="select-authors" multiple="multiple">
+                                    @foreach($authors as $author)
+                                        <option value="{{$author->id}}"
+                                                @if($book->authors->contains($author->id)) selected @endif>
+                                            {{$author->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group mb-4">
-                            <label for="input_description">Description</label>
-                            <textarea class="form-control" id="input_description" name="input_description" placeholder="Description" rows="4" style="height: 94px;" required>{{old('description', $book->description)}}</textarea>
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" name="description" placeholder="Description" rows="4" style="height: 94px;">{{old('description', $book->description)}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -118,7 +133,6 @@
             </div>
         </div>
     </form>
-
 @endsection
 
 

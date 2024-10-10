@@ -4,13 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Genre;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected $rules=[
+        'title'=>'required|max:100',
+        'subtitle'=>'nullable|max:100',
+        'description'=>'required|max:500',
+        'ISBN'=>'required|unique:books,ISBN|min:17|max:17',
+        'pages'=>'required',
+        'publication_date'=>'required',
+        'publisher'=>'required|max:100',
+        'language'=>'required|min:2|max:2',
+    ];
+
+    protected $messages=[
+        'required' => 'O campo :attribute é obrigatório',
+        'min' => 'O campo tem de possuir pelo menos :min caracteres',
+        'max'=>'O :attribute não pode possuir mais que :max caracteres',
+        'length'=>'O :attribute tem de pode possuir :length caracteres',
+        'unique'=>'O :attribute tem de ser unico',
+    ];
+
     public function index()
     {
         //
@@ -46,16 +63,21 @@ class BookController extends Controller
     public function edit(Book $book)
     {
         $genre = Genre::all();
+        $author = Author::all();
 
-        return view('template.books.edit', ['book' => $book, 'genres' => $genre]);
+        return view('template.books.edit', ['book' => $book, 'genres' => $genre, 'authors' => $author]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Book $book)
     {
-        //
+        $this->rules['ISBN'] = 'required|min:17|max:17|unique:books,ISBN,' . $book->id;
+        $dados=$request->validate($this->rules,$this->messages);
+        $book->update($dados);
+        $book->save();
+        return redirect()->back();
     }
 
     /**

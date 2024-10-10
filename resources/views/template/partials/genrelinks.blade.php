@@ -120,7 +120,7 @@
                                     <span class="text-muted sr-only">Action</span>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1" style="">
-                                    <a class="dropdown-item" href="#">Edit</a>
+                                    <a class="dropdown-item" href="{{route('books.edit',['id'=>$book->id])}}">Edit</a>
                                     <a class="dropdown-item" href="#">Remove</a>
                                 </div>
                             </div>

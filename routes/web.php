@@ -21,6 +21,9 @@ Route::get('/books-genres', [BookController::class, 'genres'])->name('books.genr
 
 Route::get('/books-decades', [BookController::class, 'decades'])->name('books.decades');
 
+Route::get('/books/{id}/edit', [BookController::class, 'edit'])->name('books.edit');
+
+
 
 
 

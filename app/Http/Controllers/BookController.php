@@ -95,4 +95,24 @@ class BookController extends Controller
         }
 
     }
+
+    public function languages(Request $request)
+    {
+        $language = $request->input('languages');
+        if(!$language){
+            return view('template.books.languages', ['books'=>Book::all()]);
+        }
+
+        return view('template.books.languages', ['books'=>Book::query()->where('language', $language)->get()]);
+    }
+
+    public function format(Request $request)
+    {
+        $format = $request->input('format');
+        if(!$format){
+            return view('template.books.format', ['books'=>Book::all()]);
+        }
+
+        return view('template.books.format', ['books'=>Book::query()->where('format', $format)->get()]);
+    }
 }

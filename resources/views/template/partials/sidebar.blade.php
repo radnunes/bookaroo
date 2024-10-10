@@ -50,10 +50,10 @@
                         <a class="nav-link pl-3" href="{{ route('books.decades') }}"><span class="ml-1 item-text">Decades</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Language</span></a>
+                        <a class="nav-link pl-3" href="{{ route('books.languages') }}"><span class="ml-1 item-text">Language</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Format</span></a>
+                        <a class="nav-link pl-3" href="{{ route('books.format') }}"><span class="ml-1 item-text">Format</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Length</span></a>

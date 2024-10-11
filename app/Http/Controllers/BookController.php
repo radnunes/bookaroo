@@ -10,13 +10,13 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
     protected $rules=[
-        'title'=>'required|max:100',
-        'subtitle'=>'nullable|max:100',
+        'title'=>'required|string|max:100',
+        'subtitle'=>'nullable|string|max:100',
         'description'=>'required|max:500',
         'ISBN'=>'required|unique:books,ISBN|min:17|max:17',
-        'pages'=>'required',
-        'publication_date'=>'required',
-        'publisher'=>'required|max:100',
+        'pages'=>'required|integer|min:1',
+        'publication_date'=>'required|date|before_or_equal:today',
+        'publisher'=>'required|string|max:100',
         'language'=>'required|min:2|max:2',
     ];
     protected $messages=[
@@ -24,6 +24,7 @@ class BookController extends Controller
         'min' => 'The :attribute must have at least :min characters.',
         'max' => 'The :attribute may not have more than :max characters.',
         'unique' => 'The ISBN must be unique.',
+        'ISBN.required' => 'The ISBN field is required.',
     ];
 
     public function index(Request $request)

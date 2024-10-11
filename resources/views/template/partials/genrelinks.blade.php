@@ -82,7 +82,6 @@
                         <th>Author</th>
                         <th>Genres</th>
                         <th>Publication Date</th>
-                        <th>Action</th>
                     </tr>
                     </thead>
                     @if(!count($books))
@@ -115,17 +114,6 @@
                                 </ul>
                             </td>
                             <td>{{ $book->publication_date }}</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-sm dropdown-toggle" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="text-muted sr-only">Action</span>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
-                                        <a class="dropdown-item" href="{{ route('books.edit', ['book' => $book]) }}">Edit</a>
-                                        <a class="dropdown-item" href="{{ route('books.destroy', ['book' => $book]) }}">Remove</a>
-                                    </div>
-                                </div>
-                            </td>
                         </tr>
 
                     @endforeach

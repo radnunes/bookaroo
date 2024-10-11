@@ -20,7 +20,10 @@
             <div class="d-flex align-items-center">
                 <h5 class="card-title mb-0">{{old('title', $book->title)}}</h5>
             </div>
-            <a type="button" class="btn btn-outline-primary" href="{{ route('books.edit', ['book' => $book]) }}">Edit</a>
+            <div>
+                <a type="button" class="btn btn-outline-primary" href="{{ route('books.edit', ['book' => $book]) }}">Edit</a>
+                <a type="button" class="btn btn-outline-danger" href="{{ route('books.destroy', ['book' => $book]) }}">Delete</a>
+            </div>
         </div>
 
         <div class="card-body">
@@ -57,7 +60,7 @@
 
                     <div class="card shadow mb-4">
                         <div class="card-body">
-                            <h5 for="multi-select2" class="mb-3">Description</h5>
+                            <h5 class="mb-3">Description</h5>
                             <p>
                                 {{$book->description}}
                             </p>
@@ -99,7 +102,7 @@
                 <div class="col-md-3">
                     <div class="card shadow mb-4">
                         <div class="card-body">
-                            <h5 for="multi-select2" class="mb-3">Authors</h5>
+                            <h5 class="mb-3">Authors</h5>
                             <div>
                                 @if($book->authors->isEmpty())
                                     <p>No authors associated with this book.</p>
@@ -115,7 +118,7 @@
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-body">
-                            <h5 for="multi-select2" class="mb-3">Genres</h5>
+                            <h5 class="mb-3">Genres</h5>
                             @foreach($book->genres as $genre)
                                 <p>
                                     {{$genre->name}}

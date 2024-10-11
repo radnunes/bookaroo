@@ -23,7 +23,10 @@
         <div class="card shadow">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5 class="card-title mb-0">Show</h5>
-                <a type="button" class="btn btn-outline-primary" href="{{ route('authors.edit', ['author' => $author]) }}">Edit</a>
+                <div>
+                    <a type="button" class="btn btn-outline-primary" href="{{ route('authors.edit', ['author' => $author]) }}">Edit</a>
+                    <a type="button" class="btn btn-outline-danger" href="{{ route('authors.destroy', ['author' => $author]) }}">Delete</a>
+                </div>
             </div>
             <div class="card-body">
                 <div class="row">

@@ -116,7 +116,6 @@
                         <th>Books</th>
                         <th>Nationality</th>
                         <th>Gender</th>
-                        <th>Action</th>
                     </tr>
                     </thead>
                     @if(!count($authors))
@@ -132,7 +131,7 @@
                     @elseif(count($authors))
                         <tbody>
                         @foreach($authors as $author)
-                            <tr>
+                            <tr onclick="window.location='{{ route('authors.show', ['id' => $author->id]) }}'" style="cursor: pointer;">
                                 <td>{{$author->id}}</td>
                                 <td>{{$author->name}}</td>
                                 <td>
@@ -149,17 +148,6 @@
                                     @elseif($author->gender  == 'F' || $author->gender  == 'f')
                                         Female
                                     @endif
-                                </td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm dropdown-toggle" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="text-muted sr-only">Action</span>
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1" style="">
-                                            <a class="dropdown-item" href="{{route('authors.edit',['author'=>$author])}}">Edit</a>
-                                            <a class="dropdown-item" href="{{route('authors.destroy', ['author'=>$author])}}">Remove</a>
-                                        </div>
-                                    </div>
                                 </td>
                             </tr>
                         @endforeach

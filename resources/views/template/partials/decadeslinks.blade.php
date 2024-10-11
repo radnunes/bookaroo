@@ -128,9 +128,7 @@
                         <td>{{$book->title}}</td>
                         <td>
                             <ul style="padding: 0">
-                                @foreach($book->authors as $author)
-                                    <li style="padding: 0">{{$author->name}}</li>
-                                @endforeach
+
                             </ul>
                         </td>
                         <td>{{$book->pages}}</td>

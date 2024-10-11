@@ -19,79 +19,79 @@
                             <div class="tab-content mb-4" id="v-pills-tabContent">
                                 <!--2000's-->
                                 <div class="tab-pane fade active show" id="v-pills-europe" role="tabpanel" aria-labelledby="v-pills-europe-tab">
-                                    <a href="{{route('books.decades',['decades'=>2020])}}" class="btn mb-2 btn-light genre-button w-100">Portugal</a>
-                                    <a href="{{route('books.decades',['decades'=>2010])}}" class="btn mb-2 btn-light genre-button w-100">Spain</a>
-                                    <a href="{{route('books.decades',['decades'=>2000])}}" class="btn mb-2 btn-light genre-button w-100">England</a>
-                                    <a href="{{route('books.decades',['decades'=>2000])}}" class="btn mb-2 btn-light genre-button w-100">Ireland</a>
-                                    <a href="{{route('books.decades',['decades'=>2000])}}" class="btn mb-2 btn-light genre-button w-100">Ireland</a>
-                                    <a href="{{route('books.decades',['decades'=>2000])}}" class="btn mb-2 btn-light genre-button w-100">Germany</a>
-                                    <a href="{{route('books.decades',['decades'=>2000])}}" class="btn mb-2 btn-light genre-button w-100">Switzerland</a>
-                                    <a href="{{route('books.decades',['decades'=>2000])}}" class="btn mb-2 btn-light genre-button w-100">Turkey</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Portuguese'])}}" class="btn mb-2 btn-light genre-button w-100">Portuguese</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Spanish'])}}" class="btn mb-2 btn-light genre-button w-100">Spanish</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'French'])}}" class="btn mb-2 btn-light genre-button w-100">French</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'English'])}}" class="btn mb-2 btn-light genre-button w-100">English</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Irish'])}}" class="btn mb-2 btn-light genre-button w-100">Irish</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Italian'])}}" class="btn mb-2 btn-light genre-button w-100">Italian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'German'])}}" class="btn mb-2 btn-light genre-button w-100">German</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Dutch'])}}" class="btn mb-2 btn-light genre-button w-100">Dutch</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Swiss'])}}" class="btn mb-2 btn-light genre-button w-100">Swiss</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Turkish'])}}" class="btn mb-2 btn-light genre-button w-100">Turkish</a>
                                 </div>
                                 <!--1900's-->
                                 <div class="tab-pane fade" id="v-pills-Namerica" role="tabpanel" aria-labelledby="v-pills-Namerica-tab">
-                                    <a href="{{route('books.decades',['decades'=>1990])}}" class="btn mb-2 btn-light genre-button w-100">USA</a>
-                                    <a href="{{route('books.decades',['decades'=>1980])}}" class="btn mb-2 btn-light genre-button w-100">Canada</a>
-                                    <a href="{{route('books.decades',['decades'=>1970])}}" class="btn mb-2 btn-light genre-button w-100">Mexico</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'American'])}}" class="btn mb-2 btn-light genre-button w-100">American</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Canadian'])}}" class="btn mb-2 btn-light genre-button w-100">Canadian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Mexican'])}}" class="btn mb-2 btn-light genre-button w-100">Mexican</a>
                                 </div>
                                 <!--1800's-->
                                 <div class="tab-pane fade" id="v-pills-Samerica" role="tabpanel" aria-labelledby="v-pills-Samerica-tab">
-                                    <a href="{{route('books.decades',['decades'=>1890])}}" class="btn mb-2 btn-light genre-button w-100">Brazil</a>
-                                    <a href="{{route('books.decades',['decades'=>1880])}}" class="btn mb-2 btn-light genre-button w-100">Argentina</a>
-                                    <a href="{{route('books.decades',['decades'=>1870])}}" class="btn mb-2 btn-light genre-button w-100">Paraguay</a>
-                                    <a href="{{route('books.decades',['decades'=>1860])}}" class="btn mb-2 btn-light genre-button w-100">Uruguay</a>
-                                    <a href="{{route('books.decades',['decades'=>1850])}}" class="btn mb-2 btn-light genre-button w-100">Peru</a>
-                                    <a href="{{route('books.decades',['decades'=>1840])}}" class="btn mb-2 btn-light genre-button w-100">Bolivia</a>
-                                    <a href="{{route('books.decades',['decades'=>1830])}}" class="btn mb-2 btn-light genre-button w-100">Chile</a>
-                                    <a href="{{route('books.decades',['decades'=>1820])}}" class="btn mb-2 btn-light genre-button w-100">Colombia</a>
-                                    <a href="{{route('books.decades',['decades'=>1810])}}" class="btn mb-2 btn-light genre-button w-100">Venezuela</a>
-                                    <a href="{{route('books.decades',['decades'=>1800])}}" class="btn mb-2 btn-light genre-button w-100">Ecuador</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Brazilian'])}}" class="btn mb-2 btn-light genre-button w-100">Brazilian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Argentinian'])}}" class="btn mb-2 btn-light genre-button w-100">Argentinian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Paraguayan'])}}" class="btn mb-2 btn-light genre-button w-100">Paraguayan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Uruguayan'])}}" class="btn mb-2 btn-light genre-button w-100">Uruguayan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Peruvian'])}}" class="btn mb-2 btn-light genre-button w-100">Peruvian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Bolivian'])}}" class="btn mb-2 btn-light genre-button w-100">Bolivian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Chilean'])}}" class="btn mb-2 btn-light genre-button w-100">Chilean</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Colombian'])}}" class="btn mb-2 btn-light genre-button w-100">Colombian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Venezuelan'])}}" class="btn mb-2 btn-light genre-button w-100">Venezuelan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Ecuadorian'])}}" class="btn mb-2 btn-light genre-button w-100">Ecuadorian</a>
                                 </div>
                                 <!--1800's-->
                                 <div class="tab-pane fade" id="v-pills-Camerica" role="tabpanel" aria-labelledby="v-pills-Samerica-tab">
-                                    <a href="{{route('books.decades',['decades'=>1890])}}" class="btn mb-2 btn-light genre-button w-100">Guatemala</a>
-                                    <a href="{{route('books.decades',['decades'=>1880])}}" class="btn mb-2 btn-light genre-button w-100">El Salvador</a>
-                                    <a href="{{route('books.decades',['decades'=>1870])}}" class="btn mb-2 btn-light genre-button w-100">Costa Rica</a>
-                                    <a href="{{route('books.decades',['decades'=>1860])}}" class="btn mb-2 btn-light genre-button w-100">Panama</a>
-                                    <a href="{{route('books.decades',['decades'=>1850])}}" class="btn mb-2 btn-light genre-button w-100">Honduras</a>
-                                    <a href="{{route('books.decades',['decades'=>1840])}}" class="btn mb-2 btn-light genre-button w-100">Nicaragua</a>
-                                    <a href="{{route('books.decades',['decades'=>1830])}}" class="btn mb-2 btn-light genre-button w-100">Belize</a>
-                                    <a href="{{route('books.decades',['decades'=>1820])}}" class="btn mb-2 btn-light genre-button w-100">Cuba</a>
-                                    <a href="{{route('books.decades',['decades'=>1810])}}" class="btn mb-2 btn-light genre-button w-100">Jamaica</a>
-                                    <a href="{{route('books.decades',['decades'=>1800])}}" class="btn mb-2 btn-light genre-button w-100">Bahamas</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Guatemalan'])}}" class="btn mb-2 btn-light genre-button w-100">Guatemalan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Salvadorean'])}}" class="btn mb-2 btn-light genre-button w-100">Salvadorean</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Costa Rican'])}}" class="btn mb-2 btn-light genre-button w-100">Costa Rican</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Panamanian'])}}" class="btn mb-2 btn-light genre-button w-100">Panamanian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Honduran'])}}" class="btn mb-2 btn-light genre-button w-100">Honduran</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Nicaraguan'])}}" class="btn mb-2 btn-light genre-button w-100">Nicaraguan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Belizean'])}}" class="btn mb-2 btn-light genre-button w-100">Belizean</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Cuban'])}}" class="btn mb-2 btn-light genre-button w-100">Cuban</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Jamaican'])}}" class="btn mb-2 btn-light genre-button w-100">Jamaican</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Bahamian'])}}" class="btn mb-2 btn-light genre-button w-100">Bahamian</a>
                                 </div>
                                 <!--1700's-->
                                 <div class="tab-pane fade" id="v-pills-asia" role="tabpanel" aria-labelledby="v-pills-asia-tab">
-                                    <a href="{{route('books.decades',['decades'=>1790])}}" class="btn mb-2 btn-light genre-button w-100">India</a>
-                                    <a href="{{route('books.decades',['decades'=>1780])}}" class="btn mb-2 btn-light genre-button w-100">Japan</a>
-                                    <a href="{{route('books.decades',['decades'=>1770])}}" class="btn mb-2 btn-light genre-button w-100">China</a>
-                                    <a href="{{route('books.decades',['decades'=>1760])}}" class="btn mb-2 btn-light genre-button w-100">Thailand</a>
-                                    <a href="{{route('books.decades',['decades'=>1750])}}" class="btn mb-2 btn-light genre-button w-100">Indonesia</a>
-                                    <a href="{{route('books.decades',['decades'=>1740])}}" class="btn mb-2 btn-light genre-button w-100">Korea</a>
-                                    <a href="{{route('books.decades',['decades'=>1730])}}" class="btn mb-2 btn-light genre-button w-100">UAE</a>
-                                    <a href="{{route('books.decades',['decades'=>1720])}}" class="btn mb-2 btn-light genre-button w-100">Russia</a>
-                                    <a href="{{route('books.decades',['decades'=>1710])}}" class="btn mb-2 btn-light genre-button w-100">Israel</a>
-                                    <a href="{{route('books.decades',['decades'=>1700])}}" class="btn mb-2 btn-light genre-button w-100">Bangladesh</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Indian'])}}" class="btn mb-2 btn-light genre-button w-100">Indian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Japanese'])}}" class="btn mb-2 btn-light genre-button w-100">Japanese</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Chinese'])}}" class="btn mb-2 btn-light genre-button w-100">Chinese</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Thai'])}}" class="btn mb-2 btn-light genre-button w-100">Thai</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Indonesian'])}}" class="btn mb-2 btn-light genre-button w-100">Indonesian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Korean'])}}" class="btn mb-2 btn-light genre-button w-100">Korean</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Emirati'])}}" class="btn mb-2 btn-light genre-button w-100">Emirati</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Russian'])}}" class="btn mb-2 btn-light genre-button w-100">Russian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Israeli'])}}" class="btn mb-2 btn-light genre-button w-100">Israeli</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Bangladeshi'])}}" class="btn mb-2 btn-light genre-button w-100">Bangladeshi</a>
                                 </div>
                                 <!--1600's-->
                                 <div class="tab-pane fade" id="v-pills-africa" role="tabpanel" aria-labelledby="v-pills-africa-tab">
-                                    <a href="{{route('books.decades',['decades'=>1690])}}" class="btn mb-2 btn-light genre-button w-100">South Africa</a>
-                                    <a href="{{route('books.decades',['decades'=>1680])}}" class="btn mb-2 btn-light genre-button w-100">Angola</a>
-                                    <a href="{{route('books.decades',['decades'=>1670])}}" class="btn mb-2 btn-light genre-button w-100">Cameroon</a>
-                                    <a href="{{route('books.decades',['decades'=>1660])}}" class="btn mb-2 btn-light genre-button w-100">Cape Green</a>
-                                    <a href="{{route('books.decades',['decades'=>1650])}}" class="btn mb-2 btn-light genre-button w-100">Mozambique</a>
-                                    <a href="{{route('books.decades',['decades'=>1640])}}" class="btn mb-2 btn-light genre-button w-100">Nigeria</a>
-                                    <a href="{{route('books.decades',['decades'=>1630])}}" class="btn mb-2 btn-light genre-button w-100">Ethiopia</a>
-                                    <a href="{{route('books.decades',['decades'=>1620])}}" class="btn mb-2 btn-light genre-button w-100">Egypt</a>
-                                    <a href="{{route('books.decades',['decades'=>1610])}}" class="btn mb-2 btn-light genre-button w-100">Morocco</a>
-                                    <a href="{{route('books.decades',['decades'=>1600])}}" class="btn mb-2 btn-light genre-button w-100">Guinea</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'South African'])}}" class="btn mb-2 btn-light genre-button w-100">South African</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Angolan'])}}" class="btn mb-2 btn-light genre-button w-100">Angolan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Cameroonian'])}}" class="btn mb-2 btn-light genre-button w-100">Cameroonian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Cape Verdean'])}}" class="btn mb-2 btn-light genre-button w-100">Cape Verdean</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Mozambican'])}}" class="btn mb-2 btn-light genre-button w-100">Mozambican</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Nigerian'])}}" class="btn mb-2 btn-light genre-button w-100">Nigerian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Ethiopian'])}}" class="btn mb-2 btn-light genre-button w-100">Ethiopian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Egyptian'])}}" class="btn mb-2 btn-light genre-button w-100">Egyptian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Moroccan'])}}" class="btn mb-2 btn-light genre-button w-100">Moroccan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Guinean'])}}" class="btn mb-2 btn-light genre-button w-100">Guinean</a>
                                 </div>
                                 <!--Older-->
                                 <div class="tab-pane fade" id="v-pills-oceania" role="tabpanel" aria-labelledby="v-pills-oceania-tab">
-                                    <a href="{{route('books.decades',['decades'=>1500])}}" class="btn mb-2 btn-light genre-button w-100">Australia</a>
-                                    <a href="{{route('books.decades',['decades'=>1400])}}" class="btn mb-2 btn-light genre-button w-100">Papua New Guinea</a>
-                                    <a href="{{route('books.decades',['decades'=>1300])}}" class="btn mb-2 btn-light genre-button w-100">New Zealand</a>
-                                    <a href="{{route('books.decades',['decades'=>1200])}}" class="btn mb-2 btn-light genre-button w-100">Fiji</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Australian'])}}" class="btn mb-2 btn-light genre-button w-100">Australian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'New Zealander'])}}" class="btn mb-2 btn-light genre-button w-100">New Zealander</a>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                         <th>Name</th>
                         <th>Books</th>
                         <th>Nationality</th>
-                        <th>Publication Date</th>
+                        <th>Gender</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -135,13 +135,21 @@
                             <tr>
                                 <td>{{$author->id}}</td>
                                 <td>{{$author->name}}</td>
-                                <!--<td>
+                                <td>
                                     <ul style="padding: 0">
-
+                                        @foreach($author->books as $book)
+                                            <li style="padding: 0">{{$book->title}}</li>
+                                        @endforeach
                                     </ul>
                                 </td>
-                                <td>pages</td>
-                                <td>date</td>-->
+                                <td>{{$author->nationality}}</td>
+                                <td>
+                                    @if($author->gender == 'M' || $author->gender  == 'm')
+                                        Male
+                                    @elseif($author->gender  == 'F' || $author->gender  == 'f')
+                                        Female
+                                    @endif
+                                </td>
                                 <td>
                                     <div class="dropdown">
                                         <button class="btn btn-sm dropdown-toggle" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

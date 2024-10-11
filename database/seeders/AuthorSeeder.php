@@ -18,7 +18,7 @@ class AuthorSeeder extends Seeder
             [
                 'name'=>'Leandro Santos',
                 'bio'=>'o maior autor do mundo',
-                'nationality'=>'Português',
+                'nationality'=>'Portuguese',
                 'birthdate'=>'2004/6/11',
                 'gender'=>'M',
                 'literary_moviment_id'=>1,

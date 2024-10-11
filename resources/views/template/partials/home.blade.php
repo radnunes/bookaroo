@@ -9,6 +9,7 @@
                         <!-- table -->
                         <table class="table table-borderless table-hover">
                             <thead>
+                            <a type="button" class="btn mb-1 btn-outline-primary" href="{{route('books.create')}}">Create new book</a>
                             <tr>
                                 <th>Id</th>
                                 <th>Title</th>
@@ -66,6 +67,7 @@
                         <!-- table -->
                         <table class="table table-borderless table-hover">
                             <thead>
+                            <a type="button" class="btn mb-1 btn-outline-primary" href="{{route('authors.create')}}">Create new author</a>
                             <tr>
                                 <th>Id</th>
                                 <th>Name</th>

@@ -76,7 +76,7 @@
                         <a class="nav-link pl-3" href="{{ route('authors.nationality') }}"><span class="ml-1 item-text">Nationality</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-tabs-accordion.html"><span class="ml-1 item-text">Literary Movements</span></a>
+                        <a class="nav-link pl-3" href="{{route('authors.literary_movements')}}"><span class="ml-1 item-text">Literary Movements</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Era</span> #WIP</a>

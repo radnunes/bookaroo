@@ -22,7 +22,7 @@ class AuthorFactory extends Factory
             'nationality' => $this->faker->randomElement(['Portuguese', 'Chinese', 'Brazilian', 'Cuban', 'Angolan', 'Australian']),
             'birthdate' => $this->faker->date(),
             'gender' => $this->faker->randomElement(['M', 'F']),
-            'literary_moviment_id' => $this->faker->randomNumber(1, 13),
+            'literary_moviment_id' => $this->faker->randomNumber(1, 19),
         ];
     }
 }

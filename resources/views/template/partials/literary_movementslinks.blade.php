@@ -17,20 +17,20 @@
                         </div>
                         <div class="col-7">
                             <div class="tab-content mb-4" id="v-pills-tabContent">
-                                <!--Europe-->
+                                <!--2000's-->
                                 <div class="tab-pane fade active show" id="v-pills-europe" role="tabpanel" aria-labelledby="v-pills-europe-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'Dutch'])}}" class="btn mb-2 btn-light genre-button w-100">Dutch</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'English'])}}" class="btn mb-2 btn-light genre-button w-100">English</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'French'])}}" class="btn mb-2 btn-light genre-button w-100">French</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'German'])}}" class="btn mb-2 btn-light genre-button w-100">German</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Irish'])}}" class="btn mb-2 btn-light genre-button w-100">Irish</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Italian'])}}" class="btn mb-2 btn-light genre-button w-100">Italian</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Portuguese'])}}" class="btn mb-2 btn-light genre-button w-100">Portuguese</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Spanish'])}}" class="btn mb-2 btn-light genre-button w-100">Spanish</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'French'])}}" class="btn mb-2 btn-light genre-button w-100">French</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'English'])}}" class="btn mb-2 btn-light genre-button w-100">English</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Irish'])}}" class="btn mb-2 btn-light genre-button w-100">Irish</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Italian'])}}" class="btn mb-2 btn-light genre-button w-100">Italian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'German'])}}" class="btn mb-2 btn-light genre-button w-100">German</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Dutch'])}}" class="btn mb-2 btn-light genre-button w-100">Dutch</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Swiss'])}}" class="btn mb-2 btn-light genre-button w-100">Swiss</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Turkish'])}}" class="btn mb-2 btn-light genre-button w-100">Turkish</a>
                                 </div>
-                                <!--North America-->
+                                <!--1900's-->
                                 <div class="tab-pane fade" id="v-pills-Namerica" role="tabpanel" aria-labelledby="v-pills-Namerica-tab">
                                     <a href="{{route('authors.nationality',['nationality'=>'American'])}}" class="btn mb-2 btn-light genre-button w-100">American</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Canadian'])}}" class="btn mb-2 btn-light genre-button w-100">Canadian</a>
@@ -38,55 +38,55 @@
                                 </div>
                                 <!--1800's-->
                                 <div class="tab-pane fade" id="v-pills-Samerica" role="tabpanel" aria-labelledby="v-pills-Samerica-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'Argentinian'])}}" class="btn mb-2 btn-light genre-button w-100">Argentinian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Bolivian'])}}" class="btn mb-2 btn-light genre-button w-100">Bolivian</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Brazilian'])}}" class="btn mb-2 btn-light genre-button w-100">Brazilian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Argentinian'])}}" class="btn mb-2 btn-light genre-button w-100">Argentinian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Paraguayan'])}}" class="btn mb-2 btn-light genre-button w-100">Paraguayan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Uruguayan'])}}" class="btn mb-2 btn-light genre-button w-100">Uruguayan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Peruvian'])}}" class="btn mb-2 btn-light genre-button w-100">Peruvian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Bolivian'])}}" class="btn mb-2 btn-light genre-button w-100">Bolivian</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Chilean'])}}" class="btn mb-2 btn-light genre-button w-100">Chilean</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Colombian'])}}" class="btn mb-2 btn-light genre-button w-100">Colombian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Ecuadorian'])}}" class="btn mb-2 btn-light genre-button w-100">Ecuadorian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Paraguayan'])}}" class="btn mb-2 btn-light genre-button w-100">Paraguayan</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Peruvian'])}}" class="btn mb-2 btn-light genre-button w-100">Peruvian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Uruguayan'])}}" class="btn mb-2 btn-light genre-button w-100">Uruguayan</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Venezuelan'])}}" class="btn mb-2 btn-light genre-button w-100">Venezuelan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Ecuadorian'])}}" class="btn mb-2 btn-light genre-button w-100">Ecuadorian</a>
                                 </div>
                                 <!--1800's-->
                                 <div class="tab-pane fade" id="v-pills-Camerica" role="tabpanel" aria-labelledby="v-pills-Samerica-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'Bahamian'])}}" class="btn mb-2 btn-light genre-button w-100">Bahamian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Belizean'])}}" class="btn mb-2 btn-light genre-button w-100">Belizean</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Costa Rican'])}}" class="btn mb-2 btn-light genre-button w-100">Costa Rican</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Cuban'])}}" class="btn mb-2 btn-light genre-button w-100">Cuban</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Guatemalan'])}}" class="btn mb-2 btn-light genre-button w-100">Guatemalan</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Honduran'])}}" class="btn mb-2 btn-light genre-button w-100">Honduran</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Jamaican'])}}" class="btn mb-2 btn-light genre-button w-100">Jamaican</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Panamanian'])}}" class="btn mb-2 btn-light genre-button w-100">Panamanian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Nicaraguan'])}}" class="btn mb-2 btn-light genre-button w-100">Nicaraguan</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Salvadorean'])}}" class="btn mb-2 btn-light genre-button w-100">Salvadorean</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Costa Rican'])}}" class="btn mb-2 btn-light genre-button w-100">Costa Rican</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Panamanian'])}}" class="btn mb-2 btn-light genre-button w-100">Panamanian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Honduran'])}}" class="btn mb-2 btn-light genre-button w-100">Honduran</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Nicaraguan'])}}" class="btn mb-2 btn-light genre-button w-100">Nicaraguan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Belizean'])}}" class="btn mb-2 btn-light genre-button w-100">Belizean</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Cuban'])}}" class="btn mb-2 btn-light genre-button w-100">Cuban</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Jamaican'])}}" class="btn mb-2 btn-light genre-button w-100">Jamaican</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Bahamian'])}}" class="btn mb-2 btn-light genre-button w-100">Bahamian</a>
                                 </div>
                                 <!--1700's-->
                                 <div class="tab-pane fade" id="v-pills-asia" role="tabpanel" aria-labelledby="v-pills-asia-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'Bangladeshi'])}}" class="btn mb-2 btn-light genre-button w-100">Bangladeshi</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Chinese'])}}" class="btn mb-2 btn-light genre-button w-100">Chinese</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Emirati'])}}" class="btn mb-2 btn-light genre-button w-100">Emirati</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Indian'])}}" class="btn mb-2 btn-light genre-button w-100">Indian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Indonesian'])}}" class="btn mb-2 btn-light genre-button w-100">Indonesian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Israeli'])}}" class="btn mb-2 btn-light genre-button w-100">Israeli</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Japanese'])}}" class="btn mb-2 btn-light genre-button w-100">Japanese</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Korean'])}}" class="btn mb-2 btn-light genre-button w-100">Korean</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Russian'])}}" class="btn mb-2 btn-light genre-button w-100">Russian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Chinese'])}}" class="btn mb-2 btn-light genre-button w-100">Chinese</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Thai'])}}" class="btn mb-2 btn-light genre-button w-100">Thai</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Indonesian'])}}" class="btn mb-2 btn-light genre-button w-100">Indonesian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Korean'])}}" class="btn mb-2 btn-light genre-button w-100">Korean</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Emirati'])}}" class="btn mb-2 btn-light genre-button w-100">Emirati</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Russian'])}}" class="btn mb-2 btn-light genre-button w-100">Russian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Israeli'])}}" class="btn mb-2 btn-light genre-button w-100">Israeli</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Bangladeshi'])}}" class="btn mb-2 btn-light genre-button w-100">Bangladeshi</a>
                                 </div>
                                 <!--1600's-->
                                 <div class="tab-pane fade" id="v-pills-africa" role="tabpanel" aria-labelledby="v-pills-africa-tab">
+                                    <a href="{{route('authors.nationality',['nationality'=>'South African'])}}" class="btn mb-2 btn-light genre-button w-100">South African</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Angolan'])}}" class="btn mb-2 btn-light genre-button w-100">Angolan</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Cameroonian'])}}" class="btn mb-2 btn-light genre-button w-100">Cameroonian</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Cape Verdean'])}}" class="btn mb-2 btn-light genre-button w-100">Cape Verdean</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Egyptian'])}}" class="btn mb-2 btn-light genre-button w-100">Egyptian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Ethiopian'])}}" class="btn mb-2 btn-light genre-button w-100">Ethiopian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Guinean'])}}" class="btn mb-2 btn-light genre-button w-100">Guinean</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Moroccan'])}}" class="btn mb-2 btn-light genre-button w-100">Moroccan</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Mozambican'])}}" class="btn mb-2 btn-light genre-button w-100">Mozambican</a>
                                     <a href="{{route('authors.nationality',['nationality'=>'Nigerian'])}}" class="btn mb-2 btn-light genre-button w-100">Nigerian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'South African'])}}" class="btn mb-2 btn-light genre-button w-100">South African</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Ethiopian'])}}" class="btn mb-2 btn-light genre-button w-100">Ethiopian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Egyptian'])}}" class="btn mb-2 btn-light genre-button w-100">Egyptian</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Moroccan'])}}" class="btn mb-2 btn-light genre-button w-100">Moroccan</a>
+                                    <a href="{{route('authors.nationality',['nationality'=>'Guinean'])}}" class="btn mb-2 btn-light genre-button w-100">Guinean</a>
                                 </div>
                                 <!--Older-->
                                 <div class="tab-pane fade" id="v-pills-oceania" role="tabpanel" aria-labelledby="v-pills-oceania-tab">
@@ -106,15 +106,15 @@
         <div class="card shadow">
             <div class="card-body">
                 <h5 class="card-title">Authors</h5>
-                <p class="card-text">List of authors based on selected nationality.</p>
-                <button type="button" class="btn mb-1 btn-outline-primary">Create new book</button>
+                <p class="card-text">List of authors based on selected Literary Movement.</p>
+                <button type="button" class="btn mb-1 btn-outline-primary">Create new author</button>
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Books</th>
-                        <th>Nationality</th>
+                        <th>Literary Movements</th>
                         <th>Gender</th>
                         <th>Action</th>
                     </tr>
@@ -142,7 +142,7 @@
                                         @endforeach
                                     </ul>
                                 </td>
-                                <td>{{$author->nationality}}</td>
+                                <td>{{$author->literary_moviments}}</td>
                                 <td>
                                     @if($author->gender == 'M' || $author->gender  == 'm')
                                         Male
@@ -157,7 +157,7 @@
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1" style="">
                                             <a class="dropdown-item" href="{{route('authors.edit',['author'=>$author])}}">Edit</a>
-                                            <a class="dropdown-item" href="{{route('authors.destroy', ['author'=>$author])}}">Remove</a>
+                                            <a class="dropdown-item" href="#">Remove</a>
                                         </div>
                                     </div>
                                 </td>

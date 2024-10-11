@@ -36,6 +36,8 @@ Route::get('/books-format', [BookController::class, 'format'])->name('books.form
 
 Route::resource('authors', AuthorController::class);
 
+Route::get('/authors-{author}-edit', [AuthorController::class, 'edit'])->name('authors.edit');
+
 Route::get('/authors-nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
 
 Route::get('/contacts', function () {

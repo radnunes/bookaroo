@@ -9,11 +9,16 @@ class Author extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'bio', 'nationality', 'birthdate', 'literary_moviment_id', 'award_id'];
+    protected $fillable = ['name', 'bio', 'nationality', 'birthdate', 'gender', 'literary_moviment_id', 'award_id'];
 
     public function books()
     {
         return $this->belongsToMany(Book::class);
+    }
+
+    public function awards()
+    {
+        return $this->belongsToMany(Awards::class, 'author_awards', 'author_id', 'award_id');
     }
 
 }

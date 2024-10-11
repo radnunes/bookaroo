@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
+use App\Models\Awards;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -39,9 +41,12 @@ class AuthorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Author $author)
     {
-        //
+        $awards = Awards::all();
+        $books = Book::all();
+
+        return view('template.authors.edit', ['author' => $author, 'awards' => $awards, 'books' => $books]);
     }
 
     /**

@@ -24,12 +24,12 @@ class DatabaseSeeder extends Seeder
             BookSeeder::class,
             AuthorSeeder::class,
             AuthorBookSeeder::class,
-            AuthorAwardsSeeder::class,
             LiteraryMovimentSeeder::class,
             GenreSeeder::class,
             BookGenreSeeder::class,
             AwardsSeeder::class,
             CommentSeeder::class,
+            AuthorAwardsSeeder::class,
             RatingSeeder::class
         ]);
     }

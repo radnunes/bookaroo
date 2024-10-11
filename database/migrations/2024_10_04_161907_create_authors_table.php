@@ -19,7 +19,6 @@ return new class extends Migration
             $table->date('birthdate');
             $table->char('gender', 1);
             $table->integer('literary_moviment_id')/*->constrained('literary_moviments')*/->nullable();
-            $table->integer('award_id')/*->constrained('awards')*/->nullable();
             $table->timestamps();
         });
     }

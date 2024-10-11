@@ -122,4 +122,25 @@ class AuthorController extends Controller
 
         return  view('template.authors.nationality', ['authors'=>Author::query()->where('nationality', $nationality)->get()]);
     }
+
+    public function literary_movements(Request $request)
+    {
+        $literary_movement = urldecode($request->input('literary_movement'));
+
+        if(!$literary_movement){
+            return view('template.authors.literary_movements', ['authors'=>Author::all()]);
+        }
+
+
+        $author = Author::query()
+            ->join('literary_moviments', 'authors.literary_moviment_id', '=', 'literary_moviments.id')
+            ->where('literary_moviments.name', $literary_movement)
+            ->select('authors.*')
+            ->get();
+
+
+        //dd($author);
+        return view('template.authors.literary_movements', ['authors' => $author]);
+
+    }
 }

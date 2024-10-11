@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             BookSeeder::class,
+            LiteraryMovimentSeeder::class,
             AuthorSeeder::class,
             AuthorBookSeeder::class,
-            LiteraryMovimentSeeder::class,
             GenreSeeder::class,
             BookGenreSeeder::class,
             AwardsSeeder::class,

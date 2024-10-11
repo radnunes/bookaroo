@@ -6,93 +6,55 @@
                     <div class="row">
                         <div class="col-5">
                             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-europe" role="tab" aria-controls="v-pills-europe" aria-selected="true">Europe</a>
-                                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-Namerica" role="tab" aria-controls="v-pills-Namerica" aria-selected="false">North America</a>
-                                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-Samerica" role="tab" aria-controls="v-pills-Camerica" aria-selected="false">Central America</a>
-                                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-Samerica" role="tab" aria-controls="v-pills-Samerica" aria-selected="false">South America</a>
-                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-asia" role="tab" aria-controls="v-pills-asia" aria-selected="false">Asia</a>
-                                <a class="nav-link" id="v-pills-1600-tab" data-toggle="pill" href="#v-pills-africa" role="tab" aria-controls="v-pills-africa" aria-selected="false">Africa</a>
-                                <a class="nav-link" id="v-pills-older-tab" data-toggle="pill" href="#v-pills-oceania" role="tab" aria-controls="v-pills-oceania" aria-selected="false">Oceania</a>
+                                <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-classical" role="tab" aria-controls="v-pills-classical" aria-selected="true">Classical</a>
+                                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-renaissance" role="tab" aria-controls="v-pills-renaissance" aria-selected="false">Renaissance</a>
+                                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-18th19th" role="tab" aria-controls="v-pills-18th19th" aria-selected="false">18th to 19th century</a>
+                                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-20th" role="tab" aria-controls="v-pills-20th" aria-selected="false">Early 20th century</a>
+                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-WWII" role="tab" aria-controls="v-pills-WWII" aria-selected="false">Post-World War II</a>
+                                <a class="nav-link" id="v-pills-1600-tab" data-toggle="pill" href="#v-pills-contemporary" role="tab" aria-controls="v-pills-contemporary" aria-selected="false">Contemporary</a>
                             </div>
                         </div>
                         <div class="col-7">
                             <div class="tab-content mb-4" id="v-pills-tabContent">
                                 <!--2000's-->
-                                <div class="tab-pane fade active show" id="v-pills-europe" role="tabpanel" aria-labelledby="v-pills-europe-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'Portuguese'])}}" class="btn mb-2 btn-light genre-button w-100">Portuguese</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Spanish'])}}" class="btn mb-2 btn-light genre-button w-100">Spanish</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'French'])}}" class="btn mb-2 btn-light genre-button w-100">French</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'English'])}}" class="btn mb-2 btn-light genre-button w-100">English</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Irish'])}}" class="btn mb-2 btn-light genre-button w-100">Irish</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Italian'])}}" class="btn mb-2 btn-light genre-button w-100">Italian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'German'])}}" class="btn mb-2 btn-light genre-button w-100">German</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Dutch'])}}" class="btn mb-2 btn-light genre-button w-100">Dutch</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Swiss'])}}" class="btn mb-2 btn-light genre-button w-100">Swiss</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Turkish'])}}" class="btn mb-2 btn-light genre-button w-100">Turkish</a>
+                                <div class="tab-pane fade active show" id="v-pills-classical" role="tabpanel" aria-labelledby="v-pills-classical-tab">
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Ancient'])}}" class="btn mb-2 btn-light genre-button w-100">Ancient</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Medieval'])}}" class="btn mb-2 btn-light genre-button w-100">Medieval</a>
                                 </div>
                                 <!--1900's-->
-                                <div class="tab-pane fade" id="v-pills-Namerica" role="tabpanel" aria-labelledby="v-pills-Namerica-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'American'])}}" class="btn mb-2 btn-light genre-button w-100">American</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Canadian'])}}" class="btn mb-2 btn-light genre-button w-100">Canadian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Mexican'])}}" class="btn mb-2 btn-light genre-button w-100">Mexican</a>
+                                <div class="tab-pane fade" id="v-pills-renaissance" role="tabpanel" aria-labelledby="v-pills-renaissance-tab">
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Renaissance'])}}" class="btn mb-2 btn-light genre-button w-100">Renaissance</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Enlightenment'])}}" class="btn mb-2 btn-light genre-button w-100">Enlightenment</a>
                                 </div>
                                 <!--1800's-->
-                                <div class="tab-pane fade" id="v-pills-Samerica" role="tabpanel" aria-labelledby="v-pills-Samerica-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'Brazilian'])}}" class="btn mb-2 btn-light genre-button w-100">Brazilian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Argentinian'])}}" class="btn mb-2 btn-light genre-button w-100">Argentinian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Paraguayan'])}}" class="btn mb-2 btn-light genre-button w-100">Paraguayan</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Uruguayan'])}}" class="btn mb-2 btn-light genre-button w-100">Uruguayan</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Peruvian'])}}" class="btn mb-2 btn-light genre-button w-100">Peruvian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Bolivian'])}}" class="btn mb-2 btn-light genre-button w-100">Bolivian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Chilean'])}}" class="btn mb-2 btn-light genre-button w-100">Chilean</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Colombian'])}}" class="btn mb-2 btn-light genre-button w-100">Colombian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Venezuelan'])}}" class="btn mb-2 btn-light genre-button w-100">Venezuelan</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Ecuadorian'])}}" class="btn mb-2 btn-light genre-button w-100">Ecuadorian</a>
+                                <div class="tab-pane fade" id="v-pills-18th19th" role="tabpanel" aria-labelledby="v-pills-18th19th-tab">
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Romanticism'])}}" class="btn mb-2 btn-light genre-button w-100">Romanticism</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Gothic'])}}" class="btn mb-2 btn-light genre-button w-100">Gothic</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Realism'])}}" class="btn mb-2 btn-light genre-button w-100">Realism</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Naturalism'])}}" class="btn mb-2 btn-light genre-button w-100">Naturalism</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Transcendentalism'])}}" class="btn mb-2 btn-light genre-button w-100">Transcendentalism</a>
                                 </div>
                                 <!--1800's-->
-                                <div class="tab-pane fade" id="v-pills-Camerica" role="tabpanel" aria-labelledby="v-pills-Samerica-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'Guatemalan'])}}" class="btn mb-2 btn-light genre-button w-100">Guatemalan</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Salvadorean'])}}" class="btn mb-2 btn-light genre-button w-100">Salvadorean</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Costa Rican'])}}" class="btn mb-2 btn-light genre-button w-100">Costa Rican</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Panamanian'])}}" class="btn mb-2 btn-light genre-button w-100">Panamanian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Honduran'])}}" class="btn mb-2 btn-light genre-button w-100">Honduran</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Nicaraguan'])}}" class="btn mb-2 btn-light genre-button w-100">Nicaraguan</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Belizean'])}}" class="btn mb-2 btn-light genre-button w-100">Belizean</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Cuban'])}}" class="btn mb-2 btn-light genre-button w-100">Cuban</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Jamaican'])}}" class="btn mb-2 btn-light genre-button w-100">Jamaican</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Bahamian'])}}" class="btn mb-2 btn-light genre-button w-100">Bahamian</a>
+                                <div class="tab-pane fade" id="v-pills-20th" role="tabpanel" aria-labelledby="v-pills-20th-tab">
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Modernism'])}}" class="btn mb-2 btn-light genre-button w-100">Modernism</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Symbolism'])}}" class="btn mb-2 btn-light genre-button w-100">Symbolism</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Surrealism'])}}" class="btn mb-2 btn-light genre-button w-100">Surrealism</a>
                                 </div>
                                 <!--1700's-->
-                                <div class="tab-pane fade" id="v-pills-asia" role="tabpanel" aria-labelledby="v-pills-asia-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'Indian'])}}" class="btn mb-2 btn-light genre-button w-100">Indian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Japanese'])}}" class="btn mb-2 btn-light genre-button w-100">Japanese</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Chinese'])}}" class="btn mb-2 btn-light genre-button w-100">Chinese</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Thai'])}}" class="btn mb-2 btn-light genre-button w-100">Thai</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Indonesian'])}}" class="btn mb-2 btn-light genre-button w-100">Indonesian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Korean'])}}" class="btn mb-2 btn-light genre-button w-100">Korean</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Emirati'])}}" class="btn mb-2 btn-light genre-button w-100">Emirati</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Russian'])}}" class="btn mb-2 btn-light genre-button w-100">Russian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Israeli'])}}" class="btn mb-2 btn-light genre-button w-100">Israeli</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Bangladeshi'])}}" class="btn mb-2 btn-light genre-button w-100">Bangladeshi</a>
+                                <div class="tab-pane fade" id="v-pills-WWII" role="tabpanel" aria-labelledby="v-pills-WWII-tab">
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Postmodernism'])}}" class="btn mb-2 btn-light genre-button w-100">Postmodernism</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Beat Generation'])}}" class="btn mb-2 btn-light genre-button w-100">Beat Generation</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Magical Realism'])}}" class="btn mb-2 btn-light genre-button w-100">Magical Realism</a>
                                 </div>
                                 <!--1600's-->
-                                <div class="tab-pane fade" id="v-pills-africa" role="tabpanel" aria-labelledby="v-pills-africa-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'South African'])}}" class="btn mb-2 btn-light genre-button w-100">South African</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Angolan'])}}" class="btn mb-2 btn-light genre-button w-100">Angolan</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Cameroonian'])}}" class="btn mb-2 btn-light genre-button w-100">Cameroonian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Cape Verdean'])}}" class="btn mb-2 btn-light genre-button w-100">Cape Verdean</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Mozambican'])}}" class="btn mb-2 btn-light genre-button w-100">Mozambican</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Nigerian'])}}" class="btn mb-2 btn-light genre-button w-100">Nigerian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Ethiopian'])}}" class="btn mb-2 btn-light genre-button w-100">Ethiopian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Egyptian'])}}" class="btn mb-2 btn-light genre-button w-100">Egyptian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Moroccan'])}}" class="btn mb-2 btn-light genre-button w-100">Moroccan</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'Guinean'])}}" class="btn mb-2 btn-light genre-button w-100">Guinean</a>
+                                <div class="tab-pane fade" id="v-pills-contemporary" role="tabpanel" aria-labelledby="v-pills-contemporary-tab">
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Contemporary'])}}" class="btn mb-2 btn-light genre-button w-100">Contemporary</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Postcolonial'])}}" class="btn mb-2 btn-light genre-button w-100">Postcolonial</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Cameroonian'])}}" class="btn mb-2 btn-light genre-button w-100">Cameroonian</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Cyberpunk and Science Fiction'])}}" class="btn mb-2 btn-light genre-button w-100">Cyberpunk and Science Fiction</a>
+                                    <a href="{{route('authors.literary_movements',['literary_movement'=>'Feminist Literature'])}}" class="btn mb-2 btn-light genre-button w-100">Feminist Literature</a>
                                 </div>
-                                <!--Older-->
-                                <div class="tab-pane fade" id="v-pills-oceania" role="tabpanel" aria-labelledby="v-pills-oceania-tab">
-                                    <a href="{{route('authors.nationality',['nationality'=>'Australian'])}}" class="btn mb-2 btn-light genre-button w-100">Australian</a>
-                                    <a href="{{route('authors.nationality',['nationality'=>'New Zealander'])}}" class="btn mb-2 btn-light genre-button w-100">New Zealander</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -142,7 +104,7 @@
                                         @endforeach
                                     </ul>
                                 </td>
-                                <td>{{$author->literary_moviments}}</td>
+                                <td>{{$author->literary_moviments->name}}</td>
                                 <td>
                                     @if($author->gender == 'M' || $author->gender  == 'm')
                                         Male

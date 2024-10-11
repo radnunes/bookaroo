@@ -46,6 +46,8 @@ Route::get('/authors-{id}-show', [AuthorController::class, 'show'])->name('autho
 
 Route::get('/authors-nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
 
+Route::get('/authors-literary_movements', [AuthorController::class, 'literary_movements'])->name('authors.literary_movements');
+
 Route::get('/contacts', function () {
     return view ('contacts');
 })->name('contacts');

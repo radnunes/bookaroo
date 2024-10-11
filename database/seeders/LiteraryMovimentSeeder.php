@@ -14,22 +14,31 @@ class LiteraryMovimentSeeder extends Seeder
     public function run(): void
     {
         DB::table('literary_moviments')->insert([
-
-            ['name'=>'Modernism'],
-            ['name'=>'The Augustans'],
+            //Classical
+            ['name'=>'Ancient'],
+            ['name'=>'Medieval'],
+            //Renaissance
+            ['name'=>'Renaissance'],
+            ['name'=>'Enlightenment'],
+            //18th to 19th century
             ['name'=>'Romanticism'],
-            ['name'=>'American Romanticism'],
-            ['name'=>'Transcendentalism'],
-            ['name'=>'Gothic Fiction'],
+            ['name'=>'Gothic'],
             ['name'=>'Realism'],
             ['name'=>'Naturalism'],
-            ['name'=>'Stream of consciousness'],
-            ['name'=>'The Harlem Renaissance'],
-            ['name'=>'The Lost Generation'],
-            ['name'=>'Minimalism'],
-            ['name'=>'Magical realism'],
+            ['name'=>'Transcendentalism'],
+            //Early 20th century
+            ['name'=>'Modernism'],
+            ['name'=>'Symbolism'],
             ['name'=>'Surrealism'],
-            ['name'=>'Postmodernism']
+            //Post-World War II
+            ['name'=>'Postmodernism'],
+            ['name'=>'Beat Generation'],
+            ['name'=>'Magical Realism'],
+            //Contemporary
+            ['name'=>'Contemporary'],
+            ['name'=>'Postcolonial'],
+            ['name'=>'Cyberpunk and Science Fiction'],
+            ['name'=>'Feminist Literature']
         ]);
     }
 }

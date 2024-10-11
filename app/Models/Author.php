@@ -21,4 +21,9 @@ class Author extends Model
         return $this->belongsToMany(Awards::class, 'author_awards', 'author_id', 'award_id');
     }
 
+    public function literary_moviments(){
+        return $this->belongsTo(Literary_moviment::class,'literary_moviment_id','id');
+    }
+
+
 }

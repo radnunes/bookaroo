@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('language', 2);
             $table->integer('rating')->nullable();
 
-            $table->string('image-name')->nullable();
-            $table->string('image-type')->nullable();
+            $table->string('image_name')->nullable();
+            $table->string('image_type')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

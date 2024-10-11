@@ -26,8 +26,8 @@ class BookFactory extends Factory
             'publisher' => $this->faker->company(),
             'language' => $this->faker->languageCode(),
             'rating' => null,
-            'image-name' => null,
-            'image-type' => null,
+            'image_name' => null,
+            'image_type' => null,
             'created_at' => now()
                 ->subdays(fake()->numberBetween(3, 15))
                 ->subHours(fake()->numberBetween(0, 23))

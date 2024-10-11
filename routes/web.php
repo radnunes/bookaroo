@@ -42,6 +42,8 @@ Route::get('/authors-{author}-edit', [AuthorController::class, 'edit'])->name('a
 
 Route::get('/authors-{author}-destroy', [AuthorController::class, 'destroy'])->name('authors.destroy');
 
+Route::get('/authors-{id}-show', [AuthorController::class, 'show'])->name('authors.show');
+
 Route::get('/authors-nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
 
 Route::get('/contacts', function () {

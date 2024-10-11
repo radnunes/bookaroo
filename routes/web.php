@@ -38,6 +38,8 @@ Route::resource('authors', AuthorController::class);
 
 Route::get('/authors-{author}-edit', [AuthorController::class, 'edit'])->name('authors.edit');
 
+Route::get('/authors-{author}-destroy', [AuthorController::class, 'destroy'])->name('authors.destroy');
+
 Route::get('/authors-nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
 
 Route::get('/contacts', function () {

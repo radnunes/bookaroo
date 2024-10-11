@@ -25,11 +25,9 @@
                                 </tr>
                             @else
                                 @foreach($books as $book)
-                                    <tr>
+                                    <tr onclick="window.location='{{ route('books.show', ['id' => $book->id]) }}'" style="cursor: pointer;">
                                         <td>{{ $book->id }}</td>
-                                        <td>
-                                            <a href="{{ route('books.show', ['id' => $book->id]) }}">{{ $book->title }}</a>
-                                        </td>
+                                        <td>{{ $book->title }}</td>
                                         <td>
                                             @foreach($book->authors as $author)
                                                 <li style="padding: 0">{{ $author->name }}</li>
@@ -52,6 +50,7 @@
                                         </td>
                                     </tr>
                                 @endforeach
+
                             @endif
                             </tbody>
                         </table>

@@ -157,7 +157,7 @@
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1" style="">
                                             <a class="dropdown-item" href="{{route('authors.edit',['author'=>$author])}}">Edit</a>
-                                            <a class="dropdown-item" href="#">Remove</a>
+                                            <a class="dropdown-item" href="{{route('authors.destroy', ['author'=>$author])}}">Remove</a>
                                         </div>
                                     </div>
                                 </td>

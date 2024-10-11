@@ -14,8 +14,9 @@
                                 <th>Title</th>
                                 <th>Authors</th>
                                 <th>Genre</th>
+                                <th>Pages</th>
+                                <th>Publisher</th>
                                 <th>Publication date</th>
-                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -38,16 +39,9 @@
                                                 <li style="padding: 0">{{ $genre->name }}</li>
                                             @endforeach
                                         </td>
-                                        <td>{{ \Carbon\Carbon::parse($book->publication_date)->format('d/m/Y') }}</td>
-                                        <td>
-                                            <button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="text-muted sr-only">Action</span>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Remove</a>
-                                            </div>
-                                        </td>
+                                        <td>{{$book->pages}}</td>
+                                        <td>{{$book->publisher}}</td>
+                                        <td>{{$book->publication_date}}</td>
                                     </tr>
                                 @endforeach
 
@@ -75,8 +69,10 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Name</th>
+                                <th>Nationality</th>
                                 <th>Books</th>
-                                <th>Action</th>
+                                <th>Gender</th>
+                                <th>Birthdate</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -86,23 +82,23 @@
                                 </tr>
                             @else
                                 @foreach($authors as $author)
-                                    <tr>
+                                    <tr onclick="window.location='{{ route('authors.show', ['id' => $author->id]) }}'" style="cursor: pointer;">
                                         <td>{{ $author->id }}</td>
                                         <td>{{ $author->name }}</td>
+                                        <td>{{ $author->nationality }}</td>
                                         <td>
                                             @foreach($author->books as $book)
                                                 <li style="padding: 0">{{ $book->title }}</li>
                                             @endforeach
                                         </td>
                                         <td>
-                                            <button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="text-muted sr-only">Action</span>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Remove</a>
-                                            </div>
+                                            @if($author->gender == 'M' || $author->gender  == 'm')
+                                                Male
+                                            @elseif($author->gender  == 'F' || $author->gender  == 'f')
+                                                Female
+                                            @endif
                                         </td>
+                                        <td>{{ $author->birthdate }}</td>
                                     </tr>
                                 @endforeach
                             @endif

@@ -19,6 +19,7 @@ class AuthorController extends Controller
     protected $messages=[
         'required' => 'The :attribute field is required.',
         'max' => 'The :attribute may not have more than :max characters.',
+        'in' => 'The :attribute must be one of the following types: :values',
     ];
 
     public function index(Request $request)
@@ -60,9 +61,13 @@ class AuthorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(String $id)
     {
-        //
+        $author = Author::with('awards', 'books')->findOrFail($id);
+        $awards = Awards::all();
+        $books = Book::all();
+
+        return view('template.authors.show', compact('author','awards', 'books'));
     }
 
     /**

@@ -107,7 +107,7 @@
             <div class="card-body">
                 <h5 class="card-title">Authors</h5>
                 <p class="card-text">List of authors based on selected nationality.</p>
-                <button type="button" class="btn mb-1 btn-outline-primary">Create new book</button>
+                <button type="button" class="btn mb-1 btn-outline-primary">Create new author</button>
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>

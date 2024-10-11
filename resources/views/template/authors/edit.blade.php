@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group mb-4">
-                            <label for="Birthdate">Birthdate</label>
+                            <label for="birthdate">Birthdate</label>
                             <input type="date" id="birthdate" name="birthdate" class="form-control" placeholder="Birthdate" value="{{old('birthdate', $author->birthdate)}}">
                         </div>
                     </div>

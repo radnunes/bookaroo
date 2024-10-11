@@ -9,6 +9,18 @@ use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
+    protected $rules=[
+        'name'=>'required|max:100',
+        'bio'=>'required|max:250',
+        'nationality'=>'required|max:30',
+        'birthdate'=>'required',
+        'gender'=>'required|in:M,F',
+    ];
+    protected $messages=[
+        'required' => 'The :attribute field is required.',
+        'max' => 'The :attribute may not have more than :max characters.',
+    ];
+
     public function index(Request $request)
     {
 
@@ -52,17 +64,33 @@ class AuthorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Author $author)
     {
-        //
+        $dados=$request->validate($this->rules,$this->messages);
+        $author->update($dados);
+        $author->save();
+
+        if ($request->has('awards')) {
+            $author->awards()->sync($request->input('awards'));
+        }
+
+        if ($request->has('books')) {
+            $author->books()->sync($request->input('books'));
+        }
+
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Author $author)
     {
-        //
+        $author->awards()->detach();
+        $author->books()->detach();
+
+        $author->delete();
+        return to_route('home');
     }
 
     public function nationalities(Request $request)

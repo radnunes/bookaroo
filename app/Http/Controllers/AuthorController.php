@@ -47,8 +47,8 @@ class AuthorController extends Controller
     {
         $dados=$request->validate($this->rules,$this->messages);
         $author = new Author($dados);
-        dd($author);
-        /*$author->save();
+        $author->literary_moviment_id = $request->input('literary_moviment_id');
+        $author->save();
 
         if ($request->has('awards')) {
             $author->awards()->sync($request->input('awards'));
@@ -58,7 +58,7 @@ class AuthorController extends Controller
             $author->books()->sync($request->input('books'));
         }
 
-        return redirect()->back();*/
+        return redirect()->route('home');
 
 
     }
@@ -82,8 +82,9 @@ class AuthorController extends Controller
     {
         $awards = Awards::all();
         $books = Book::all();
+        $literary_moviments = literary_moviment::all();
 
-        return view('template.authors.edit', ['author' => $author, 'awards' => $awards, 'books' => $books]);
+        return view('template.authors.edit', ['author' => $author, 'awards' => $awards, 'books' => $books, 'literary_moviments' => $literary_moviments]);
     }
 
     /**
@@ -93,6 +94,7 @@ class AuthorController extends Controller
     {
         $dados=$request->validate($this->rules,$this->messages);
         $author->update($dados);
+        $author->literary_moviment_id = $request->input('literary_moviment_id');
         $author->save();
 
         if ($request->has('awards')) {

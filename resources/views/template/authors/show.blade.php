@@ -71,14 +71,14 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mr-2"> <!-- Right Column for Pages -->
+                            <div class="col-md-5 mr-2"> <!-- Right Column for Pages -->
                                 <div class="form-group mb-4">
                                     <label for="pages">Birthdate</label>
                                     <input type="text" id="birthdate" name="birthdate" class="form-control" value="{{ old('birthdate', $author->birthdate) }}" disabled>
                                 </div>
                             </div>
 
-                            <div class="col-md-5 mr-2"> <!-- Right Column for Pages -->
+                            <div class="col-md-6 mr-2"> <!-- Right Column for Pages -->
                                 <div class="form-group mb-4">
                                     <label for="pages">Literary Movement</label>
                                     <input type="text" id="pages" name="pages" class="form-control" value="{{ old('literary_moviment', $author->literary_moviments->name) }}" disabled>

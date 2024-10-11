@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <label for="awards">Awards</label>
@@ -76,7 +76,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-2">
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <label for="literary_moviment_id">Literary Movements</label>
+                                <select class="form-control" id="literary_moviment_id" name="literary_moviment_id">
+                                    @foreach($literary_moviments as $lm)
+                                        <option value="{{$lm->id}}"
+                                                @if($author->literary_moviment_id == $lm->id) selected @endif>
+                                            {{$lm->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <label for="books">Books</label>

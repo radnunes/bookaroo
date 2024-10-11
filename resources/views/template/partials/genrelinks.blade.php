@@ -97,36 +97,37 @@
                     @elseif(count($books))
                     <tbody>
                     @foreach($books as $book)
-                    <tr>
-                        <td>{{$book->id}}</td>
-                        <td>{{$book->title}}</td>
-                        <td>
-                            <ul style="padding: 0">
-                                @foreach($book->authors as $author)
-                                    <li style="padding: 0">{{$author->name}}</li>
-                                @endforeach
-                            </ul>
-                        </td>
-                        <td>
-                            <ul style="padding: 0">
-                                @foreach($book->genres as $genre)
-                                    <li style="padding: 0">{{$genre->name}}</li>
-                                @endforeach
-                            </ul>
-                        </td>
-                        <td>{{$book->publication_date}}</td>
-                        <td>
-                            <div class="dropdown">
-                                <button class="btn btn-sm dropdown-toggle" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="text-muted sr-only">Action</span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1" style="">
-                                    <a class="dropdown-item" href="{{route('books.edit',['book'=>$book])}}">Edit</a>
-                                    <a class="dropdown-item" href="{{route('books.destroy', ['book'=>$book])}}">Remove</a>
+                        <tr onclick="window.location='{{ route('books.show', ['id' => $book->id]) }}'" style="cursor: pointer;">
+                            <td>{{ $book->id }}</td>
+                            <td>{{ $book->title }}</td>
+                            <td>
+                                <ul style="padding: 0">
+                                    @foreach($book->authors as $author)
+                                        <li style="padding: 0">{{ $author->name }}</li>
+                                    @endforeach
+                                </ul>
+                            </td>
+                            <td>
+                                <ul style="padding: 0">
+                                    @foreach($book->genres as $genre)
+                                        <li style="padding: 0">{{ $genre->name }}</li>
+                                    @endforeach
+                                </ul>
+                            </td>
+                            <td>{{ $book->publication_date }}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm dropdown-toggle" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="text-muted sr-only">Action</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
+                                        <a class="dropdown-item" href="{{ route('books.edit', ['book' => $book]) }}">Edit</a>
+                                        <a class="dropdown-item" href="{{ route('books.destroy', ['book' => $book]) }}">Remove</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+
                     @endforeach
                     </tbody>
                 </table>

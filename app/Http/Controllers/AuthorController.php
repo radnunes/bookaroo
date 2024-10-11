@@ -31,7 +31,10 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        $awards = Awards::all();
+        $books = Book::all();
+
+        return view('template.authors.create', ['awards'=>$awards, 'books'=>$books]);
     }
 
     /**
@@ -39,7 +42,19 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados=$request->validate($this->rules,$this->messages);
+        $author = new Author($dados);
+        $author->save();
+
+        if ($request->has('awards')) {
+            $author->awards()->sync($request->input('awards'));
+        }
+
+        if ($request->has('books')) {
+            $author->books()->sync($request->input('books'));
+        }
+
+        return redirect()->back();
     }
 
     /**

@@ -36,6 +36,8 @@ Route::get('/books-format', [BookController::class, 'format'])->name('books.form
 
 Route::resource('authors', AuthorController::class);
 
+Route::get('/authors-create', [AuthorController::class, 'create'])->name('authors.create');
+
 Route::get('/authors-{author}-edit', [AuthorController::class, 'edit'])->name('authors.edit');
 
 Route::get('/authors-{author}-destroy', [AuthorController::class, 'destroy'])->name('authors.destroy');

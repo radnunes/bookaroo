@@ -107,7 +107,7 @@
             <div class="card-body">
                 <h5 class="card-title">Books</h5>
                 <p class="card-text">List of books based on selected decade.</p>
-                <button type="button" class="btn mb-1 btn-outline-primary">Create new book</button>
+                <a type="button" class="btn mb-1 btn-outline-primary" href="{{route('authors.create')}}">Create new author</a>
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>

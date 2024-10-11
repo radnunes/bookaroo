@@ -19,52 +19,39 @@
 
     <form method="POST" action="{{route('authors.update',$author)}}">
         @csrf
+        @method('PUT')
 
         <div class="card shadow">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="card-title mb-0">Show</h5>
+                <div class="d-flex align-items-center">
+                    <h5 class="card-title mb-0">{{old('name', $author->name)}}</h5>
+                </div>
                 <div>
                     <a type="button" class="btn btn-outline-primary" href="{{ route('authors.edit', ['author' => $author]) }}">Edit</a>
                     <a type="button" class="btn btn-outline-danger" href="{{ route('authors.destroy', ['author' => $author]) }}">Delete</a>
                 </div>
             </div>
+
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-2">
-                        <div class="form-group mb-4">
-                            <label for="id">Id</label>
-                            <input type="text" id="id" value="{{$author->id}}" readonly="" class="form-control-plaintext" disabled>
+                    <div class="col-md-3"> <!-- PHOTO -->
+                        <div class="card border-0 bg-transparent">
+                            <img src="{{ asset('assets/images/no-image-found.svg')}}" alt="..." class="card-img-top img-fluid rounded">
                         </div>
                     </div>
-                    <div class="col-md-10">
-                        <div class="form-group mb-4">
-                            <label for="title">Name</label>
-                            <input type="text" id="name" name="name" class="form-control" value="{{old('name', $author->name)}}" disabled>
+                    <div class="col-md-3"> <!-- center -->
+                        <div class="form-group">
+                            <div class="row">
+                                <!-- Column for ID -->
+                                <div class="col-md-2"> <!-- Adjust width as needed -->
+                                    <div class="form-group mb-1">
+                                        <label for="id" class="mb-0">Id</label>
+                                        <input type="text" id="id" value="{{$author->id}}" readonly class="form-control-plaintext" disabled>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group mb-4">
-                            <label for="birthdate">Birthdate</label>
-                            <input type="date" id="birthdate" name="birthdate" class="form-control" placeholder="Birthdate" value="{{old('birthdate', $author->birthdate)}}" disabled>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group mb-4">
-                            <label for="nationality">Nationality</label>
-                            <input type="text" id="nationality" name="nationality" class="form-control" value="{{old('nationality', $author->nationality)}}" disabled>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group mb-4">
-                            <label for="gender">Gender</label>
-                            <input type="text" id="gender" name="gender" class="form-control" value="{{old('gender', $author->gender)}}" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
+
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <h5 class="mb-3">Bio</h5>
@@ -74,28 +61,44 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card shadow mb-4">
-                            <div class="card-body">
-                                <h5 class="mb-3">Awards</h5>
-                                <div>
-                                    @if($author->awards->isEmpty())
-                                        <p>No books associated with this author.</p>
-                                    @else
-                                        @foreach($author->awards as $award)
-                                            <p>
-                                                {{$award->name}}
-                                            </p>
-                                        @endforeach
+
+                    <div class="col-md-3">
+                        <div class="row"> <!-- Add a row for Language and Pages fields -->
+                            <div class="col-md-4 mr-2"> <!-- Left Column for Language -->
+                                <div class="form-group mb-2">
+                                    <label for="language">Nationality</label>
+                                    <input type="text" id="nationality" name="nationality" class="form-control" value="{{ old('nationality', $author->nationality) }}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mr-2"> <!-- Right Column for Pages -->
+                                <div class="form-group mb-4">
+                                    <label for="pages">Birthdate</label>
+                                    <input type="text" id="birthdate" name="birthdate" class="form-control" value="{{ old('birthdate', $author->birthdate) }}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 mr-2"> <!-- Right Column for Pages -->
+                                <div class="form-group mb-4">
+                                    <label for="pages">Literary Movement</label>
+                                    <input type="text" id="pages" name="pages" class="form-control" value="{{ old('literary_moviment', $author->literary_moviments->name) }}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 mr-2">
+                                <div class="form-group mb-4 mr-2">
+                                    <label for="publisher">Gender</label>
+                                    @if($author->gender == 'M' || $author->gender == 'm')
+                                    <input type="text" id="male" name="male" class="form-control" value="{{ old('publisher', 'Male') }}" disabled>
+                                    @elseif($author->gender == 'F' || $author->gender == 'f')
+                                        <input type="text" id="female" name="female" class="form-control"  value="{{ old('publisher', 'Female') }}" disabled>
                                     @endif
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+
+                    <div class="col-md-3">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <h5 class="mb-3">Books</h5>
@@ -106,6 +109,23 @@
                                         @foreach($author->books as $book)
                                             <p>
                                                 {{$book->title}}
+                                            </p>
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <h5 class="mb-3">Awards</h5>
+                                <div>
+                                    @if($author->awards->isEmpty())
+                                        <p>No awards associated with this author.</p>
+                                    @else
+                                        @foreach($author->awards as $award)
+                                            <p>
+                                                {{$award->name}}
                                             </p>
                                         @endforeach
                                     @endif

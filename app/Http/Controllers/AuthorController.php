@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Models\Awards;
 use App\Models\Book;
+use App\Models\Literary_moviment;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -34,8 +35,9 @@ class AuthorController extends Controller
     {
         $awards = Awards::all();
         $books = Book::all();
+        $literary_moviments = literary_moviment::all();
 
-        return view('template.authors.create', ['awards'=>$awards, 'books'=>$books]);
+        return view('template.authors.create', ['awards'=>$awards, 'books'=>$books, 'literary_moviments'=>$literary_moviments]);
     }
 
     /**
@@ -45,7 +47,8 @@ class AuthorController extends Controller
     {
         $dados=$request->validate($this->rules,$this->messages);
         $author = new Author($dados);
-        $author->save();
+        dd($author);
+        /*$author->save();
 
         if ($request->has('awards')) {
             $author->awards()->sync($request->input('awards'));
@@ -55,7 +58,9 @@ class AuthorController extends Controller
             $author->books()->sync($request->input('books'));
         }
 
-        return redirect()->back();
+        return redirect()->back();*/
+
+
     }
 
     /**

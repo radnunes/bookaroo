@@ -69,7 +69,7 @@
             <div class="card-body">
                 <h5 class="card-title">Authors</h5>
                 <p class="card-text">List of authors based on selected Literary Movement.</p>
-                <button type="button" class="btn mb-1 btn-outline-primary">Create new author</button>
+                <a type="button" class="btn mb-1 btn-outline-primary" href="{{route('authors.create')}}">Create new author</a>
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
@@ -78,7 +78,6 @@
                         <th>Books</th>
                         <th>Literary Movements</th>
                         <th>Gender</th>
-                        <th>Action</th>
                     </tr>
                     </thead>
                     @if(!count($authors))
@@ -94,7 +93,7 @@
                     @elseif(count($authors))
                         <tbody>
                         @foreach($authors as $author)
-                            <tr>
+                            <tr onclick="window.location='{{ route('authors.show', ['id' => $author->id]) }}'" style="cursor: pointer;">
                                 <td>{{$author->id}}</td>
                                 <td>{{$author->name}}</td>
                                 <td>
@@ -111,17 +110,6 @@
                                     @elseif($author->gender  == 'F' || $author->gender  == 'f')
                                         Female
                                     @endif
-                                </td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm dropdown-toggle" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="text-muted sr-only">Action</span>
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1" style="">
-                                            <a class="dropdown-item" href="{{route('authors.edit',['author'=>$author])}}">Edit</a>
-                                            <a class="dropdown-item" href="#">Remove</a>
-                                        </div>
-                                    </div>
                                 </td>
                             </tr>
                         @endforeach

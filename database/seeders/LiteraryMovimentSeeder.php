@@ -14,19 +14,22 @@ class LiteraryMovimentSeeder extends Seeder
     public function run(): void
     {
         DB::table('literary_moviments')->insert([
-            ['name'=>'Trovadorismo'],
-            ['name'=>'Humanismo'],
-            ['name'=>'Quinhentismo'],
-            ['name'=>'Classicismo'],
-            ['name'=>'Barroco'],
-            ['name'=>'Arcadismo'],
-            ['name'=>'Romantismo'],
-            ['name'=>'Realismo'],
-            ['name'=>'Naturalismo'],
-            ['name'=>'Parnasianismo'],
-            ['name'=>'Pré-Modernismo'],
-            ['name'=>'Modernismo'],
-            ['name'=>'Pós-Modernismo']
+
+            ['name'=>'Modernism'],
+            ['name'=>'The Augustans'],
+            ['name'=>'Romanticism'],
+            ['name'=>'American Romanticism'],
+            ['name'=>'Transcendentalism'],
+            ['name'=>'Gothic Fiction'],
+            ['name'=>'Realism'],
+            ['name'=>'Naturalism'],
+            ['name'=>'Stream of consciousness'],
+            ['name'=>'The Harlem Renaissance'],
+            ['name'=>'The Lost Generation'],
+            ['name'=>'Minimalism'],
+            ['name'=>'Magical realism'],
+            ['name'=>'Surrealism'],
+            ['name'=>'Postmodernism']
         ]);
     }
 }

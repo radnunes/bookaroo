@@ -35,14 +35,13 @@
             <div class="row">
                 <div class="col-md-3"> <!-- PHOTO -->
                     <div class="card border-0 bg-transparent">
-
                         @if(is_null($book->image_name))
-                            <img src="{{ asset('assets/images/no-image-found.svg')}}" alt="..." class="card-img-top img-fluid rounded">
+                            <img src="{{ asset('assets/images/no-image-found.svg') }}" alt="No image found" class="card-img-top img-fluid rounded">
                         @else
-                            <img src="{{asset('assets/images/'.$book->image_name.$book->image_type)}}" alt="..." class="card-img-top img-fluid rounded">
+                            <img src="{{ asset('storage/images/' . $book->image_name . '.'. $book->image_type) }}" alt="{{ $book->title }}" class="card-img-top img-fluid rounded">
                         @endif
-
                     </div>
+
                 </div>
                 <div class="col-md-3"> <!-- center -->
                     <div class="form-group">

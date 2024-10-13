@@ -34,6 +34,11 @@ Route::get('/books/languages', [BookController::class, 'languages'])->name('book
 
 Route::get('/books/format', [BookController::class, 'format'])->name('books.format');
 
+Route::post('/books/{id}/upload-image', [BookController::class, 'uploadImage'])->name('books.uploadImage');
+
+
+
+
 Route::resource('books', BookController::class);
 
 

@@ -6,6 +6,8 @@ use App\Models\Author;
 use App\Models\Book;
 use App\Models\Genre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class BookController extends Controller
 {
@@ -112,10 +114,25 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
+        $this->rules['image'] = 'image|mimes:jpeg,png,jpg,gif,svg|max:2048';
         $this->rules['ISBN'] = 'required|min:17|max:17|unique:books,ISBN,' . $book->id;
+
         $dados=$request->validate($this->rules,$this->messages);
         $book->update($dados);
         $book->save();
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            // Store the image
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension(); // Create a unique name for the image
+            $imagePath = $image->storeAs('images', $imageName, 'public'); // Store in 'storage/app/public/images'
+
+            // Update book's image information in the database
+            $book->image_name = pathinfo($imageName, PATHINFO_FILENAME); // Store the image name without extension
+            $book->image_type = $image->getClientOriginalExtension(); // Store the image type (extension)
+            $book->save();
+        }
 
         if ($request->has('genres')) {
             $book->genres()->sync($request->input('genres'));
@@ -209,4 +226,7 @@ class BookController extends Controller
 
         return view('template.books.format', ['books'=>Book::query()->where('format', $format)->get()]);
     }
+
+
+
 }

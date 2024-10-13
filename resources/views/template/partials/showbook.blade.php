@@ -22,7 +22,12 @@
             </div>
             <div>
                 <a type="button" class="btn btn-outline-primary" href="{{ route('books.edit', ['book' => $book]) }}">Edit</a>
-                <a type="button" class="btn btn-outline-danger" href="{{ route('books.destroy', ['book' => $book]) }}">Delete</a>
+
+                <form method="POST" action="{{ route('books.destroy', ['book' => $book]) }}" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this book?');">Delete</button>
+                </form>
             </div>
         </div>
 

@@ -66,9 +66,9 @@ class AuthorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(String $id)
+    public function show(Author $author)
     {
-        $author = Author::with('awards', 'books')->findOrFail($id);
+        $author = Author::with('awards', 'books')->findOrFail($author->id);
         $awards = Awards::all();
         $books = Book::all();
 

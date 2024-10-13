@@ -85,10 +85,10 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Book $book)
     {
         // Fetch the book with the given ID, including its authors and genres
-        $book = Book::with('authors', 'genres')->findOrFail($id);
+        $book = Book::with('authors', 'genres')->findOrFail($book->id);
         $genres = Genre::all();
         $authors = Author::all();
         // Return the view with the book data

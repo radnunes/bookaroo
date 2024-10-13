@@ -96,7 +96,7 @@
                     @elseif(count($books))
                     <tbody>
                     @foreach($books as $book)
-                        <tr onclick="window.location='{{ route('books.show', ['id' => $book->id]) }}'" style="cursor: pointer;">
+                        <tr onclick="window.location='{{ route('books.show', ['book' => $book->id]) }}'" style="cursor: pointer;">
                             <td>{{ $book->id }}</td>
                             <td>{{ $book->title }}</td>
                             <td>

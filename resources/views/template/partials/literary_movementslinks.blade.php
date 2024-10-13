@@ -93,7 +93,7 @@
                     @elseif(count($authors))
                         <tbody>
                         @foreach($authors as $author)
-                            <tr onclick="window.location='{{ route('authors.show', ['id' => $author->id]) }}'" style="cursor: pointer;">
+                            <tr onclick="window.location='{{ route('authors.show', ['author' => $author->id]) }}'" style="cursor: pointer;">
                                 <td>{{$author->id}}</td>
                                 <td>{{$author->name}}</td>
                                 <td>

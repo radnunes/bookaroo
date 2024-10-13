@@ -27,7 +27,7 @@
                                 </tr>
                             @else
                                 @foreach($books as $book)
-                                    <tr onclick="window.location='{{ route('books.show', ['id' => $book->id]) }}'" style="cursor: pointer;">
+                                    <tr onclick="window.location='{{ route('books.show', ['book' => $book->id]) }}'" style="cursor: pointer;">
                                         <td>{{ $book->id }}</td>
                                         <td>{{ $book->title }}</td>
                                         <td>
@@ -84,7 +84,7 @@
                                 </tr>
                             @else
                                 @foreach($authors as $author)
-                                    <tr onclick="window.location='{{ route('authors.show', ['id' => $author->id]) }}'" style="cursor: pointer;">
+                                    <tr onclick="window.location='{{ route('authors.show', ['author' => $author->id]) }}'" style="cursor: pointer;">
                                         <td>{{ $author->id }}</td>
                                         <td>{{ $author->name }}</td>
                                         <td>{{ $author->nationality }}</td>

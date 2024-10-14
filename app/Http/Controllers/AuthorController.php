@@ -92,10 +92,24 @@ class AuthorController extends Controller
      */
     public function update(Request $request, Author $author)
     {
+        $this->rules['image'] = 'image|mimes:jpeg,png,jpg,gif,svg|max:2048';
+
         $dados=$request->validate($this->rules,$this->messages);
         $author->update($dados);
         $author->literary_moviment_id = $request->input('literary_moviment_id');
         $author->save();
+
+        if ($request->hasFile('image')) {
+            // Store the image
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension(); // Create a unique name for the image
+            $imagePath = $image->storeAs('images', $imageName, 'public'); // Store in 'storage/app/public/images'
+
+            // Update book's image information in the database
+            $author->image_name = pathinfo($imageName, PATHINFO_FILENAME); // Store the image name without extension
+            $author->image_type = $image->getClientOriginalExtension(); // Store the image type (extension)
+            $author->save();
+        }
 
         if ($request->has('awards')) {
             $author->awards()->sync($request->input('awards'));
@@ -105,7 +119,7 @@ class AuthorController extends Controller
             $author->books()->sync($request->input('books'));
         }
 
-        return redirect()->back();
+        return view('template.authors.show', compact('author'));
     }
 
     /**

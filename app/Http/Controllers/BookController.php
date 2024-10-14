@@ -142,7 +142,8 @@ class BookController extends Controller
             $book->authors()->sync($request->input('authors'));
         }
 
-        return redirect()->back();
+        //return redirect()->back();
+        return view('template.books.show', compact('book'));
 
     }
 

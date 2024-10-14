@@ -17,81 +17,66 @@
         </div>
     @endif
 
-    <form method="POST" action="{{route('authors.update',$author)}}">
+    <form method="POST" action="{{route('authors.update',$author)}}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
         <div class="card shadow mb-4">
             <div class="card-header">
-                <strong class="card-title">Edit Author</strong>
+                <h3 class="card-title my-auto">{{$author->name}}</h3>
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-1">
-                        <div class="form-group mb-4">
-                            <label for="id">Id</label>
-                            <input type="text" id="id" value="{{$author->id}}" readonly="" class="form-control-plaintext">
+                    <div class="col-md-4">
+                        <div class="card border-0 bg-transparent">
+                            @if(is_null($author->image_name))
+                                <img src="{{ asset('assets/images/no-image-found.svg') }}" alt="No image found" class="card-img-top img-fluid rounded mx-auto" style="max-width: 150px; max-height: 200px; width: auto; height: auto;">
+                            @else
+                                <img src="{{ asset('storage/images/' . $author->image_name . '.'. $author->image_type) }}" alt="{{ $author->name }}" class="card-img-top img-fluid rounded mx-auto" style="max-width: 400px; max-height: 550px;">
+                            @endif
+                        </div>
+                        <!-- Book Cover Input -->
+                        <div class="my-3 justify-content-around">
+                            <input type="file" name="image">
                         </div>
                     </div>
-                    <div class="col-md-11">
-                        <div class="form-group mb-4">
+                    <div class="col-md-4">
+                        <div class="row justify-content-around">
+                            <div class="col-md-3">
+                                <div class="form-group mb-2">
+                                    <label for="id">Id</label>
+                                    <input type="text" id="id" value="{{$author->id}}" readonly="" class="form-control-plaintext">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group mb-4">
+                                    <label for="gender">Gender</label>
+                                    <input type="text" id="gender" name="gender" class="form-control" placeholder="Gender" value="{{old('gender', $author->gender)}}">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group mb-4">
+                                    <label for="nationality">Nationality</label>
+                                    <input type="text" id="nationality" name="nationality" class="form-control" value="{{old('nationality', $author->nationality)}}" placeholder="Nationality">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group mb-4">
+                                    <label for="birthdate">Birthdate</label>
+                                    <input type="date" id="birthdate" name="birthdate" class="form-control" placeholder="Birthdate" value="{{old('birthdate', $author->birthdate)}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="Name" value="{{old('name', $author->name)}}">
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="form-group mb-4">
-                            <label for="birthdate">Birthdate</label>
-                            <input type="date" id="birthdate" name="birthdate" class="form-control" placeholder="Birthdate" value="{{old('birthdate', $author->birthdate)}}">
+                        <div class="form-group my-4">
+                            <label for="bio">Bio</label>
+                            <textarea class="form-control" id="bio" name="bio" placeholder="Bio" rows="4" style="height: 94px;">{{old('bio', $author->bio)}}</textarea>
                         </div>
                     </div>
-                    <div class="col-md-5">
-                        <div class="form-group mb-4">
-                            <label for="nationality">Nationality</label>
-                            <input type="text" id="nationality" name="nationality" class="form-control" value="{{old('nationality', $author->nationality)}}" placeholder="Nationality">
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group mb-4">
-                            <label for="gender">Gender</label>
-                            <input type="text" id="gender" name="gender" class="form-control" placeholder="Gender" value="{{old('gender', $author->gender)}}">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="card shadow mb-4">
-                            <div class="card-body">
-                                <label for="awards">Awards</label>
-                                <select class="form-control select2-multi" id="award" name="award[]" multiple="multiple">
-                                    @foreach($awards as $award)
-                                        <option value="{{$award->id}}"
-                                                @if($author->awards->contains($award->id)) selected @endif>
-                                            {{$award->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card shadow mb-4">
-                            <div class="card-body">
-                                <label for="literary_moviment_id">Literary Movements</label>
-                                <select class="form-control" id="literary_moviment_id" name="literary_moviment_id">
-                                    @foreach($literary_moviments as $lm)
-                                        <option value="{{$lm->id}}"
-                                                @if($author->literary_moviment_id == $lm->id) selected @endif>
-                                            {{$lm->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <label for="books">Books</label>
@@ -105,14 +90,31 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group mb-4">
-                            <label for="bio">Bio</label>
-                            <textarea class="form-control" id="bio" name="bio" placeholder="Bio" rows="4" style="height: 94px;">{{old('bio', $author->bio)}}</textarea>
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <label for="awards">Awards</label>
+                                <select class="form-control select2-multi" id="award" name="award[]" multiple="multiple">
+                                    @foreach($awards as $award)
+                                        <option value="{{$award->id}}"
+                                                @if($author->awards->contains($award->id)) selected @endif>
+                                            {{$award->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <label for="literary_moviment_id">Literary Movements</label>
+                                <select class="form-control" id="literary_moviment_id" name="literary_moviment_id">
+                                    @foreach($literary_moviments as $lm)
+                                        <option value="{{$lm->id}}"
+                                                @if($author->literary_moviment_id == $lm->id) selected @endif>
+                                            {{$lm->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>

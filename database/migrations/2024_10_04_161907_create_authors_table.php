@@ -20,6 +20,9 @@ return new class extends Migration
             $table->char('gender', 1);
             $table->ForeignId('literary_moviment_id')->constrained('literary_moviments');
             $table->timestamps();
+
+            $table->string('image_name')->nullable();
+            $table->string('image_type')->nullable();
         });
     }
 

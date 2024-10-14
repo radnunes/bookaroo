@@ -34,9 +34,6 @@ Route::get('/books/languages', [BookController::class, 'languages'])->name('book
 
 Route::get('/books/format', [BookController::class, 'format'])->name('books.format');
 
-Route::post('/books/{id}/upload-image', [BookController::class, 'uploadImage'])->name('books.uploadImage');
-
-
 
 
 Route::resource('books', BookController::class);
@@ -54,6 +51,8 @@ Route::resource('books', BookController::class);
 Route::get('/authors/nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
 
 Route::get('/authors/literary_movements', [AuthorController::class, 'literary_movements'])->name('authors.literary_movements');
+
+
 
 Route::resource('authors', AuthorController::class);
 

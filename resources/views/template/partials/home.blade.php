@@ -50,7 +50,7 @@
                             </tbody>
                         </table>
                         <nav aria-label="Table Paging" class="mb-0 text-muted">
-                            {{ $books->appends(request()->input())->links() }}
+                            {{ $books->links('pagination::bootstrap-5')  }}
                         </nav>
                     </div>
                 </div>
@@ -102,6 +102,7 @@
                             @endif
                             </tbody>
                         </table>
+                        {{ $authors->links('pagination::bootstrap-5')  }}
                     </div>
                 </div>
             </div>

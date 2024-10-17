@@ -43,7 +43,7 @@ class BookController extends Controller
         // Fetch authors based on the search term
         $authors = Author::when($search, function ($query) use ($search) {
             return $query->where('name', 'LIKE', "%$search%");
-        })->get();
+        })->paginate($perPage);;
 
         // Return the view with the books and authors
         return view('home', compact('books', 'authors', 'search', 'perPage'));

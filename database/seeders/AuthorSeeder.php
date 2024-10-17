@@ -33,6 +33,6 @@ class AuthorSeeder extends Seeder
             ]
         ]);
 
-        Author::factory(2)->create();
+        Author::factory(30)->create();
     }
 }

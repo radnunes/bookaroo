@@ -16,11 +16,13 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'username' => 'Test User',
+            'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
 
         $this->call([
+            RolesSeeder::class,
+            UserSeeder::class,
             BookSeeder::class,
             LiteraryMovimentSeeder::class,
             AuthorSeeder::class,
@@ -30,7 +32,7 @@ class DatabaseSeeder extends Seeder
             AwardsSeeder::class,
             CommentSeeder::class,
             AuthorAwardsSeeder::class,
-            RatingSeeder::class
+            RatingSeeder::class,
         ]);
     }
 }

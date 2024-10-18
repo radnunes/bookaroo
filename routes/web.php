@@ -2,9 +2,18 @@
 
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [BookController::class, 'index'])->name('home');
+//login
+Route::get('/login', [LoginController::class,'showLogin'])->name('login');
+Route::post('/login', [LoginController::class,'login']);
+
+//logout
+Route::post('/logout', [LoginController::class,'logout'])->name('logout')
+    ->middleware('auth');
+
+
 
 Route::get('/login', function () {
     return view ('login');
@@ -15,59 +24,70 @@ Route::get('/register', function () {
 })->name('register');
 
 
+Route::get('/', [BookController::class, 'index'])->name('home');
+
+//Administradores
+Route::middleware('role:admin')->group(function () {
+    Route::prefix('/admin')->group(function () {
+        Route::name('admin.')->group(function () {
+
+            //books
+            /*Route::resource('books', BookController::class);
+            Route::get('/books/genres', [BookController::class, 'genres'])->name('books.genres');
+            Route::get('/books/decades', [BookController::class, 'decades'])->name('books.decades');
+            Route::get('/books/languages', [BookController::class, 'languages'])->name('books.languages');
+            Route::get('/books/format', [BookController::class, 'format'])->name('books.format');*/
+
+            //authors
+            /*Route::resource('authors', AuthorController::class);
+            Route::get('/authors/nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
+            Route::get('/authors/literary_movements', [AuthorController::class, 'literary_movements'])->name('authors.literary_movements');*/
+
+            //Dashboard
+            //Route::get('dashboard',[DashboardController::class,'admin'])->name('dashboard');
+        });
+    });
+});
 
 
+//Clientes
+Route::middleware('role:client')->group(function () {
+    Route::prefix('/clients')->group(function () {
+        Route::name('client.')->group(function () {
 
-//Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+            //books
+            /*Route::resource('books', BookController::class)->only(['index', 'show']);
+            Route::get('/books/genres', [BookController::class, 'genres'])->name('books.genres');
+            Route::get('/books/decades', [BookController::class, 'decades'])->name('books.decades');
+            Route::get('/books/languages', [BookController::class, 'languages'])->name('books.languages');
+            Route::get('/books/format', [BookController::class, 'format'])->name('books.format');
 
-//Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('books.edit');
+            //authors
+            Route::resource('authors', AuthorController::class)->only(['show']);
+            Route::get('/authors/nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
+            Route::get('/authors/literary_movements', [AuthorController::class, 'literary_movements'])->name('authors.literary_movements');*/
 
-//Route::get('/books/{book}/destroy', [BookController::class, 'destroy'])->name('books.destroy');
 
-//Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show');
+            //Dashboard
+            //Route::get('dashboard',function (){ return view('dashboards.client'); })->name('dashboard');
 
-Route::get('/books/genres', [BookController::class, 'genres'])->name('books.genres');
-
-Route::get('/books/decades', [BookController::class, 'decades'])->name('books.decades');
-
-Route::get('/books/languages', [BookController::class, 'languages'])->name('books.languages');
-
-Route::get('/books/format', [BookController::class, 'format'])->name('books.format');
-
+        });
+    });
+});
 
 
 Route::resource('books', BookController::class);
+Route::get('/books/genres', [BookController::class, 'genres'])->name('books.genres');
+Route::get('/books/decades', [BookController::class, 'decades'])->name('books.decades');
+Route::get('/books/languages', [BookController::class, 'languages'])->name('books.languages');
+Route::get('/books/format', [BookController::class, 'format'])->name('books.format');
 
-
-
-//Route::get('/authors/create', [AuthorController::class, 'create'])->name('authors.create');
-
-//Route::get('/authors/{author}/edit', [AuthorController::class, 'edit'])->name('authors.edit');
-
-//Route::get('/authors/{author}/destroy', [AuthorController::class, 'destroy'])->name('authors.destroy');
-
-//Route::get('/authors/{author}', [AuthorController::class, 'show'])->name('authors.show');
-
-Route::get('/authors/nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
-
-Route::get('/authors/literary_movements', [AuthorController::class, 'literary_movements'])->name('authors.literary_movements');
-
-
-
+//authors
 Route::resource('authors', AuthorController::class);
+Route::get('/authors/nationality', [AuthorController::class, 'nationalities'])->name('authors.nationality');
+Route::get('/authors/literary_movements', [AuthorController::class, 'literary_movements'])->name('authors.literary_movements');
 
 
 Route::get('/contacts', function () {
     return view ('contacts');
 })->name('contacts');
-
-
-
-
-
-
-
-
-
-
-

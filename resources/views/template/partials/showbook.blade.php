@@ -21,6 +21,7 @@
                 <h5 class="card-title mb-0">{{old('title', $book->title)}}</h5>
             </div>
             <div>
+                @role('admin')
                 <a type="button" class="btn btn-outline-primary" href="{{ route('books.edit', ['book' => $book]) }}">Edit</a>
 
                 <form method="POST" action="{{ route('books.destroy', ['book' => $book]) }}" style="display: inline;">
@@ -28,6 +29,7 @@
                     @method('DELETE')
                     <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this book?');">Delete</button>
                 </form>
+                @endrole
             </div>
         </div>
 

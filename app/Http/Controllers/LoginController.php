@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function showLogin()
+    {
+        return view('login');
+    }
+
     public function login(Request $request): RedirectResponse
     {
 
@@ -15,14 +20,20 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
+        //dd($credentials);
 
         if (Auth::attempt($credentials)) {
 
             $request->session()->regenerate();
-            if (auth()->user()->hasRole('admin'))
-                return redirect()->route('admin.home');
-            else
-                return redirect()->intended('client.home');
+            if (auth()->user()->hasRole('admin')) {
+                return redirect()->route('home');
+
+            }else if (auth()->user()->hasRole('client')){
+                return redirect()->route('home');
+
+            }else{
+                return redirect()->route('home');
+            }
         }
 
         return back()->withErrors([
@@ -35,12 +46,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
-    }
-
-    public function showLogin()
-    {
-        return view('auth.login');
+        return redirect()->route('home');
     }
 
 }

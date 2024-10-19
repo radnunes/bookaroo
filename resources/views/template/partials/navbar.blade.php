@@ -20,16 +20,25 @@
                 </a>
             </li>
 
+            @guest()
+                <div class="mt-2">
+                    <a href="{{ route('login') }}">
+                        <button type="button" class="btn mb-2 btn-outline-primary mr-2">Login</button>
+                    </a>
+                    <a href="{{ route('register') }}">
+                        <button type="button" class="btn mb-2 btn-outline-secondary">Sign Up</button>
+                    </a>
 
-            <div class="mt-2">
-                <a href="{{ route('login') }}">
-                    <button type="button" class="btn mb-2 btn-outline-primary mr-2">Login</button>
-                </a>
-                <a href="{{ route('register') }}">
-                    <button type="button" class="btn mb-2 btn-outline-secondary">Sign Up</button>
-                </a>
+                </div>
+            @endguest
+            @auth()
+                <form method="POST" action="{{route('logout')}}">
+                    @csrf
 
-            </div>
+                    <button type="submit" class="btn mb-2 btn-outline-primary mr-2">Logout</button>
+
+                </form>
+            @endauth
 
             <!--
             <li class="nav-item">
@@ -54,8 +63,8 @@
                     <a class="dropdown-item" href="#">Settings</a>
                     <a class="dropdown-item" href="#">Activities</a>
                 </div>
-                -->
-            </li>
+
+            </li>-->
         </ul>
     </nav>
 

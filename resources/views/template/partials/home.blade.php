@@ -4,9 +4,12 @@
             <div class="col-md-6 my-4">
                 <h2 class="h4 mb-1">Books</h2>
                 <p class="mb-3">All books available</p>
-                <div class="card shadow">
-                    <div class="card-body">
-                        <!-- table -->
+
+                <div class="card-grid">
+                    <!--
+                    <div class="">
+                        table -->
+                        <!--
                         <table class="table table-borderless table-hover">
                             <thead>
                             @role('admin')
@@ -29,6 +32,7 @@
                                 </tr>
                             @else
                                 @foreach($books as $book)
+
                                     <tr onclick="window.location='{{ route('books.show', ['book' => $book->id]) }}'" style="cursor: pointer;">
                                         <td>{{ $book->id }}</td>
                                         <td>{{ $book->title }}</td>
@@ -46,16 +50,41 @@
                                         <td>{{$book->publisher}}</td>
                                         <td>{{$book->publication_date}}</td>
                                     </tr>
+
                                 @endforeach
 
                             @endif
                             </tbody>
                         </table>
-                        <nav aria-label="Table Paging" class="mb-0 text-muted">
-                            {{ $books->links('pagination::bootstrap-5')  }}
-                        </nav>
+
+
+                    </div>
+                    -->
+                </div>
+
+                <!-- resources/views/your-view-name.blade.php -->
+                <div class="container p-0 pb-2"> <!-- Added a container to control the layout -->
+                    <div class="row card-grid mx-0">
+                        @role('admin')
+                        <div class="col-12 mb-3">
+                            <a type="button" class="btn btn-outline-primary" href="{{ route('books.create') }}">Create new book</a>
+                        </div>
+                        @endrole
+
+                        @foreach($books as $book)
+                            <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                                <x-book-card :book="$book"/>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
+
+
+
+                <nav aria-label="Table Paging" class="mb-0 text-muted">
+                    {{ $books->links('pagination::bootstrap-5')  }}
+                </nav>
+
             </div>
             <div class="col-md-6 my-4">
                 <h2 class="h4 mb-1">Authors</h2>

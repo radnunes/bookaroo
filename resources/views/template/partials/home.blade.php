@@ -78,18 +78,14 @@
                         @endforeach
                     </div>
                 </div>
-
-
-
-                <nav aria-label="Table Paging" class="mb-0 text-muted">
-                    {{ $books->links('pagination::bootstrap-5')  }}
+                <nav aria-label="Books Paging" class="mb-0 text-muted">
+                    {{ $books->appends(['authors_page' => $authors->currentPage()])->links('pagination::bootstrap-5') }}
                 </nav>
-
             </div>
             <div class="col-md-6 my-4">
                 <h2 class="h4 mb-1">Authors</h2>
                 <p class="mb-3">All authors matching your search</p>
-                <div class="card shadow">
+                <div class="card bg-light">
                     <div class="card-body">
                         <!-- table -->
                         <table class="table table-borderless table-hover">
@@ -135,7 +131,9 @@
                             @endif
                             </tbody>
                         </table>
-                        {{ $authors->links('pagination::bootstrap-5')  }}
+                        <nav aria-label="Authors Paging" class="mb-0 text-muted">
+                            {{ $authors->appends(['books_page' => $books->currentPage()])->links('pagination::bootstrap-5') }}
+                        </nav>
                     </div>
                 </div>
             </div>

@@ -35,22 +35,25 @@ class BookController extends Controller
         $search = $request->input('search');
         $perPage = $request->input('per_page', 12); // Default to 12 if not provided
 
+        // Get current pages from request
+        $booksPage = $request->input('books_page', 1);
+        $authorsPage = $request->input('authors_page', 1);
+
         // Fetch books with pagination and filter by title if search term exists
         $books = Book::when($search, function ($query) use ($search) {
             return $query->where('title', 'LIKE', "%$search%");
-        })->paginate($perPage);
+        })->paginate($perPage, ['*'], 'books_page', $booksPage);
 
-        // Fetch authors based on the search term
+        // Fetch authors based on the search term with a different pagination state
         $authors = Author::when($search, function ($query) use ($search) {
             return $query->where('name', 'LIKE', "%$search%");
-        })->paginate($perPage);;
+        })->paginate($perPage, ['*'], 'authors_page', $authorsPage);
 
         // Return the view with the books and authors
         return view('home', compact('books', 'authors', 'search', 'perPage'));
-        //
-
-
     }
+
+
 
     /**
      * Show the form for creating a new resource.

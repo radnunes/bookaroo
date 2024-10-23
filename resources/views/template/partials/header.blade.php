@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="{{ asset('book_logo.svg') }}">
+<link rel="icon" class="sidelogo" href="{{ asset('book_logo.svg') }}">
 <title>Bookaroo</title>
 
 <!-- Simple bar CSS -->

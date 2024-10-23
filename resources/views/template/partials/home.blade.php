@@ -1,9 +1,10 @@
 <div class="row justify-content-center">
     <div class="col-12">
+        <x-filter :booksCount="$booksCount" :authorsCount="$authorsCount"/>
         <div class="row bg-light-dark rounded border-top border-warning">
             <div class="col-md-6 my-4">
                 <h2 class="h4 mb-1">Books</h2>
-                <p class="mb-3">All books available</p>
+                <p class="mb-3">All books matching your search</p>
 
                 <div class="card-grid">
                     <!--

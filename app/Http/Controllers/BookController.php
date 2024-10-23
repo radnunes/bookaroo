@@ -49,9 +49,14 @@ class BookController extends Controller
             return $query->where('name', 'LIKE', "%$search%");
         })->paginate($perPage, ['*'], 'authors_page', $authorsPage);
 
-        // Return the view with the books and authors
-        return view('home', compact('books', 'authors', 'search', 'perPage'));
+        // Get counts of books and authors
+        $booksCount = $books->total(); // Total number of books
+        $authorsCount = $authors->total(); // Total number of authors
+
+        // Return the view with the books, authors, and their counts
+        return view('home', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount'));
     }
+
 
 
 

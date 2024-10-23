@@ -3,6 +3,6 @@
 @section('title', 'Bookaroo')
 
 @section('content')
-    @include('template.partials.home')
+    <h1>This is home</h1>
 @endsection
 

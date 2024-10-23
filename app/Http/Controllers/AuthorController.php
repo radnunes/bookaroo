@@ -25,7 +25,30 @@ class AuthorController extends Controller
 
     public function index(Request $request)
     {
+        // Get search input and items per page
+        $search = $request->input('search');
+        $perPage = $request->input('per_page', 12); // Default to 12 if not provided
 
+        // Get current pages from request
+        $booksPage = $request->input('books_page', 1);
+        $authorsPage = $request->input('authors_page', 1);
+
+        // Fetch books with pagination and filter by title if search term exists
+        $books = Book::when($search, function ($query) use ($search) {
+            return $query->where('title', 'LIKE', "%$search%");
+        })->paginate($perPage, ['*'], 'books_page', $booksPage);
+
+        // Fetch authors based on the search term with a different pagination state
+        $authors = Author::when($search, function ($query) use ($search) {
+            return $query->where('name', 'LIKE', "%$search%");
+        })->paginate($perPage, ['*'], 'authors_page', $authorsPage);
+
+        // Get counts of books and authors
+        $booksCount = $books->total(); // Total number of books
+        $authorsCount = $authors->total(); // Total number of authors
+
+        // Return the view with the books, authors, and their counts
+        return view('template.authors.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount'));
     }
 
     /**

@@ -54,7 +54,7 @@ class BookController extends Controller
         $authorsCount = $authors->total(); // Total number of authors
 
         // Return the view with the books, authors, and their counts
-        return view('home', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount'));
+        return view('template.books.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount'));
     }
 
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,8 @@ Route::get('/register', function () {
 })->name('register');
 
 
-Route::get('/', [BookController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::resource('books', BookController::class);
 Route::get('/books/genres', [BookController::class, 'genres'])->name('books.genres');
 Route::get('/books/decades', [BookController::class, 'decades'])->name('books.decades');

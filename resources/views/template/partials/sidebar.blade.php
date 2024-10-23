@@ -36,58 +36,17 @@
             <span>Explore</span>
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item dropdown">
-                <a href="#books" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+            <li class="nav-item ">
+                <a href="{{ route('books.index') }}" aria-expanded="false" class="nav-link">
                     <i class="fe fe-book-open fe-16"></i>
                     <span class="ml-3 item-text">Books</span>
                 </a>
-                <ul class="collapse list-unstyled pl-4 w-100" id="books">
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('books.genres') }}"><span class="ml-1 item-text">Genres</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('books.decades') }}"><span class="ml-1 item-text">Decades</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('books.languages') }}"><span class="ml-1 item-text">Language</span> #WIP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('books.format') }}"><span class="ml-1 item-text">Format</span> #WIP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Length</span> #WIP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Ratings</span> #WIP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Publisher</span> #WIP</a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a href="#authors" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+            <li class="nav-item ">
+                <a href="{{ route('authors.index') }}" aria-expanded="false" class="nav-link">
                     <i class="fe fe-users fe-16"></i>
-                    <span class="ml-3 item-text">Authors</span>
+                    <span class="ml-3 item-text">Author</span>
                 </a>
-                <ul class="collapse list-unstyled pl-4 w-100" id="authors">
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{ route('authors.nationality') }}"><span class="ml-1 item-text">Nationality</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{route('authors.literary_movements')}}"><span class="ml-1 item-text">Literary Movements</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Era</span> #WIP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-notification.html"><span class="ml-1 item-text">Awards #WIP</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-3" href="./ui-modals.html"><span class="ml-1 item-text">Gender</span> #WIP</a>
-                    </li>
-                </ul>
             </li>
             <li class="nav-item dropdown">
                 <a href="#lists" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">

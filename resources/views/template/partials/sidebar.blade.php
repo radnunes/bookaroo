@@ -122,7 +122,7 @@
                     <a class="nav-link pl-3" href="./contacts-new.html"><span class="ml-1">Libraries</span></a>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
+            <!--<li class="nav-item dropdown">
                 <a href="#profile" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-user fe-16"></i>
                     <span class="ml-3 item-text">Profile</span>
@@ -143,7 +143,7 @@
                     <a class="nav-link pl-3" href="./files-list.html"><span class="ml-1">Files List</span></a>
                     <a class="nav-link pl-3" href="./files-grid.html"><span class="ml-1">Files Grid</span></a>
                 </ul>
-            </li>
+            </li>-->
             <li class="nav-item dropdown">
                 <a href="#support" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-compass fe-16"></i>
@@ -175,14 +175,12 @@
                     <span class="ml-3 item-text">Contacts</span></span>
                 </a>
             </li>
-
-
-            <li class="nav-item dropdown">
+            <!--<li class="nav-item dropdown">
                 <a href="#auth" data-toggle="collapse" aria-expanded="false" class="nav-link">
                     <i class="fe fe-shield fe-16"></i>
                     <span class="ml-3 item-text">Admin</span>
                 </a>
-            </li>
+            </li>-->
         </ul>
     </nav>
 </aside>

@@ -37,8 +37,8 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Verifique as suas credenciais.',
-        ])->onlyInput('email');
+            'password' => 'Verifique as suas credenciais.',
+        ])->onlyInput('password');
     }
 
     public function logout(Request $request): RedirectResponse

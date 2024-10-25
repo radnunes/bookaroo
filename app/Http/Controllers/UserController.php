@@ -11,7 +11,7 @@ class UserController extends Controller
         'name'=>'required|max:100',
         'email'=>'required|email|unique:users,email',
         'nationality'=>'required|max:2',
-        'birthdate'=>'required|before_or_equal:-10 years',
+        'birthdate'=>'required|before_or_equal:-10 years|after_or_equal:-120 years',
         'password'=>[
             'required',
             'min:8',
@@ -29,6 +29,7 @@ class UserController extends Controller
         'unique' => 'The :attribute has already been taken.',
         'max' => 'The :attribute may not have more than :max characters.',
         'before_or_equal' => 'You must be older than 10 years old.',
+        'after_or_equal' => 'You must be younger than 120 years old.',
         'confirm_password.same' => 'Password does not match.',
     ];
     public function showRegister()

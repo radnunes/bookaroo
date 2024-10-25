@@ -8,36 +8,36 @@
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" class="form-control" placeholder="Name">
                 @if ($errors->has('name'))
-                    <div class="alert alert-danger">
+                    <p class="alert" style="color: indianred;">
                         {{ $errors->first('name') }}
-                    </div>
+                    </p>
                 @endif
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                 @if ($errors->has('email'))
-                    <div class="alert alert-danger">
+                    <p class="alert" style="color: indianred;">
                         {{ $errors->first('email') }}
-                    </div>
+                    </p>
                 @endif
             </div>
             <div class="form-group">
                 <label for="nationality">Nationality</label>
                 <input type="text" id="nationality" name="nationality" class="form-control" placeholder="Nationality">
                 @if ($errors->has('nationality'))
-                    <div class="alert alert-danger">
+                    <p class="alert" style="color: indianred;">
                         {{ $errors->first('nationality') }}
-                    </div>
+                    </p>
                 @endif
             </div>
             <div class="form-group">
                 <label for="birthdate">Birthdate</label>
                 <input type="date" id="birthdate" name="birthdate" class="form-control" placeholder="Birthdate">
                 @if ($errors->has('birthdate'))
-                    <div class="alert alert-danger">
+                    <p class="alert" style="color: indianred;">
                         {{ $errors->first('birthdate') }}
-                    </div>
+                    </p>
                 @endif
             </div>
 
@@ -48,7 +48,7 @@
                         <label for="password">New Password</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                         @if ($errors->has('password'))
-                            <p class="alert-danger">
+                            <p class="alert" style="color: indianred;">
                                 {{ $errors->first('password') }}
                             </p>
                         @endif
@@ -57,9 +57,9 @@
                         <label for="confirm_password">Confirm Password</label>
                         <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
                         @if ($errors->has('confirm_password'))
-                            <div class="alert alert-danger">
+                            <p class="alert" style="color: indianred;">
                                 {{ $errors->first('confirm_password') }}
-                            </div>
+                            </p>
                         @endif
                     </div>
                 </div>

@@ -4,7 +4,12 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
+//register
+Route::resource('users', UserController::class);
+Route::get('/register', [UserController::class,'showRegister'])->name('register');
 
 //login
 Route::get('/login', [LoginController::class,'showLogin'])->name('login');
@@ -13,13 +18,6 @@ Route::post('/login', [LoginController::class,'login']);
 //logout
 Route::post('/logout', [LoginController::class,'logout'])->name('logout')
     ->middleware('auth');
-
-
-
-Route::get('/register', function () {
-    return view ('register');
-})->name('register');
-
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

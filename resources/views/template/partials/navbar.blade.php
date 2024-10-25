@@ -19,26 +19,25 @@
                     <i class="fe fe-sun fe-16"></i>
                 </a>
             </li>
+            <div class="mt-2">
+                @guest()
 
-            @guest()
-                <div class="mt-2">
                     <a href="{{ route('login') }}">
                         <button type="button" class="btn mb-2 btn-outline-primary mr-2">Login</button>
                     </a>
                     <a href="{{ route('register') }}">
                         <button type="button" class="btn mb-2 btn-outline-secondary">Sign Up</button>
                     </a>
+                @endguest
+                @auth()
+                    <form method="POST" action="{{route('logout')}}">
+                        @csrf
 
-                </div>
-            @endguest
-            @auth()
-                <form method="POST" action="{{route('logout')}}">
-                    @csrf
+                        <button type="submit" class="btn mb-2 btn-outline-primary mr-2">Logout</button>
 
-                    <button type="submit" class="btn mb-2 btn-outline-primary mr-2">Logout</button>
-
-                </form>
-            @endauth
+                    </form>
+                @endauth
+            </div>
 
             <!--
             <li class="nav-item">

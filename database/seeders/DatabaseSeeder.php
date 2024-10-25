@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             CommentSeeder::class,
             AuthorAwardsSeeder::class,
             RatingSeeder::class,
+            AuthorLiteraryMovimentsSeeder::class,
         ]);
     }
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nationality', 30);
             $table->date('birthdate');
             $table->char('gender', 1);
-            $table->ForeignId('literary_moviment_id')->constrained('literary_moviments');
+            //$table->ForeignId('literary_moviment_id')->constrained('literary_moviments');
 
 
             $table->string('image_name')->nullable();

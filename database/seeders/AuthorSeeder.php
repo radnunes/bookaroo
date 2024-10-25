@@ -20,16 +20,14 @@ class AuthorSeeder extends Seeder
                 'bio'=>'o maior autor do mundo',
                 'nationality'=>'Portuguese',
                 'birthdate'=>'2004-06-11',
-                'gender'=>'M',
-                'literary_moviment_id'=>6
+                'gender'=>'M'
             ],
             [
                 'name'=>'J. K. Rowling',
                 'bio'=>'Harry Potter Author',
                 'nationality'=>'English',
                 'birthdate'=>'1965-07-31',
-                'gender'=>'F',
-                'literary_moviment_id'=>15
+                'gender'=>'F'
             ]
         ]);
 

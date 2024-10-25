@@ -5,3 +5,14 @@
 .genre-column {
     width: 100px;
 }
+
+.card-paragraph {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-paragraph:hover {
+    overflow: visible;
+    white-space: normal;
+}

@@ -23,3 +23,4 @@
 <link rel="stylesheet" href="{{ asset('css/app-light.css') }}" id="lightTheme" disabled>
 <link rel="stylesheet" href="{{ asset('css/app-dark.css') }}" id="darkTheme">
 <link rel="stylesheet" href="{{ asset('css/genre-buttons.css') }}">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">

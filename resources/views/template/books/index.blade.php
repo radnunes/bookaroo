@@ -7,9 +7,9 @@
         <div class="col-12">
             <x-filter :booksCount="$booksCount" :authorsCount="$authorsCount"/>
             <div class="row bg-light-dark rounded border-top border-warning">
-                <div class="col-md-12 my-4">
-                    <h2 class="h4 mb-1">Books</h2>
-                    <p class="mb-3">All books matching your search</p>
+                <div class="col-md-12">
+                    <h2 class="h4 mt-4">Books</h2>
+                    <h6 class="mb-3">All books matching your search</h6>
 
                     <div class="card-grid">
                         <!--

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\BookResource;
 use App\Models\Book;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class BookController extends BaseController
@@ -38,14 +39,14 @@ class BookController extends BaseController
     /**
      * Display the specified resource.
      */
-    public function show(Book $book)
+    public function show($id)
     {
-        if(is_null($book)){
-            return $this->sendError('Book not found');
+        try {
+            $book = Book::findOrFail($id);
+            return $this->sendResponse(new BookResource($book), 'Book retrieved successfully.');
+        } catch (ModelNotFoundException $e) {
+            return $this->sendError($e->getMessage(), 'Book not found', 404);
         }
-
-        //return $this->sendResponse($book->toArray(), 'Book retrieved successfully.');
-        return $this->sendResponse( new BookResource($book), 'Book retrieved successfully.');
     }
 
     /**

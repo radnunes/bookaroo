@@ -251,6 +251,25 @@
         e.preventDefault(); // This will stop the link from working
     });
 </script>
+<script>
+    // Select the checkbox and the date pickers
+    const toggleCheckbox = document.getElementById("toggleSingleDate");
+    const singleDatePicker = document.getElementById("singleDatePicker");
+    const startDatePicker = document.getElementById("startDatePicker");
+    const endDatePicker = document.getElementById("endDatePicker");
 
+    // Add event listener to toggle visibility on checkbox change
+    toggleCheckbox.addEventListener("change", function() {
+        if (this.checked) {
+            singleDatePicker.style.display = "block";  // Show single date picker
+            startDatePicker.style.display = "none";    // Hide start date picker
+            endDatePicker.style.display = "none";      // Hide end date picker
+        } else {
+            singleDatePicker.style.display = "none";   // Hide single date picker
+            startDatePicker.style.display = "block";   // Show start date picker
+            endDatePicker.style.display = "block";     // Show end date picker
+        }
+    });
+</script>
 
 

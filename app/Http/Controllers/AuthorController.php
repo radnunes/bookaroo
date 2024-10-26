@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Models\Awards;
 use App\Models\Book;
+use App\Models\Genre;
 use App\Models\Literary_moviment;
 use Illuminate\Http\Request;
 
@@ -46,9 +47,10 @@ class AuthorController extends Controller
         // Get counts of books and authors
         $booksCount = $books->total(); // Total number of books
         $authorsCount = $authors->total(); // Total number of authors
+        $genres = Genre::all();
 
         // Return the view with the books, authors, and their counts
-        return view('template.authors.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount'));
+        return view('template.authors.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount', 'genres'));
     }
 
     /**

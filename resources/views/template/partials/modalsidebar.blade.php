@@ -1,27 +1,28 @@
 <div class="modal fade modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" style="display: none; padding-right: 17px;" aria-modal="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="defaultModalLabel">Filters</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="fe fe-x fe-12"></i>
-                </button>
-            </div>
-            <div class="modal-body" data-select2-id="5">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="filterText" placeholder="Title/Subtitle/Description">
+            <form method="GET"   action="{{ route('books.index') }}">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="defaultModalLabel">Filters</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fe fe-x fe-12"></i>
+                    </button>
                 </div>
-                <div class="form-group">
-                    <label for="ISBN">ISBN</label>
-                    <input type="text" id="filterISBN" name="ISBN" class="form-control" maxlength="17" placeholder="___-_-__-______-_" value="">
-                </div>
-                <div class="form-group">
-                    <label for="example-helping">Pages</label>
-                    <div class="row col-10">
-                        <input type="text" id="filterMin" class="form-control col-3 mr-2" placeholder="Min">
-                        <input type="text" id="filterMax" class="form-control col-3" placeholder="Max">
+                <div class="modal-body" data-select2-id="5">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="search" id="filterText" placeholder="Title/Subtitle/Description" value="{{ request('search') }}">
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="ISBN">ISBN</label>
+                        <input type="text" id="filterISBN" name="ISBN" class="form-control" maxlength="17" placeholder="___-_-__-______-_" value="{{ request('ISBN') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="example-helping">Pages</label>
+                        <div class="row col-10">
+                            <input type="text" id="filterMin" class="form-control col-3 mr-2" placeholder="Min">
+                            <input type="text" id="filterMax" class="form-control col-3" placeholder="Max">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="form-group d-flex align-items-center mb-0">
                             <label for="date-input1" class="mr-2 mt-3 h6">Publishing Date</label>
@@ -66,37 +67,38 @@
                             </div>
                         </div>
                     </div>
-                <div class="form-group mb-3">
-                    <label for="example-select">Genres</label>
-                    <select class="form-control select2-multi" id="genres" name="genres[]" multiple="multiple">
-                        @foreach($genres as $genre)
-                            <option value="{{$genre->id}}">{{$genre->name}}</option>
-                        @endforeach
-                    </select>
+                    <div class="form-group mb-3">
+                        <label for="example-select">Genres</label>
+                        <select class="form-control select2-multi" id="genres" name="genres[]" multiple="multiple">
+                            @foreach($genres as $genre)
+                                <option value="{{$genre->id}}">{{$genre->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="custom-select">Publisher - Falta implementar modelo/tabela</label>
+                        <select class="custom-select" id="custom-select">
+                            <option selected="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="custom-select">Language - Falta implementar modelo/tabela</label>
+                        <select class="custom-select" id="custom-select">
+                            <option selected="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group mb-3">
-                    <label for="custom-select">Publisher - Falta implementar modelo/tabela</label>
-                    <select class="custom-select" id="custom-select">
-                        <option selected="">Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+                <div class="modal-footer">
+                    <button type="submit" class="btn mb-2 btn-primary btn-block">Apply</button>
+                    <button type="reset" class="btn mb-2 btn-secondary btn-block">Reset</button>
                 </div>
-                <div class="form-group mb-3">
-                    <label for="custom-select">Language - Falta implementar modelo/tabela</label>
-                    <select class="custom-select" id="custom-select">
-                        <option selected="">Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn mb-2 btn-primary btn-block">Apply</button>
-                <button type="button" class="btn mb-2 btn-secondary btn-block">Reset</button>
-            </div>
+            </form>
         </div>
     </div>
 </div>

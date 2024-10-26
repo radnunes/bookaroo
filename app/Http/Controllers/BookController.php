@@ -39,24 +39,53 @@ class BookController extends Controller
         $booksPage = $request->input('books_page', 1);
         $authorsPage = $request->input('authors_page', 1);
 
-        // Fetch books with pagination and filter by title if search term exists
-        $books = Book::when($search, function ($query) use ($search) {
-            return $query->where('title', 'LIKE', "%$search%");
-        })->paginate($perPage, ['*'], 'books_page', $booksPage);
+        // Filter criteria from the request
+        $ISBN = $request->input('ISBN');
+        $pagesMin = $request->input('pages_min');
+        $pagesMax = $request->input('pages_max');
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+        $genres = $request->input('genres');
 
-        // Fetch authors based on the search term with a different pagination state
+        // Fetch books with pagination and apply multiple filters
+        $books = Book::when($search, function ($query) use ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'LIKE', "%$search%")
+                    ->orWhere('subtitle', 'LIKE', "%$search%")
+                    ->orWhere('description', 'LIKE', "%$search%");
+            });
+        })
+            ->when($ISBN, function ($query) use ($ISBN) {
+                $query->where('isbn', $ISBN);
+            })
+            ->when($pagesMin && $pagesMax, function ($query) use ($pagesMin, $pagesMax) {
+                $query->whereBetween('pages', [$pagesMin, $pagesMax]);
+            })
+            ->when($startDate && $endDate, function ($query) use ($startDate, $endDate) {
+                $query->whereBetween('publishing_date', [$startDate, $endDate]);
+            })
+            ->when($genres, function ($query) use ($genres) {
+                $query->whereIn('genre_id', $genres);
+            })
+            ->paginate($perPage, ['*'], 'books_page', $booksPage);
+
+        // Fetch authors with a search filter and pagination
         $authors = Author::when($search, function ($query) use ($search) {
-            return $query->where('name', 'LIKE', "%$search%");
-        })->paginate($perPage, ['*'], 'authors_page', $authorsPage);
+            $query->where('name', 'LIKE', "%$search%");
+        })
+            ->paginate($perPage, ['*'], 'authors_page', $authorsPage);
 
         // Get counts of books and authors
         $booksCount = $books->total(); // Total number of books
         $authorsCount = $authors->total(); // Total number of authors
+
+        // Fetch all genres for the dropdown
         $genres = Genre::all();
 
         // Return the view with the books, authors, and their counts
-        return view('template.books.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount','genres'));
+        return view('template.books.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount', 'genres'));
     }
+
 
 
 

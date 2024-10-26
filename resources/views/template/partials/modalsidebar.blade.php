@@ -24,23 +24,36 @@
                 </div>
                     <div class="form-group">
                         <label for="date-input1">Publishing Date</label>
-                        <div class="row">
-                            <div class="input-group col-sm-5 m-1">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text" id="button-addon-date"><span class="fe fe-calendar fe-16"></span></div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="date-input1" class="text-white-50">Start Date</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text" id="filterPublishingStartingDate"><span class="fe fe-calendar fe-16"></span></div>
+                                    </div>
+                                    <input type="text" class="form-control drgpicker" id="filterPublishingStartingDate" value="">
                                 </div>
-                                <input type="text" class="form-control drgpicker" id="filterPublishingDate" value="">
                             </div>
-                            <div class="input-group col-sm-5 m-1">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text" id="button-addon-date"><span class="fe fe-calendar fe-16"></span></div>
+                            <div class="form-group col-md-6">
+                                <label for="date-input1" class="text-white-50">Ending Date</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text" id="filterPublishingEndingDate"><span class="fe fe-calendar fe-16"></span></div>
+                                    </div>
+                                    <input type="text" class="form-control drgpicker" id="filterPublishingEndingDate" value="">
                                 </div>
-                                <input type="text" class="form-control drgpicker" id="filterPublishingDate" value="">
                             </div>
-                        </div>
-                        <input type="text" class="form-control" value="02-16-2012">
 
+                        </div>
                     </div>
+                <div class="form-group mb-3">
+                    <label for="example-select">Genres</label>
+                    <select class="form-control select2-multi" id="genres" name="genres[]" multiple="multiple">
+                        @foreach($genres as $genre)
+                            <option value="{{$genre->id}}">{{$genre->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn mb-2 btn-primary btn-block">Apply</button>

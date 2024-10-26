@@ -22,7 +22,7 @@ class Author extends Model
     }
 
     public function literary_moviments(){
-        return $this->belongsTo(Literary_moviment::class,'literary_moviment_id','id');
+        return $this->belongsToMany(Literary_moviment::class,'literary_moviments','author_id','literary_moviment_id');
     }
 
 

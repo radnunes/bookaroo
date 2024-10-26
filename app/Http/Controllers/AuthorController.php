@@ -134,6 +134,7 @@ class AuthorController extends Controller
             $author->save();
         }
 
+
         if ($request->has('awards')) {
             $author->awards()->sync($request->input('awards'));
         }

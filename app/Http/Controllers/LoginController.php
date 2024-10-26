@@ -19,7 +19,9 @@ class LoginController extends Controller
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
-        ]);
+        ], [
+            'password.required' => 'Password is required',
+    ]);
         //dd($credentials);
 
         if (Auth::attempt($credentials)) {
@@ -38,7 +40,7 @@ class LoginController extends Controller
 
         return back()->withErrors([
             'email' => 'Verifique as suas credenciais.',
-        ])->onlyInput('email');
+        ]);
     }
 
     public function logout(Request $request): RedirectResponse

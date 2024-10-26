@@ -21,7 +21,9 @@
                         </div>
                     </div>
                     <!-- .container-fluid -->
-                    @include('template.partials.modalsidebar')
+                </div>
+            </div>
+        </div>
     </main>
 </div>
     @include('template.partials.footer')

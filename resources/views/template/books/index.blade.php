@@ -91,4 +91,5 @@
             </div> <!-- Books -->
             </div>
         </div>
+    @include('template.partials.modalsidebar')
 @endsection

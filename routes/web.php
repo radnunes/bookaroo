@@ -19,6 +19,7 @@ Route::post('/login', [LoginController::class,'login']);
 Route::post('/logout', [LoginController::class,'logout'])->name('logout')
     ->middleware('auth');
 
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::resource('books', BookController::class);

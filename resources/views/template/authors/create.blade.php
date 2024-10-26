@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <label for="awards">Awards</label>
@@ -66,11 +66,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <label for="literary_moviment_id">Literary Movements</label>
-                                <select class="form-control" id="literary_moviment_id" name="literary_moviment_id">
+                                <select class="form-control select2-multi" id="literary_moviment_id" name="literary_moviment_id[]" multiple="multiple">
                                     @foreach($literary_moviments as $lm)
                                         <option value="{{$lm->id}}">{{$lm->name}}</option>
                                     @endforeach
@@ -78,8 +78,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
-                        <div class="card shadow mb-4">
+                    <div class="col-md-4">
+                        <div class="card shadow mb-3">
                             <div class="card-body">
                                 <label for="books">Books</label>
                                 <select class="form-control select2-multi" id="books" name="books[]" multiple="multiple">

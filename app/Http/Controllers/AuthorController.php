@@ -155,6 +155,7 @@ class AuthorController extends Controller
     {
         $author->awards()->detach();
         $author->books()->detach();
+        $author->literary_moviments()->detach();
 
         $author->delete();
         return to_route('home');

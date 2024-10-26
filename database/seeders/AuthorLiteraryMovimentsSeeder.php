@@ -13,10 +13,10 @@ class AuthorLiteraryMovimentsSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('author__literary_moviments')->insert([
-            ['author_id'=>1,'literary_moviments_id'=>12],
-            ['author_id'=>2,'literary_moviments_id'=>8],
-            ['author_id'=>3,'literary_moviments_id'=>5]
+        DB::table('author_literary_moviment')->insert([
+            ['author_id'=>1,'literary_moviment_id'=>12],
+            ['author_id'=>2,'literary_moviment_id'=>8],
+            ['author_id'=>3,'literary_moviment_id'=>5]
         ]);
     }
 }

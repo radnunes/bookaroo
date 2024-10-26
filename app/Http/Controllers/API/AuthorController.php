@@ -3,20 +3,17 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\BookResource;
-use App\Models\Book;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
-class BookController extends BaseController
+class AuthorController extends BaseController
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $count = Book::count();
-        $books = Book::all();
-        return $this->sendResponse(BookResource::collection($books), $count.' Books retrieved successfully.');
+        //
     }
 
     /**
@@ -38,20 +35,15 @@ class BookController extends BaseController
     /**
      * Display the specified resource.
      */
-    public function show(Book $book)
+    public function show(Author $author)
     {
-        if(is_null($book)){
-            return $this->sendError('Book not found');
-        }
-
-        //return $this->sendResponse($book->toArray(), 'Book retrieved successfully.');
-        return $this->sendResponse( new BookResource($book), 'Book retrieved successfully.');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Book $book)
+    public function edit(Author $author)
     {
         //
     }
@@ -59,7 +51,7 @@ class BookController extends BaseController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, Author $author)
     {
         //
     }
@@ -67,7 +59,7 @@ class BookController extends BaseController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Book $book)
+    public function destroy(Author $author)
     {
         //
     }

@@ -11,6 +11,6 @@ class Literary_moviment extends Model
 
     public function authors()
     {
-        return $this->belongsToMany(Literary_moviment::class,'literary_moviments','literary_moviment_id', 'author_id');
+        return $this->belongsToMany(Literary_moviment::class);
     }
 }

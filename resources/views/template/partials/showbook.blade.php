@@ -129,14 +129,7 @@
                         </div>
                     </div>
                     <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <h5 class="mb-3">Genres</h5>
-                            @foreach($book->genres as $genre)
-                                <p>
-                                    {{$genre->name}}
-                                </p>
-                            @endforeach
-                        </div>
+
                     </div>
                 </div>
             </div>

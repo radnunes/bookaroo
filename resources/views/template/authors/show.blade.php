@@ -88,8 +88,18 @@
 
                             <div class="col-md-6 mr-2"> <!-- Right Column for Pages -->
                                 <div class="form-group mb-4">
-                                    <label for="pages">Literary Movement</label>
-                                    <input type="text" id="pages" name="pages" class="form-control" value="{{ old('literary_moviment', $author->literary_moviments->name) }}" disabled>
+                                    <h5 class="mb-3">Literary Movements</h5>
+                                    <div>
+                                        @if($author->literary_moviments->isEmpty())
+                                            <p>No literary movements associated with this author.</p>
+                                        @else
+                                            @foreach($author->literary_moviments as $lm)
+                                                <p>
+                                                    {{$lm->name}}
+                                                </p>
+                                            @endforeach
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
 

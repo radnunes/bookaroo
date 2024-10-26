@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('author__literary_moviments', function (Blueprint $table) {
+        Schema::create('author_literary_moviment', function (Blueprint $table) {
             $table->foreignId('author_id')->constrained('authors');
-            $table->foreignId('literary_moviments_id')->constrained('literary_moviments');
-            $table->primary(['author_id', 'literary_moviments_id']);
+            $table->foreignId('literary_moviment_id')->constrained('literary_moviments');
+            $table->primary(['author_id', 'literary_moviment_id']);
         });
     }
 

@@ -106,7 +106,7 @@
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <label for="literary_moviment_id">Literary Movements</label>
-                                <select class="form-control" id="literary_moviment_id" name="literary_moviment_id">
+                                <select class="form-control select2-multi" id="literary_moviment_id" name="literary_moviment_id[]" multiple="multiple">
                                     @foreach($literary_moviments as $lm)
                                         <option value="{{$lm->id}}"
                                                 @if($author->literary_moviment_id == $lm->id) selected @endif>

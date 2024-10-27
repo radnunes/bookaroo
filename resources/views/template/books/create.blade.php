@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{route('books.store')}}">
+    <form method="POST" action="{{route('admin.books.store')}}">
         @csrf
 
         <div class="card shadow mb-4">

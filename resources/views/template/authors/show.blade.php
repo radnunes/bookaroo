@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{route('authors.update',$author)}}">
+    <form method="POST" action="{{route('admin.authors.update',$author)}}">
         @csrf
         @method('PUT')
 
@@ -28,8 +28,8 @@
                 </div>
                 <div>
                     @role('admin')
-                        <a type="button" class="btn btn-outline-primary" href="{{ route('authors.edit', ['author' => $author]) }}">Edit</a>
-                        <form action="{{ route('authors.destroy', ['author' => $author]) }}" method="POST" style="display: inline;">
+                        <a type="button" class="btn btn-outline-primary" href="{{ route('admin.authors.edit', ['author' => $author]) }}">Edit</a>
+                        <form action="{{ route('admin.authors.destroy', ['author' => $author]) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this author?')">Delete</button>

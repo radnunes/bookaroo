@@ -40,10 +40,10 @@
                                             <span class="text-muted sr-only">Action</span>
                                         </button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{{ route('books.edit', $book->id) }}">
+                                            <a class="dropdown-item" href="{{ route('admin.books.edit', $book->id) }}">
                                                 <i class="fe fe-edit mr-2"></i>Edit
                                             </a>
-                                            <form action="{{ route('books.destroy', $book->id) }}" method="POST" style="display:inline;">
+                                            <form action="{{ route('admin.books.destroy', $book->id) }}" method="POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="dropdown-item" type="submit">

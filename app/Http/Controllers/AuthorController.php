@@ -72,7 +72,6 @@ class AuthorController extends Controller
     {
         $dados=$request->validate($this->rules,$this->messages);
         $author = new Author($dados);
-        $author->literary_moviment_id = $request->input('literary_moviment_id');
         $author->save();
 
         if ($request->has('awards')) {
@@ -81,6 +80,10 @@ class AuthorController extends Controller
 
         if ($request->has('books')) {
             $author->books()->sync($request->input('books'));
+        }
+
+        if ($request->has('literary_moviments')) {
+            $author->books()->sync($request->input('literary_moviments'));
         }
 
         return redirect()->route('home');

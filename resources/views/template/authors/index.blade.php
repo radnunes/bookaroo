@@ -16,7 +16,7 @@
                             <table class="table table-borderless table-hover">
                                 <thead>
                                 @role('admin')
-                                <a type="button" class="btn mb-1 btn-outline-primary" href="{{route('authors.create')}}">Create new author</a>
+                                <a type="button" class="btn mb-1 btn-outline-primary" href="{{route('admin.authors.create')}}">Create new author</a>
                                 @endrole
                                 <tr>
                                     <th>Id</th>
@@ -74,7 +74,7 @@
 
                             <table class="table table-borderless table-hover">
                                 <thead>
-                                <a type="button" class="btn mb-1 btn-outline-primary" href="{{route('authors.create')}}">Create new author</a>
+                                <a type="button" class="btn mb-1 btn-outline-primary" href="{{route('admin.authors.create')}}">Create new author</a>
                                 <tr>
                                     <th>Id</th>
                                     <th>Name</th>

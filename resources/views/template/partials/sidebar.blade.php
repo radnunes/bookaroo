@@ -32,6 +32,7 @@
                 </a>
             </li>
         </ul>
+
         <p class="text-muted nav-heading mt-4 mb-1">
             <span>Explore</span>
         </p>

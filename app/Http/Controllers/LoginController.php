@@ -21,7 +21,7 @@ class LoginController extends Controller
             'password' => ['required'],
         ], [
             'password.required' => 'Password is required',
-    ]);
+        ]);
         //dd($credentials);
 
         if (Auth::attempt($credentials)) {

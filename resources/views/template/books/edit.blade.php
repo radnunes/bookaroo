@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{route('books.update',$book)}}" enctype="multipart/form-data">
+    <form method="POST" action="{{route('admin.books.update',$book)}}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

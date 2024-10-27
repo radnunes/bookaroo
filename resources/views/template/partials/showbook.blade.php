@@ -11,7 +11,7 @@
     </div>
 @endif
 
-<form method="POST" action="{{route('books.update',$book)}}">
+<form method="POST" action="{{route('admin.books.update',$book)}}">
     @csrf
     @method('PUT')
 
@@ -22,9 +22,9 @@
             </div>
             <div>
                 @role('admin')
-                    <a type="button" class="btn btn-outline-primary" href="{{ route('books.edit', ['book' => $book]) }}">Edit</a>
+                    <a type="button" class="btn btn-outline-primary" href="{{ route('admin.books.edit', ['book' => $book]) }}">Edit</a>
 
-                    <form method="POST" action="{{ route('books.destroy', ['book' => $book]) }}" style="display: inline;">
+                    <form method="POST" action="{{ route('admin.books.destroy', ['book' => $book]) }}" style="display: inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this book?');">Delete</button>

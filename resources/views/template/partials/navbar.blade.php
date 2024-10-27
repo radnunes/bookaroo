@@ -3,15 +3,15 @@
         <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
             <i class="fe fe-menu navbar-toggler-icon"></i>
         </button>
-        <form class="form-inline mr-auto searchform text-muted" method="GET" action="{{ route('books.index') }}">
+        <!--<form class="form-inline mr-auto searchform text-muted" method="GET" action="{{ route('books.index') }}">
             <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted"
                    type="search"
                    name="search"
             placeholder="Type something..."
             aria-label="Search"
-            value="{{ request('search') }}"
+            value="#"
             onkeyup="submitForm(event)">
-        </form>
+        </form>-->
         <ul class="nav">
 
             <li class="nav-item">
@@ -36,13 +36,23 @@
                         <button type="button" class="btn mb-2 btn-outline-secondary mr-2">Profile</button>
                     </a>
                 </div>
+                @role('admin')
                 <div class="mt-2">
-                    <form method="POST" action="{{route('logout')}}">
+                    <form method="POST" action="{{route('admin.logout')}}">
                         @csrf
                         <button type="submit" class="btn mb-2 btn-outline-primary mr-2">Logout</button>
                     </form>
                 </div>
-                @endauth
+                @endrole
+                @role('client')
+                <div class="mt-2">
+                    <form method="POST" action="{{route('client.logout')}}">
+                        @csrf
+                        <button type="submit" class="btn mb-2 btn-outline-primary mr-2">Logout</button>
+                    </form>
+                </div>
+                @endrole
+            @endauth
 
 
             <!--

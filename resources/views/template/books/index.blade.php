@@ -19,7 +19,7 @@
                         <table class="table table-borderless table-hover">
                             <thead>
                             @role('admin')
-                        <a type="button" class="btn mb-1 btn-outline-primary" href="{{route('books.create')}}">Create new book</a>
+                        <a type="button" class="btn mb-1 btn-outline-primary" href="{{route('admin.books.create')}}">Create new book</a>
                             @endrole
                         <tr>
                             <th>Id</th>
@@ -73,7 +73,7 @@
                         <div class="row card-grid mx-0">
                             @role('admin')
                             <div class="col-12 mb-3">
-                                <a type="button" class="btn btn-outline-primary" href="{{ route('books.create') }}">Create new book</a>
+                                <a type="button" class="btn btn-outline-primary" href="{{ route('admin.books.create') }}">Create new book</a>
                             </div>
                             @endrole
 

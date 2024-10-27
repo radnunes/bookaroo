@@ -19,8 +19,10 @@ return new class extends Migration
             $table->string('ISBN',17)->unique();
             $table->integer('pages');
             $table->date('publication_date');
-            $table->string('publisher', 100);
-            $table->string('language', 2);
+            $table->foreignId('publisher_id')->references('id')->on('publishers');
+            $table->foreignId('language_id')->references('id')->on('languages');
+            //$table->string('publisher', 100);
+            //$table->string('language', 2);
             $table->integer('rating')->nullable();
 
             $table->string('image_name')->nullable();

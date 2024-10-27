@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolesSeeder::class,
             UserSeeder::class,
+            LanguagesSeeder::class,
+            PublisherSeeder::class,
             BookSeeder::class,
             LiteraryMovimentSeeder::class,
             AuthorSeeder::class,
@@ -34,6 +36,7 @@ class DatabaseSeeder extends Seeder
             AuthorAwardsSeeder::class,
             RatingSeeder::class,
             AuthorLiteraryMovimentsSeeder::class,
+
         ]);
     }
 }

@@ -23,4 +23,12 @@ class Book extends Model
     {
         return $this->belongsToMany(Genre::class);
     }
+
+    public function languages(){
+        return $this->belongsTo(Languages::class);
+    }
+
+    public function publisher(){
+        return $this->belongsTo(Publisher::class);
+    }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Models\Book;
 use App\Models\Genre;
+use App\Models\Languages;
+use App\Models\Publisher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -18,8 +20,8 @@ class BookController extends Controller
         'ISBN'=>'required|unique:books,ISBN|min:17|max:17',
         'pages'=>'required|integer|min:1',
         'publication_date'=>'required|date|before_or_equal:today',
-        'publisher'=>'required|string|max:100',
-        'language'=>'required|min:2|max:2',
+        'publisher_id'=>'required',
+        'language_id'=>'required',
     ];
     protected $messages=[
         'required' => 'The :attribute field is required.',
@@ -142,8 +144,9 @@ class BookController extends Controller
     {
         $genre = Genre::all();
         $author = Author::all();
-
-        return view('template.books.edit', ['book' => $book, 'genres' => $genre, 'authors' => $author]);
+        $publisher = Publisher::all();
+        $language = Languages::all();
+        return view('template.books.edit', ['book' => $book, 'genres' => $genre, 'authors' => $author, 'publishers' => $publisher, 'languages' => $language]);
 
     }
 
@@ -152,10 +155,13 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
+
         $this->rules['image'] = 'image|mimes:jpeg,png,jpg,gif,svg|max:2048';
         $this->rules['ISBN'] = 'required|min:17|max:17|unique:books,ISBN,' . $book->id;
-
+        $this->rules['language_id'] = 'required';
+        //dd($request->all());
         $dados=$request->validate($this->rules,$this->messages);
+
         $book->update($dados);
         $book->save();
 
@@ -179,6 +185,8 @@ class BookController extends Controller
         if ($request->has('authors')) {
             $book->authors()->sync($request->input('authors'));
         }
+
+
 
         //return redirect()->back();
         return view('template.books.show', compact('book'));

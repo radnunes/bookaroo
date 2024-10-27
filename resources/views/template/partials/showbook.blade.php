@@ -22,13 +22,13 @@
             </div>
             <div>
                 @role('admin')
-                <a type="button" class="btn btn-outline-primary" href="{{ route('books.edit', ['book' => $book]) }}">Edit</a>
+                    <a type="button" class="btn btn-outline-primary" href="{{ route('books.edit', ['book' => $book]) }}">Edit</a>
 
-                <form method="POST" action="{{ route('books.destroy', ['book' => $book]) }}" style="display: inline;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this book?');">Delete</button>
-                </form>
+                    <form method="POST" action="{{ route('books.destroy', ['book' => $book]) }}" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this book?');">Delete</button>
+                    </form>
                 @endrole
             </div>
         </div>
@@ -85,7 +85,7 @@
                         <div class="col-md-4 mr-2"> <!-- Left Column for Language -->
                             <div class="form-group mb-2">
                                 <label for="language">Language</label>
-                                <input type="text" id="language" name="language" class="form-control" placeholder="Language" value="{{ old('language', $book->language) }}" disabled>
+                                <input type="text" id="language" name="language" class="form-control" placeholder="Language" value="{{ old('language', $book->language->name) }}" disabled>
                             </div>
                         </div>
 
@@ -99,7 +99,7 @@
 
                     <div class="form-group mb-4">
                         <label for="publisher">Publisher</label>
-                        <input type="text" id="publisher" name="publisher" class="form-control" placeholder="Publisher" value="{{ old('publisher', $book->publisher) }}" disabled>
+                        <input type="text" id="publisher" name="publisher" class="form-control" placeholder="Publisher" value="{{ old('publisher', $book->publisher->name) }}" disabled>
                     </div>
                     <div class="form-group mb-4">
                         <label for="ISBN">ISBN</label>

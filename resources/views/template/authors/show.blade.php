@@ -27,12 +27,14 @@
                     <h5 class="card-title mb-0">{{old('name', $author->name)}}</h5>
                 </div>
                 <div>
-                    <a type="button" class="btn btn-outline-primary" href="{{ route('authors.edit', ['author' => $author]) }}">Edit</a>
-                    <form action="{{ route('authors.destroy', ['author' => $author]) }}" method="POST" style="display: inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this author?')">Delete</button>
-                    </form>
+                    @role('admin')
+                        <a type="button" class="btn btn-outline-primary" href="{{ route('authors.edit', ['author' => $author]) }}">Edit</a>
+                        <form action="{{ route('authors.destroy', ['author' => $author]) }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this author?')">Delete</button>
+                        </form>
+                    @endrole
                 </div>
             </div>
 

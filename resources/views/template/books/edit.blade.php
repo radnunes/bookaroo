@@ -50,8 +50,12 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="language">Language</label>
-                                    <input type="text" id="language" name="language" class="form-control" placeholder="Language" value="{{old('language', $book->language)}}">
+                                    <label for="language_id">Language</label>
+                                    <select class="form-control" id="language_id" name="language_id" >
+                                        @foreach($languages as $language)
+                                            <option value="{{$language->id}}" @if($book->language_id == $language->id) selected @endif>{{$language->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -98,8 +102,12 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="publisher">Publisher</label>
-                                <input type="text" id="publisher" name="publisher" class="form-control" placeholder="Publisher" value="{{old('publisher', $book->publisher)}}">
+                                <label for="publisher_id">Publisher</label>
+                                <select class="form-control" id="publisher_id" name="publisher_id" >
+                                    @foreach($publishers as $publisher)
+                                        <option value="{{$publisher->id}}" @if($book->publisher_id == $publisher->id) selected @endif>{{$publisher->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-12 my-2">
@@ -132,7 +140,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <button type="submit" class="btn btn-outline-primary">Update</button>
-                            <a href="{{route('books.genres')}}" class="btn btn-link">Cancel</a>
+                            <a href="{{route('home')}}" class="btn btn-link">Cancel</a>
                         </div>
                     </div>
                 </div>

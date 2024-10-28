@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function showLogin()
     {
-        return view('login');
+        return view('template.auth.login');
     }
 
     public function login(Request $request): RedirectResponse

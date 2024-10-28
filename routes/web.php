@@ -58,5 +58,3 @@ Route::middleware('role:client')->group(function () {
         });
     });
 });
-
-

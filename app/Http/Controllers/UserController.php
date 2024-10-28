@@ -10,7 +10,7 @@ class UserController extends Controller
     protected $rules=[
         'name'=>'required|max:100',
         'email'=>'required|email|unique:users,email',
-        'nationality'=>'required|max:2',
+        'nationality'=>'required|alpha|size:2',
         'birthdate'=>'required|before_or_equal:-10 years|after_or_equal:-120 years',
         'password'=>[
             'required',
@@ -28,13 +28,15 @@ class UserController extends Controller
         'email' => 'The :attribute must be a valid email address.',
         'unique' => 'The :attribute has already been taken.',
         'max' => 'The :attribute may not have more than :max characters.',
+        'alpha' => 'The :attribute may only contain letters.',
+        'size' => 'The :attribute may not have more or less than :size characters.',
         'before_or_equal' => 'You must be older than 10 years old.',
         'after_or_equal' => 'You must be younger than 120 years old.',
         'confirm_password.same' => 'Password does not match.',
     ];
     public function showRegister()
     {
-        return view('register');
+        return view('template.auth.register');
     }
 
     /**
@@ -44,7 +46,10 @@ class UserController extends Controller
     {
         $dados=$request->validate($this->rules,$this->messages);
         $user = new User($dados);
+
         $user->save();
+
+        $user->assignRole('client');
 
         return redirect()->route('login');
     }

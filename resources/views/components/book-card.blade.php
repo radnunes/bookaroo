@@ -3,11 +3,13 @@
         <div class="col-md-12 p-3">
             <div class="card">
                 <div class="card-body text-center bg-light rounded p-2 m-0" style="height: 100%">
+                    <a href="{{route('books.show', $book->id) }}">
                     @if(is_null($book->image_name))
                         <img src="{{ asset('assets/images/no-image-found.svg') }}" alt="No image found" class="card-img-top img-fluid rounded">
                     @else
                         <img src="{{ asset('storage/images/' . $book->image_name . '.' . $book->image_type) }}" alt="{{ $book->title }}" class="card-img-top img-fluid rounded">
                     @endif
+                    </a>
                     <div class="card-text text-left mt-3">
                         <h6 class=" card-paragraph">{{ $book->title }}</h6>
                         @if($book->subtitle)

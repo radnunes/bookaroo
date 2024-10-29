@@ -80,9 +80,31 @@ class BookController extends BaseController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, String $id)
     {
-        //
+        $book = Book::find($id);
+        if(is_null($book)){
+            return $this->sendError(404 , "Book not found");
+        }
+        $input = $request->all();
+        $validator = Validator::make($input, [
+            'title'=>'required|string|max:100',
+            'subtitle'=>'nullable|string|max:100',
+            'description'=>'required|max:500',
+            'ISBN'=>'required|unique:books,ISBN|min:17|max:17',
+            'pages'=>'required|integer|min:1',
+            'publication_date'=>'required|date|before_or_equal:today',
+            'publisher_id'=>'required',
+            'language_id'=>'required',
+        ]);
+        if($validator->fails()){
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
+
+        //Se chegou aqui, dados válidos. Atualizar book.
+        $book->update($input);
+        $book->save();
+        return $this->sendResponse(new BookResource($book), 'Book updated successfully.');
     }
 
     /**
@@ -90,6 +112,6 @@ class BookController extends BaseController
      */
     public function destroy(Book $book)
     {
-        //
+
     }
 }

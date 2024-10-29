@@ -91,7 +91,7 @@ class BookController extends BaseController
             'title'=>'required|string|max:100',
             'subtitle'=>'nullable|string|max:100',
             'description'=>'required|max:500',
-            'ISBN'=>'required|unique:books,ISBN|min:17|max:17',
+            'ISBN'=>'required|min:17|max:17|unique:books,ISBN,' . $book->id,
             'pages'=>'required|integer|min:1',
             'publication_date'=>'required|date|before_or_equal:today',
             'publisher_id'=>'required',

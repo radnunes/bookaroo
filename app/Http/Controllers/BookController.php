@@ -102,8 +102,9 @@ class BookController extends Controller
     {
         $genre = Genre::all();
         $author = Author::all();
+        $publisher = Publisher::all();
 
-        return view('template.books.create', ['genres' => $genre, 'authors' => $author]);
+        return view('template.books.create', ['genres' => $genre, 'authors' => $author, 'publishers' => $publisher]);
     }
 
     /**

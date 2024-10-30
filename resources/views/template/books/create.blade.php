@@ -68,7 +68,12 @@
                     <div class="col-md-4">
                         <div class="form-group mb-4">
                             <label for="publisher">Publisher</label>
-                            <input type="text" id="publisher" name="publisher" class="form-control" placeholder="Publisher">
+                            <!-- <input type="text" id="publisher" name="publisher" class="form-control" placeholder="Publisher"> -->
+                            <select class="form-control select2" id="publisher" name="publisher">
+                                @foreach($publishers as $publisher)
+                                    <option value="{{ $publisher->id }}">{{ $publisher->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>

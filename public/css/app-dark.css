@@ -7668,7 +7668,7 @@ select {
   min-width: 20%;
   right: 0;
   margin: 0;
-  height: 100%;
+  min-height: 100%;
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
   -ms-transform: translate(100%, 0); }

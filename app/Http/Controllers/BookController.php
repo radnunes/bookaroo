@@ -84,11 +84,13 @@ class BookController extends Controller
         $booksCount = $books->total(); // Total number of books
         $authorsCount = $authors->total(); // Total number of authors
 
-        // Fetch all genres for the dropdown
+        // Fetch all for the dropdown
         $genres = Genre::all();
+        $publishers = Publisher::all();
+        $languages = Languages::all();
 
         // Return the view with the books, authors, and their counts
-        return view('template.books.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount', 'genres'));
+        return view('template.books.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount', 'genres', 'publishers', 'languages'));
     }
 
 

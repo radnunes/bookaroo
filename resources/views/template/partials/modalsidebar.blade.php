@@ -57,29 +57,29 @@
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="example-select">Genres</label>
+                        <label for="genres">Genres</label>
                         <select class="form-control select2-multi" id="genres" name="genres[]" multiple="multiple">
                             @foreach($genres as $genre)
-                                <option value="{{$genre->id}}">{{$genre->name}}</option>
+                                <option value="{{ $genre->id }}">{{ $genre->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="custom-select">Publisher - Falta implementar modelo/tabela</label>
-                        <select class="custom-select" id="custom-select">
-                            <option selected="">Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <label for="publisher">Publisher</label>
+                        <select class="form-control select2" id="publisher" name="publisher">
+                            <option value="" selected disabled>Select a Publisher</option>
+                            @foreach($publishers as $publisher)
+                                <option value="{{ $publisher->id }}">{{ $publisher->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="custom-select">Language - Falta implementar modelo/tabela</label>
-                        <select class="custom-select" id="custom-select">
-                            <option selected="">Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <label for="language">Language</label>
+                        <select class="form-control select2" id="language" name="language"> <!-- Changed id and name to language -->
+                            <option value="" selected disabled>Select a Language</option>
+                            @foreach($languages as $language)
+                                <option value="{{ $language->id }}">{{ $language->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

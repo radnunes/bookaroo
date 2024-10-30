@@ -16,3 +16,7 @@
     overflow: visible;
     white-space: normal;
 }
+
+.unselectable {
+    user-select: none;
+}

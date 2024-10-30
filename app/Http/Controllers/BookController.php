@@ -46,9 +46,11 @@ class BookController extends Controller
         $ISBN = $request->input('ISBN');
         $pagesMin = $request->input('pages_min');
         $pagesMax = $request->input('pages_max');
+        $singleDate = $request->input('single_date');
         $startDate = $request->input('start_date');
-        $endDate = $request->input('end_date');
+        $endingDate = $request->input('ending_date');
         $genres = $request->input('genres');
+        //dd($request);
 
         // Fetch books with pagination and apply multiple filters
         $books = Book::when($search, function ($query) use ($search) {
@@ -64,8 +66,8 @@ class BookController extends Controller
             ->when($pagesMin && $pagesMax, function ($query) use ($pagesMin, $pagesMax) {
                 $query->whereBetween('pages', [$pagesMin, $pagesMax]);
             })
-            ->when($startDate && $endDate, function ($query) use ($startDate, $endDate) {
-                $query->whereBetween('publishing_date', [$startDate, $endDate]);
+            ->when($startDate, function ($query) use ($startDate) {
+                $query->whereBetween('publishing_date', [$startDate]);
             })
             ->when($genres, function ($query) use ($genres) {
                 $query->whereIn('genre_id', $genres);

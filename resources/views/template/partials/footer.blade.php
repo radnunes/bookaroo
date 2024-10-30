@@ -42,16 +42,6 @@
             multiple: true,
             theme: 'bootstrap4',
         });
-    $('.drgpicker').daterangepicker(
-        {
-            singleDatePicker: true,
-            timePicker: false,
-            showDropdowns: true,
-            locale:
-                {
-                    format: 'MM/DD/YYYY'
-                }
-        });
     $('.time-input').timepicker(
         {
             'scrollDefault': 'now',
@@ -68,7 +58,7 @@
                 locale:
                     {
                         format: 'M/DD hh:mm A'
-                    }
+                    },
             });
     }
     var start = moment().subtract(29, 'days');
@@ -258,6 +248,36 @@
     const startDatePicker = document.getElementById("startDatePicker");
     const endDatePicker = document.getElementById("endDatePicker");
 
+    // Select date input fields
+    const startingDateInput = document.getElementById("startingDate");
+    const endingDateInput = document.getElementById("endingDate");
+    const singleDateInput = document.getElementById("singleDate");
+
+    // Function to check which date input should be displayed
+    function setDatePickerVisibility() {
+        const singleDateValue = singleDateInput.value; // Check the value of the single date input
+        const startDateValue = startingDateInput.value;
+        const endDateValue = endingDateInput.value;
+
+        // Check if single date has a value
+        if (singleDateValue) {
+            singleDatePicker.style.display = "block";  // Show single date picker
+            startDatePicker.style.display = "none";    // Hide start date picker
+            endDatePicker.style.display = "none";      // Hide end date picker
+            toggleCheckbox.checked = true;              // Check the checkbox
+        } else if (startDateValue || endDateValue) {
+            singleDatePicker.style.display = "none";   // Hide single date picker
+            startDatePicker.style.display = "block";   // Show start date picker
+            endDatePicker.style.display = "block";     // Show end date picker
+            toggleCheckbox.checked = false;             // Uncheck the checkbox
+        } else {
+            singleDatePicker.style.display = "none";   // Hide single date picker
+            startDatePicker.style.display = "block";   // Show start date picker
+            endDatePicker.style.display = "block";     // Show end date picker
+            toggleCheckbox.checked = false;             // Uncheck the checkbox
+        }
+    }
+
     // Add event listener to toggle visibility on checkbox change
     toggleCheckbox.addEventListener("change", function() {
         if (this.checked) {
@@ -270,6 +290,62 @@
             endDatePicker.style.display = "block";     // Show end date picker
         }
     });
+
+    // Function to clear date if invalid
+    function checkDateValidity() {
+        const startDateValue = startingDateInput.value;
+        const endDateValue = endingDateInput.value;
+
+        const startDate = new Date(startDateValue);
+        const endDate = new Date(endDateValue);
+
+        // If starting date is selected
+        if (startDateValue) {
+            // Only clear ending date if it's selected and start date is after end date
+            if (endDateValue && startDate > endDate) {
+                endingDateInput.value = "";  // Clear ending date
+            }
+        }
+
+        // If ending date is selected
+        if (endDateValue) {
+            // Only clear starting date if it's selected and end date is before start date
+            if (startDateValue && endDate < startDate) {
+                startingDateInput.value = ""; // Clear starting date
+            }
+        }
+    }
+
+    // Function to reset dates based on input changes
+    function resetOtherDates(inputChanged) {
+        if (inputChanged === 'single') {
+            // If single date changes, reset start and end date
+            startingDateInput.value = "";
+            endingDateInput.value = "";
+        } else if (inputChanged === 'range') {
+            // If starting or ending date changes, reset single date
+            singleDateInput.value = "";
+        }
+        // Re-evaluate which date picker should be shown
+        setDatePickerVisibility();
+    }
+
+    // Add event listeners for date inputs
+    startingDateInput.addEventListener("change", function() {
+        checkDateValidity();
+        resetOtherDates('range');
+    });
+    endingDateInput.addEventListener("change", function() {
+        checkDateValidity();
+        resetOtherDates('range');
+    });
+    singleDateInput.addEventListener("change", function() {
+        resetOtherDates('single');
+    });
+
+    // Call the function on page load to set the initial visibility
+    window.onload = setDatePickerVisibility; // Ensure this runs when the page loads
 </script>
+
 
 

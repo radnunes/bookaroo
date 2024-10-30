@@ -31,6 +31,7 @@ class BookController extends Controller
         'ISBN.required' => 'The ISBN field is required.',
     ];
 
+
     public function index(Request $request)
     {
         // Get search input and items per page

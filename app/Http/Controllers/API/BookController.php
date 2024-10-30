@@ -97,6 +97,7 @@ class BookController extends BaseController
             'publisher_id'=>'required',
             'language_id'=>'required',
         ]);
+
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());
         }

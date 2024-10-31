@@ -3,11 +3,11 @@
         <ul class="nav nav-pills justify-content-start">
             @if (Route::is('books.index'))
             <li class="nav-item mr-1">
-                <a class="nav-link bg-transparent pr-2 pl-0 text-warning" href="#">Books <span class="badge badge-pill bg-light-dark text-white">{{$booksCount}}</span></a>
+                <a class="nav-link bg-transparent pr-2 pl-0 text-warning" href="#">Books <span class="badge badge-pill bg-light-dark text-white">{{$resourceCount}}</span></a>
             </li>
             @elseif (Route::is('authors.index'))
             <li class="nav-item mr-1">
-                <a class="nav-link bg-transparent pr-2 pl-0 text-warning" href="#">Authors <span class="badge badge-pill bg-dark-light text-white">{{$authorsCount}}</span></a>
+                <a class="nav-link bg-transparent pr-2 pl-0 text-warning" href="#">Authors <span class="badge badge-pill bg-dark-light text-white">{{$resourceCount}}</span></a>
             </li>
             @else
 

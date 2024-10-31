@@ -8,16 +8,16 @@ use Illuminate\View\Component;
 
 class Filter extends Component
 {
-    public $booksCount;
-    public $authorsCount;
+    public $resourceCount;
+
     /**
      * Create a new component instance.
      */
 
-    public function __construct($booksCount, $authorsCount)
+    public function __construct($resourceCount = null)
     {
-        $this->booksCount = $booksCount;
-        $this->authorsCount = $authorsCount;
+        $this->resourceCount = $resourceCount;
+
 
     }
 

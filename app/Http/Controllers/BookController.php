@@ -34,15 +34,13 @@ class BookController extends Controller
 
     public function index(Request $request)
     {
-        // Get search input and items per page
-        $search = $request->input('search');
         $perPage = $request->input('per_page', 12); // Default to 12 if not provided
-
         // Get current pages from request
         $booksPage = $request->input('books_page', 1);
         $authorsPage = $request->input('authors_page', 1);
 
-        // Filter criteria from the request
+        // Request info
+        $search = $request->input('search');
         $ISBN = $request->input('ISBN');
         $pagesMin = $request->input('pages_min');
         $pagesMax = $request->input('pages_max');
@@ -50,10 +48,11 @@ class BookController extends Controller
         $startDate = $request->input('start_date');
         $endingDate = $request->input('ending_date');
         $genres = $request->input('genres');
+        $publisher = $request->input('publisher');
         //dd($request);
 
-        // Fetch books with pagination and apply multiple filters
-        $books = Book::when($search, function ($query) use ($search) {
+        $books = Book::with(['genres', 'authors']) // Load genres and authors with each book
+        ->when($search, function ($query) use ($search) {
             $query->where(function ($q) use ($search) {
                 $q->where('title', 'LIKE', "%$search%")
                     ->orWhere('subtitle', 'LIKE', "%$search%")
@@ -63,34 +62,48 @@ class BookController extends Controller
             ->when($ISBN, function ($query) use ($ISBN) {
                 $query->where('isbn', $ISBN);
             })
-            ->when($pagesMin && $pagesMax, function ($query) use ($pagesMin, $pagesMax) {
-                $query->whereBetween('pages', [$pagesMin, $pagesMax]);
+            ->when($pagesMin, function ($query) use ($pagesMin) {
+                $query->where('pages', '>=', $pagesMin);
+            })
+            ->when($pagesMax, function ($query) use ($pagesMax) {
+                $query->where('pages', '<=', $pagesMax);
             })
             ->when($startDate, function ($query) use ($startDate) {
-                $query->whereBetween('publishing_date', [$startDate]);
+                $query->where('publication_date', '>=', $startDate);
+            })
+            ->when($endingDate, function ($query) use ($endingDate) {
+                $query->where('publication_date', '<=', $endingDate);
+            })
+            ->when($singleDate, function ($query) use ($singleDate) {
+                $query->whereDate('publication_date', $singleDate);
+            })
+            ->when($publisher, function ($query) use ($publisher) {
+                $query->where('publisher_id', $publisher);
             })
             ->when($genres, function ($query) use ($genres) {
-                $query->whereIn('genre_id', $genres);
+                $query->whereHas('genres', function ($q) use ($genres) {
+                    $q->whereIn('genre_id', (array) $genres);
+                });
             })
             ->paginate($perPage, ['*'], 'books_page', $booksPage);
 
-        // Fetch authors with a search filter and pagination
-        $authors = Author::when($search, function ($query) use ($search) {
-            $query->where('name', 'LIKE', "%$search%");
-        })
-            ->paginate($perPage, ['*'], 'authors_page', $authorsPage);
+
+
 
         // Get counts of books and authors
         $booksCount = $books->total(); // Total number of books
-        $authorsCount = $authors->total(); // Total number of authors
+
+
 
         // Fetch all for the dropdown
+        $authors = Author::all();
         $genres = Genre::all();
         $publishers = Publisher::all();
         $languages = Languages::all();
 
         // Return the view with the books, authors, and their counts
-        return view('template.books.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount', 'genres', 'publishers', 'languages'));
+        //dd($request);
+        return view('template.books.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'genres', 'publishers', 'languages'));
     }
 
 

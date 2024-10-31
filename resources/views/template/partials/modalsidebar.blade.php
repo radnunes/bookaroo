@@ -1,7 +1,7 @@
 <div class="modal fade modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" style="display: none; padding-right: 17px;" aria-modal="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form method="GET"   action="{{ route('books.index') }}">
+            <form id="filterForm" method="GET"   action="{{ route('books.index') }}">
                 <div class="modal-header">
                     <h5 class="modal-title" id="defaultModalLabel">Filters</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -60,7 +60,10 @@
                         <label for="genres">Genres</label>
                         <select class="form-control select2-multi" id="genres" name="genres[]" multiple="multiple">
                             @foreach($genres as $genre)
-                                <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                                <option value="{{ $genre->id }}"
+                                        @if(in_array($genre->id, request('genres', []))) selected @endif>
+                                    {{ $genre->name }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
@@ -82,10 +85,18 @@
                             @endforeach
                         </select>
                     </div>
+                    <div class="form-group mb-3">
+                        <label for="language">Authors</label>
+                        <select class="form-control select2" id="authors" name="authors[]" multiple="multiple"> <!-- Changed id and name to language -->
+                            @foreach($authors as $author)
+                                <option value="{{ $author->id }}">{{ $author->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn mb-2 btn-primary btn-block">Apply</button>
-                    <button type="reset" class="btn mb-2 btn-secondary btn-block">Reset</button>
+                    <button type="reset" id="resetButton" class="btn mb-2 btn-secondary btn-block">Reset</button>
                 </div>
             </form>
         </div>

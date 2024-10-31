@@ -5,7 +5,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12">
-            <x-filter :booksCount="$booksCount" :authorsCount="$authorsCount"/>
+            <x-filter :resourceCount="$booksCount" />
             <div class="row bg-light-dark rounded border-top border-warning">
                 <div class="col-md-12">
                     <h2 class="h4 mt-4">Books</h2>
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <nav aria-label="Books Paging" class="mb-0 text-muted">
-                        {{ $books->appends(['authors_page' => $authors->currentPage()])->links('pagination::bootstrap-5') }}
+                        {{ $books->appends(['books_page' => $books->currentPage()])->links('pagination::bootstrap-5') }}
                     </nav>
                 </div>
             </div> <!-- Books -->

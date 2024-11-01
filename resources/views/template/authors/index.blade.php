@@ -5,7 +5,14 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12">
-            <x-filter :resourceCount="$authorsCount"/>
+            <x-filter
+                :resourceCount="$authorsCount"
+                :genres="$genres"
+                :publishers="$publishers"
+                :languages="$languages"
+                :authors="$authors"
+                :request="request()"
+            />
             <div class="row bg-light-dark rounded border-top border-warning">
                 <div class="col-md-12 my-4">
                     <h2 class="h4 mb-1">Authors</h2>

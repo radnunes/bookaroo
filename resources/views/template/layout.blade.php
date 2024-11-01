@@ -9,7 +9,7 @@
     @include('template.partials.navbar')
     @include('template.partials.sidebar')
 
-    <main role="main" class="main-content">
+    <main role="main" class="main-content py-0">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12">

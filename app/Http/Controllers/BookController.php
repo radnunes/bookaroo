@@ -49,6 +49,8 @@ class BookController extends Controller
         $endingDate = $request->input('ending_date');
         $genres = $request->input('genres');
         $publisher = $request->input('publisher');
+        $language = $request->input('language');
+        $author = $request->input('authors');
         //dd($request);
 
         $books = Book::with(['genres', 'authors']) // Load genres and authors with each book
@@ -80,14 +82,20 @@ class BookController extends Controller
             ->when($publisher, function ($query) use ($publisher) {
                 $query->where('publisher_id', $publisher);
             })
+            ->when($language, function ($query) use ($language) {
+                $query->where('language_id', $language);
+            })
             ->when($genres, function ($query) use ($genres) {
                 $query->whereHas('genres', function ($q) use ($genres) {
                     $q->whereIn('genre_id', (array) $genres);
                 });
             })
+            ->when($author, function ($query) use ($author) {
+                $query->whereHas('authors', function ($q) use ($author) {
+                    $q->where('author_id', $author);
+                });
+            })
             ->paginate($perPage, ['*'], 'books_page', $booksPage);
-
-
 
 
         // Get counts of books and authors

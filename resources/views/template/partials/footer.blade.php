@@ -229,155 +229,60 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="{{ asset('https://www.googletagmanager.com/gtag/js?id=UA-56159088-1')}}"></script>
 <script>
+    // Google Analytics Setup
     window.dataLayer = window.dataLayer || [];
-
-    function gtag()
-    {
+    function gtag() {
         dataLayer.push(arguments);
     }
     gtag('js', new Date());
     gtag('config', 'UA-56159088-1');
-    document.querySelector('.nav-link').addEventListener('click', function(e) {
-        e.preventDefault(); // This will stop the link from working
-    });
-</script>
-<script>
-    // Initialize pageLoaded flag
-    let pageLoaded = false;
+    document.querySelector('.nav-link').addEventListener('click', (e) => e.preventDefault());
 
-    // Select the checkbox and the date pickers
+    // Form selectors and state variables
     const toggleCheckbox = document.getElementById("toggleSingleDate");
     const singleDatePicker = document.getElementById("singleDatePicker");
     const startDatePicker = document.getElementById("startDatePicker");
     const endDatePicker = document.getElementById("endDatePicker");
-
-    // Select date input fields
     const startingDateInput = document.getElementById("startingDate");
     const endingDateInput = document.getElementById("endingDate");
     const singleDateInput = document.getElementById("singleDate");
+    const search = document.getElementById("filterText");
+    const isbn = document.getElementById("filterISBN");
+    const pagesMax = document.getElementById('filterMax');
+    const pagesMin = document.getElementById('filterMin')
+    const resetButton = document.querySelector("button[type='reset']");
+    let pageLoaded = false;
 
-    /*
-    document.querySelector("button[type='reset']").addEventListener("click", function() {
-        // Clear Select2 fields
-        $(".select2, .select2-multi").val(null).trigger("change");
-
-        // Clear text fields, date inputs, and checkboxes
-        document.getElementById("filterText").value = '';
-        document.getElementById("filterISBN").value = '';
-        document.getElementById("filterMin").value = '';
-        document.getElementById("filterMax").value = '';
-        document.getElementById("singleDate").value = '';
-        document.getElementById("startingDate").value = '';
-        document.getElementById("endingDate").value = '';
-        document.getElementById("toggleSingleDate").checked = false;
-
-        // Hide single date picker and show range date picker
-        document.getElementById("singleDatePicker").style.display = 'none';
-        document.getElementById("startDatePicker").style.display = 'block';
-        document.getElementById("endDatePicker").style.display = 'block';
-    });
-    */
-
-
-    document.getElementById("filterForm").addEventListener("reset", function(event) {
-        // Use setTimeout to ensure this code runs after the form reset
-        setTimeout(function() {
-            // Clear Select2 fields
-            $(".select2, .select2-multi").val(null).trigger("change");
-
-            // Clear text fields, date inputs, and checkboxes
-            document.getElementById("filterText").value = '';
-            document.getElementById("filterISBN").value = '';
-            document.getElementById("filterMin").value = '';
-            document.getElementById("filterMax").value = '';
-            document.getElementById("singleDate").value = '';
-            document.getElementById("startingDate").value = '';
-            document.getElementById("endingDate").value = '';
-            // Hide single date picker and show range date picker
-            document.getElementById("singleDatePicker").style.display = 'none';
-            document.getElementById("startDatePicker").style.display = 'block';
-            document.getElementById("endDatePicker").style.display = 'block';
-        }, 0);
-    });
-
-    // Function to check which date input should be displayed
+    // Toggle date pickers based on checkbox state
     function setDatePickerVisibility() {
-        const singleDateValue = singleDateInput.value; // Check the value of the single date input
-        const startDateValue = startingDateInput.value;
-        const endDateValue = endingDateInput.value;
-
-        // Check if single date has a value
-        if (singleDateValue) {
-            singleDatePicker.style.display = "block";  // Show single date picker
-            startDatePicker.style.display = "none";    // Hide start date picker
-            endDatePicker.style.display = "none";      // Hide end date picker
-            toggleCheckbox.checked = true;             // Check the checkbox
-        } else if (startDateValue || endDateValue) {
-            singleDatePicker.style.display = "none";   // Hide single date picker
-            startDatePicker.style.display = "block";   // Show start date picker
-            endDatePicker.style.display = "block";     // Show end date picker
-            toggleCheckbox.checked = false;            // Uncheck the checkbox
-        } else {
-            singleDatePicker.style.display = "none";   // Hide single date picker
-            startDatePicker.style.display = "block";   // Show start date picker
-            endDatePicker.style.display = "block";     // Show end date picker
-            toggleCheckbox.checked = false;            // Uncheck the checkbox
-        }
+        const isSingleMode = toggleCheckbox.checked;
+        singleDatePicker.style.display = isSingleMode ? "block" : "none";
+        startDatePicker.style.display = endDatePicker.style.display = isSingleMode ? "none" : "block";
     }
 
-    // Add event listener to toggle visibility on checkbox change
-    toggleCheckbox.addEventListener("change", function() {
-        if (this.checked) {
-            singleDatePicker.style.display = "block";  // Show single date picker
-            startDatePicker.style.display = "none";    // Hide start date picker
-            endDatePicker.style.display = "none";      // Hide end date picker
-        } else {
-            singleDatePicker.style.display = "none";   // Hide single date picker
-            startDatePicker.style.display = "block";   // Show start date picker
-            endDatePicker.style.display = "block";     // Show end date picker
-        }
-    });
-
-    // Function to clear date if invalid
+    // Validate dates to ensure logical date ranges
     function checkDateValidity() {
-        const startDateValue = startingDateInput.value;
-        const endDateValue = endingDateInput.value;
-
-        const startDate = new Date(startDateValue);
-        const endDate = new Date(endDateValue);
-
-        // If starting date is selected
-        if (startDateValue) {
-            // Only clear ending date if it's selected and start date is after end date
-            if (endDateValue && startDate > endDate) {
-                endingDateInput.value = "";  // Clear ending date
-            }
-        }
-
-        // If ending date is selected
-        if (endDateValue) {
-            // Only clear starting date if it's selected and end date is before start date
-            if (startDateValue && endDate < startDate) {
-                startingDateInput.value = ""; // Clear starting date
-            }
+        const startDate = new Date(startingDateInput.value);
+        const endDate = new Date(endingDateInput.value);
+        if (startDate > endDate) {
+            endingDateInput.value = "";  // Clear if end date is before start date
+        } else if (endDate < startDate) {
+            startingDateInput.value = ""; // Clear if start date is after end date
         }
     }
 
-    // Function to reset dates based on input changes
+    // Reset other date inputs if single or range dates are selected
     function resetOtherDates(inputChanged) {
         if (inputChanged === 'single') {
-            // If single date changes, reset start and end date
             startingDateInput.value = "";
             endingDateInput.value = "";
-        } else if (inputChanged === 'range') {
-            // If starting or ending date changes, reset single date
+        } else {
             singleDateInput.value = "";
         }
-        // Re-evaluate which date picker should be shown
         setDatePickerVisibility();
     }
 
-    // Add event listeners for date inputs
+    // Event listeners for date input changes
     startingDateInput.addEventListener("change", function() {
         if (pageLoaded) {
             checkDateValidity();
@@ -398,12 +303,41 @@
         }
     });
 
-    // Call the function on page load to set the initial visibility
+    // Toggle between date pickers when checkbox state changes
+    toggleCheckbox.addEventListener("change", function() {
+        setDatePickerVisibility();
+    });
+
+    // Custom Reset Button Functionality
+    resetButton.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default form reset
+        document.getElementById("filterForm").reset(); // Reset all standard form inputs
+
+        // Manually clear Select2 fields
+        $(".select2, .select2-multi").val(null).trigger("change");
+
+        // Clear date inputs and reset the checkbox
+        search.value = '';
+        isbn.value = '';
+        singleDateInput.value = '';
+        startingDateInput.value = '';
+        endingDateInput.value = '';
+        pagesMax.value = '';
+        pagesMin.value = '';
+        //toggleCheckbox.checked = false;
+
+        // Reset date picker visibility
+        setDatePickerVisibility();
+    });
+
+    // Initialize date picker visibility on page load
     window.onload = function() {
         setDatePickerVisibility();
-        pageLoaded = true; // Set flag to true after page has loaded
-    }; // Ensure this runs when the page loads
+        pageLoaded = true;
+    };
 </script>
+
+
 
 
 

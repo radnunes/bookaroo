@@ -5,11 +5,18 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12">
-            <x-filter :resourceCount="$booksCount" />
+            <x-filter
+                :resourceCount="$booksCount"
+                :genres="$genres"
+                :publishers="$publishers"
+                :languages="$languages"
+                :authors="$authors"
+                :request="request()"
+            />
             <div class="row bg-light-dark rounded border-top border-warning">
                 <div class="col-md-12">
-                    <h2 class="h4 mt-4">Books</h2>
-                    <h6 class="mb-3">All books matching your search</h6>
+                    <h2 class="h4 mt-3">Books</h2>
+                    <h6 class="">All<span class="small badge badge-pill badge-warning ml-1 mb-1">{{ $booksCount }}</span> books matching your search</h6>
 
                     <div class="card-grid">
                         <!--

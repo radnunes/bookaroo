@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
+use App\Models\Languages;
+use App\Models\Publisher;
 use App\Models\Awards;
 use App\Models\Book;
 use App\Models\Genre;
@@ -45,12 +47,14 @@ class AuthorController extends Controller
         })->paginate($perPage, ['*'], 'authors_page', $authorsPage);
 
         // Get counts of books and authors
+        $publishers = Publisher::all();
         $booksCount = $books->total(); // Total number of books
         $authorsCount = $authors->total(); // Total number of authors
         $genres = Genre::all();
+        $languages = Languages::all();
 
         // Return the view with the books, authors, and their counts
-        return view('template.authors.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount', 'genres'));
+        return view('template.authors.index', compact('books', 'authors', 'search', 'perPage', 'booksCount', 'authorsCount', 'genres', 'publishers', 'languages'));
     }
 
     /**

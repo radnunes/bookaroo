@@ -19,40 +19,35 @@
                     <div class="form-group">
                         <label for="example-helping">Pages</label>
                         <div class="row col-10">
-                            <input type="text" id="filterMin" name="pages_min" class="form-control col-3 mr-2" placeholder="Min">
-                            <input type="text" id="filterMax" name="pages_max" class="form-control col-3" placeholder="Max">
+                            <input type="text" id="filterMin" name="pages_min" class="form-control col-3 mr-2" placeholder="Min" value="{{ request('pages_min') }}">
+                            <input type="text" id="filterMax" name="pages_max" class="form-control col-3" placeholder="Max" value="{{ request('pages_max') }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="form-group d-flex align-items-center mb-0">
-                            <label for="date-input1" class="mr-2 mt-3 h6">Publishing Date</label>
-                            <div class="custom-control custom-switch mt-1">
-                                <input type="checkbox" class="custom-control-input" id="toggleSingleDate">
+                        <div class="d-flex align-items-center mb-2">
+                            <label for="toggleSingleDate" class="mr-2 h6 mt-3">Publishing Date</label>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="toggleSingleDate" {{ request('single_date') ? 'checked' : '' }}>
                                 <label class="custom-control-label" for="toggleSingleDate"></label>
                             </div>
                         </div>
-                        <p class="text-white-50 unselectable">Alter between single date and range date</p>
-                        <div class="form-row">
+                        <small class="text-muted unselectable" >Toggle to choose between a single date or date range.</small>
+
+                        <div class="form-row mt-3">
                             <!-- Single Date Picker (Hidden by Default) -->
-                            <div class="form-group col-md-6 date-picker" id="singleDatePicker" style="display: none;">
-                                <label for="singleDate" class="text-white-50 unselectable">Single Date</label>
-                                <div class="input-group">
-                                    <input type="date" id="singleDate" name="single_date" class="form-control" placeholder="Date" value="{{ request('single_date') }}">
-                                </div>
+                            <div class="form-group col-md-6" id="singleDatePicker" style="display: {{ request('single_date') ? 'block' : 'none' }};">
+                                <label for="singleDate" class="unselectable">Single Date</label>
+                                <input type="date" id="singleDate" name="single_date" class="form-control" value="{{ request('single_date') }}">
                             </div>
 
-                            <!-- Start Date Picker -->
-                            <div class="form-group col-md-6 date-picker" id="startDatePicker">
-                                <label for="startingDate" class="text-white-50">Starting Date</label>
-                                <div class="input-group">
-                                    <input type="date" id="startingDate" name="start_date" class="form-control" placeholder="Starting Date" value="{{ request('start_date') }}">
-                                </div>
+                            <!-- Range Date Pickers -->
+                            <div class="form-group col-md-6" id="startDatePicker" style="display: {{ request('single_date') ? 'none' : 'block' }};">
+                                <label for="startingDate">Starting Date</label>
+                                <input type="date" id="startingDate" name="start_date" class="form-control" value="{{ request('start_date') }}">
                             </div>
-                            <div class="form-group col-md-6 date-picker" id="endDatePicker">
-                                <label for="endingDate" class="text-white-50">Ending Date</label>
-                                <div class="input-group">
-                                    <input type="date" id="endingDate" name="ending_date" class="form-control" placeholder="Ending Date" value="{{ request('ending_date') }}">
-                                </div>
+                            <div class="form-group col-md-6" id="endDatePicker" style="display: {{ request('single_date') ? 'none' : 'block' }};">
+                                <label for="endingDate">Ending Date</label>
+                                <input type="date" id="endingDate" name="ending_date" class="form-control" value="{{ request('ending_date') }}">
                             </div>
                         </div>
                     </div>
@@ -72,7 +67,7 @@
                         <select class="form-control select2" id="publisher" name="publisher">
                             <option value="" selected disabled>Select a Publisher</option>
                             @foreach($publishers as $publisher)
-                                <option value="{{ $publisher->id }}">{{ $publisher->name }}</option>
+                                <option value="{{ $publisher->id }}" @if(request('publisher') == $publisher->id) selected @endif>{{ $publisher->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -81,7 +76,7 @@
                         <select class="form-control select2" id="language" name="language"> <!-- Changed id and name to language -->
                             <option value="" selected disabled>Select a Language</option>
                             @foreach($languages as $language)
-                                <option value="{{ $language->id }}">{{ $language->name }}</option>
+                                <option value="{{ $language->id }}" @if(request('language') == $language->id) selected @endif>{{ $language->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -89,7 +84,7 @@
                         <label for="language">Authors</label>
                         <select class="form-control select2" id="authors" name="authors[]" multiple="multiple"> <!-- Changed id and name to language -->
                             @foreach($authors as $author)
-                                <option value="{{ $author->id }}">{{ $author->name }}</option>
+                                <option value="{{ $author->id }}" @if(in_array($author->id, request('authors', []))) selected @endif>{{ $author->name }}</option>
                             @endforeach
                         </select>
                     </div>
